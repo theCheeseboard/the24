@@ -104,6 +104,6 @@ void WorldClockWidget::updateClock() {
         }
     }
 
-    labelParts.append(d->tz.displayName(QTimeZone::GenericTime, QTimeZone::LongName));
+    labelParts.append(d->tz.displayName(QDateTime::currentDateTime(), QTimeZone::LongName));
     ui->timezoneLabel->setText(labelParts.join(" · "));
 }
