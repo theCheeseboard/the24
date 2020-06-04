@@ -1,0 +1,38 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="com.vicr123.the24.Timer">
+    <signal name="Timeout">
+    </signal>
+    <signal name="StateChanged">
+    </signal>
+    <signal name="LengthChanged">
+    </signal>
+    <signal name="NoteChanged">
+    </signal>
+    <signal name="Removing">
+    </signal>
+    <method name="Remove">
+    </method>
+    <method name="MillisecondsRemaining">
+      <arg type="x" direction="out"/>
+    </method>
+    <method name="SetLength">
+      <arg name="length" type="t" direction="in"/>
+    </method>
+    <method name="SetNote">
+      <arg name="note" type="s" direction="in"/>
+    </method>
+    <method name="Pause">
+    </method>
+    <method name="Resume">
+    </method>
+    <method name="Reset">
+    </method>
+    <method name="State">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="Note">
+      <arg type="s" direction="out"/>
+    </method>
+  </interface>
+</node>

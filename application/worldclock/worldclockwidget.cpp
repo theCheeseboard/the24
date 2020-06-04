@@ -67,8 +67,9 @@ void WorldClockWidget::contextMenuEvent(QContextMenuEvent* event) {
 
 void WorldClockWidget::updateClock() {
     QDateTime date = QDateTime::currentDateTimeUtc();
+    int utcOffset = d->tz.offsetFromUtc(date);
     date = date.addSecs(d->tz.offsetFromUtc(date));
-    ui->timeLabel->setText(QLocale().toString(date, "hh:mm"));
+    ui->timeLabel->setText(QLocale().toString(date.time(), QLocale::ShortFormat));
 
     int dayDifference = QDateTime::currentDateTime().daysTo(date);
     if (dayDifference == 0) {
@@ -81,5 +82,28 @@ void WorldClockWidget::updateClock() {
         ui->dayDifferenceLabel->setVisible(true);
     }
 
-    ui->timezoneLabel->setText(d->tz.displayName(QTimeZone::GenericTime, QTimeZone::LongName));
+    QStringList labelParts;
+
+    int differenceFromLocal = utcOffset - QTimeZone::systemTimeZone().offsetFromUtc(QDateTime::currentDateTimeUtc());
+    if (differenceFromLocal == 0) {
+        labelParts.append(tr("Current Timezone"));
+    } else {
+        QTime offset = QTime(0, 0).addSecs(qAbs(differenceFromLocal));
+        if (offset.minute() == 0) {
+            if (differenceFromLocal < 0) {
+                labelParts.append(tr("%n hours behind", nullptr, qAbs(differenceFromLocal / 3600)));
+            } else {
+                labelParts.append(tr("%n hours ahead", nullptr, qAbs(differenceFromLocal / 3600)));
+            }
+        } else {
+            if (differenceFromLocal < 0) {
+                labelParts.append(tr("%1 behind").arg(offset.toString("hh:mm")));
+            } else {
+                labelParts.append(tr("%1 ahead").arg(offset.toString("hh:mm")));
+            }
+        }
+    }
+
+    labelParts.append(d->tz.displayName(QTimeZone::GenericTime, QTimeZone::LongName));
+    ui->timezoneLabel->setText(labelParts.join(" · "));
 }

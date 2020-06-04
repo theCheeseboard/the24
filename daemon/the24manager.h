@@ -17,25 +17,36 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef TIMER_H
-#define TIMER_H
+#ifndef THE24MANAGER_H
+#define THE24MANAGER_H
 
-#include <QWidget>
+#include <QObject>
+#include <QDBusObjectPath>
 
-namespace Ui {
-    class Timer;
-}
-
-class Timer : public QWidget
-{
+struct The24ManagerPrivate;
+class The24Manager : public QObject {
         Q_OBJECT
+        Q_CLASSINFO("D-Bus Interface", "com.vicr123.the24")
 
     public:
-        explicit Timer(QWidget *parent = nullptr);
-        ~Timer();
+        explicit The24Manager(QObject* parent = nullptr);
+        ~The24Manager();
+
+    public Q_SLOTS:
+        Q_SCRIPTABLE QStringList EnumerateAlarms();
+        Q_SCRIPTABLE QStringList EnumerateTimers();
+        Q_SCRIPTABLE QStringList EnumerateStopwatches();
+
+        Q_SCRIPTABLE QString AddTimer(qint64 msecsFromNow);
+
+        Q_SCRIPTABLE void RequestExit();
+
+    Q_SIGNALS:
+        Q_SCRIPTABLE void TimerAdded(QString objectPath);
+        Q_SCRIPTABLE void TimerRemoved(QString objectPath);
 
     private:
-        Ui::Timer *ui;
+        The24ManagerPrivate* d;
 };
 
-#endif // TIMER_H
+#endif // THE24MANAGER_H

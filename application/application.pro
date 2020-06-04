@@ -28,7 +28,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     stopwatch.cpp \
-    timer.cpp \
+    timer/newtimerpopover.cpp \
+    timer/timer.cpp \
+    timer/timerwidget.cpp \
     worldclock/addclockpopover.cpp \
     worldclock/timezonesmodel.cpp \
     worldclock/worldclock.cpp \
@@ -38,7 +40,9 @@ HEADERS += \
     alarms.h \
     mainwindow.h \
     stopwatch.h \
-    timer.h \
+    timer/newtimerpopover.h \
+    timer/timer.h \
+    timer/timerwidget.h \
     worldclock/addclockpopover.h \
     worldclock/timezonesmodel.h \
     worldclock/worldclock.h \
@@ -48,7 +52,9 @@ FORMS += \
     alarms.ui \
     mainwindow.ui \
     stopwatch.ui \
-    timer.ui \
+    timer/newtimerpopover.ui \
+    timer/timer.ui \
+    timer/timerwidget.ui \
     worldclock/addclockpopover.ui \
     worldclock/worldclock.ui \
     worldclock/worldclockwidget.ui

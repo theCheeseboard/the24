@@ -106,6 +106,7 @@ void TimezonesModel::search(QString query) {
             if (QString(tz.id()).replace("_", " ").contains(query, Qt::CaseInsensitive)) match = true;
             if (tz.displayName(now, QTimeZone::OffsetName).contains(query, Qt::CaseInsensitive)) match = true;
             if (tz.displayName(now, QTimeZone::LongName).contains(query, Qt::CaseInsensitive)) match = true;
+            if (QLocale::countryToString(tz.country()).contains(query, Qt::CaseInsensitive)) match = true;
 
             if (match) d->shownTimezones.append(tz);
         }

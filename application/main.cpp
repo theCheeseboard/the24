@@ -27,9 +27,6 @@
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
 
-    tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
-    tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");
-
     if (QDir("/usr/share/the24/").exists()) {
         a.setShareDir("/usr/share/the24/");
     } else if (QDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/")).exists()) {
@@ -44,6 +41,7 @@ int main(int argc, char* argv[]) {
     a.setApplicationLicense(tApplication::Gpl3OrLater);
     a.setCopyrightHolder("Victor Tran");
     a.setCopyrightYear("2020");
+    a.setOrganizationName("theSuite");
 #ifdef T_BLUEPRINT_BUILD
     a.setApplicationName("the24 Blueprint");
     a.setDesktopFileName("com.vicr123.the24-blueprint");
@@ -51,6 +49,9 @@ int main(int argc, char* argv[]) {
     a.setApplicationName("the24");
     a.setDesktopFileName("com.vicr123.the24");
 #endif
+
+    tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
+    tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");
 
     MainWindow w;
     w.show();

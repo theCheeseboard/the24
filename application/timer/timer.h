@@ -17,17 +17,35 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "timer.h"
-#include "ui_timer.h"
+#ifndef TIMER_H
+#define TIMER_H
 
-Timer::Timer(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Timer)
-{
-    ui->setupUi(this);
+#include <QWidget>
+
+namespace Ui {
+    class Timer;
 }
 
-Timer::~Timer()
-{
-    delete ui;
-}
+struct TimerPrivate;
+class Timer : public QWidget {
+        Q_OBJECT
+
+    public:
+        explicit Timer(QWidget* parent = nullptr);
+        ~Timer();
+
+    public slots:
+        void addTimer(QString path);
+
+    private slots:
+        void on_addButton_clicked();
+
+    private:
+        Ui::Timer* ui;
+        TimerPrivate* d;
+
+        void serviceAvailable();
+        void serviceUnavailable();
+};
+
+#endif // TIMER_H
