@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/icon.svg</file>
+        <file>icons/aboutsplash.svg</file>
+    </qresource>
+</RCC>
