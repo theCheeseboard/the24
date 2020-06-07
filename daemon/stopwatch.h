@@ -20,22 +20,43 @@
 #ifndef STOPWATCH_H
 #define STOPWATCH_H
 
-#include <QWidget>
+#include <QObject>
+#include <QDBusContext>
 
-namespace Ui {
-    class Stopwatch;
-}
-
-class Stopwatch : public QWidget
-{
+struct StopwatchPrivate;
+class Stopwatch : public QObject, protected QDBusContext {
         Q_OBJECT
+        Q_CLASSINFO("D-Bus Interface", "com.vicr123.the24.Stopwatch")
 
     public:
-        explicit Stopwatch(QWidget *parent = nullptr);
+        explicit Stopwatch(int id, QObject* parent = nullptr);
         ~Stopwatch();
 
+        QString objectPath();
+
+    public Q_SLOTS:
+        Q_SCRIPTABLE void Remove();
+        Q_SCRIPTABLE qulonglong Elapsed();
+        Q_SCRIPTABLE bool Paused();
+
+        Q_SCRIPTABLE void Start();
+        Q_SCRIPTABLE void Stop();
+        Q_SCRIPTABLE void Reset();
+        Q_SCRIPTABLE void Lap();
+
+        Q_SCRIPTABLE QList<qulonglong> Laps();
+
+    signals:
+        Q_SCRIPTABLE void Removing();
+        Q_SCRIPTABLE void LapsChanged();
+        Q_SCRIPTABLE void StateChanged();
+
     private:
-        Ui::Stopwatch *ui;
+        StopwatchPrivate* d;
+
+        void updateFromDatabase();
+        void updateRunningValues();
+        void writeToDatabase();
 };
 
 #endif // STOPWATCH_H

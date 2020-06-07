@@ -53,10 +53,18 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    db.exec("PRAGMA foreign_keys = ON");
+
     //Initialise the tables
     QStringList tables = db.tables();
     if (!tables.contains("TIMERS")) {
         db.exec("CREATE TABLE timers(id INTEGER PRIMARY KEY, timeout INTEGER, length INTEGER, pausedRemaining INTEGER DEFAULT NULL, note TEXT DEFAULT NULL)");
+    }
+    if (!tables.contains("STOPWATCH")) {
+        db.exec("CREATE TABLE stopwatch(id INTEGER PRIMARY KEY, starttime INTEGER, offset INTEGER DEFAULT 0, paused BOOLEAN DEFAULT FALSE)");
+    }
+    if (!tables.contains("LAPS")) {
+        db.exec("CREATE TABLE laps(id INTEGER PRIMARY KEY, stopwatch INTEGER CONSTRAINT laps_stopwatch_id_fk REFERENCES stopwatch, offset INTEGER)");
     }
 
     if (!QDBusConnection::sessionBus().registerService("com.vicr123.the24")) {

@@ -267,7 +267,7 @@
   <customwidget>
    <class>Stopwatch</class>
    <extends>QWidget</extends>
-   <header>stopwatch.h</header>
+   <header>stopwatch/stopwatch.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

@@ -7,6 +7,12 @@
     <signal name="TimerRemoved">
       <arg name="objectPath" type="s" direction="out"/>
     </signal>
+    <signal name="StopwatchAdded">
+      <arg name="objectPath" type="s" direction="out"/>
+    </signal>
+    <signal name="StopwatchRemoved">
+      <arg name="objectPath" type="s" direction="out"/>
+    </signal>
     <method name="EnumerateAlarms">
       <arg type="as" direction="out"/>
     </method>
@@ -19,6 +25,9 @@
     <method name="AddTimer">
       <arg type="s" direction="out"/>
       <arg name="msecsFromNow" type="x" direction="in"/>
+    </method>
+    <method name="AddStopwatch">
+      <arg type="s" direction="out"/>
     </method>
     <method name="RequestExit">
     </method>

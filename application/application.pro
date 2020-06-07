@@ -25,9 +25,11 @@ QMAKE_POST_LINK += $$QMAKE_COPY_DIR $$quote($$PWD/translations) $$shell_quote($$
 
 SOURCES += \
     alarms.cpp \
+    clockhelpers.cpp \
     main.cpp \
     mainwindow.cpp \
-    stopwatch.cpp \
+    stopwatch/stopwatch.cpp \
+    stopwatch/stopwatchwidget.cpp \
     timer/newtimerpopover.cpp \
     timer/timer.cpp \
     timer/timerwidget.cpp \
@@ -38,8 +40,10 @@ SOURCES += \
 
 HEADERS += \
     alarms.h \
+    clockhelpers.h \
     mainwindow.h \
-    stopwatch.h \
+    stopwatch/stopwatch.h \
+    stopwatch/stopwatchwidget.h \
     timer/newtimerpopover.h \
     timer/timer.h \
     timer/timerwidget.h \
@@ -51,7 +55,8 @@ HEADERS += \
 FORMS += \
     alarms.ui \
     mainwindow.ui \
-    stopwatch.ui \
+    stopwatch/stopwatch.ui \
+    stopwatch/stopwatchwidget.ui \
     timer/newtimerpopover.ui \
     timer/timer.ui \
     timer/timerwidget.ui \

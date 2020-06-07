@@ -27,8 +27,14 @@
 #include "timer_adaptor.h"
 
 struct TimerPrivate {
+    enum State {
+        Running,
+        Paused,
+        Stopped
+    };
+
     int id;
-    int state;
+    State state;
 
     quint64 length;
     quint64 timeoutDate;
@@ -73,9 +79,9 @@ void Timer::Remove() {
 }
 
 qlonglong Timer::MillisecondsRemaining() {
-    if (d->state == 0) { //Running
+    if (d->state == TimerPrivate::Running) { //Running
         return d->timer->remainingTime();
-    } else if (d->state == 1) { //Paused
+    } else if (d->state == TimerPrivate::Paused) { //Paused
         return d->pauseLengthRemain;
     } else { //Stopped
         return d->length;
@@ -83,60 +89,60 @@ qlonglong Timer::MillisecondsRemaining() {
 }
 
 void Timer::SetLength(quint64 length) {
-    if (d->state != 2) return;
+    if (d->state != TimerPrivate::Stopped) return;
 
     d->length = length;
-    writeToDatabase();
     emit LengthChanged();
+    writeToDatabase();
 }
 
 void Timer::SetNote(QString note) {
     d->note = note;
-    writeToDatabase();
     emit NoteChanged();
+    writeToDatabase();
 }
 
 void Timer::Pause() {
-    if (d->state != 0) return;
+    if (d->state != TimerPrivate::Running) return;
 
-    d->state = 1;
+    d->state = TimerPrivate::Paused;
     d->pauseLengthRemain = d->timer->remainingTime();
     d->timer->stop();
 
-    writeToDatabase();
     emit StateChanged();
+    writeToDatabase();
 }
 
 void Timer::Resume() {
-    if (d->state == 1) { //Paused
+    if (d->state == TimerPrivate::Paused) { //Paused
         d->timeoutDate = QDateTime::currentMSecsSinceEpoch() + d->pauseLengthRemain;
     } else { //Stopped
         d->timeoutDate = QDateTime::currentMSecsSinceEpoch() + d->length;
     }
-    d->state = 0;
+    d->state = TimerPrivate::Running;
 
     d->timer->setInterval(QDateTime::currentDateTimeUtc().msecsTo(QDateTime::fromMSecsSinceEpoch(d->timeoutDate)));
     d->timer->start();
 
-    writeToDatabase();
     emit StateChanged();
+    writeToDatabase();
 }
 
 void Timer::Reset() {
     d->timer->stop();
-    d->state = 2;
+    d->state = TimerPrivate::Stopped;
 
-    writeToDatabase();
     emit StateChanged();
+    writeToDatabase();
 }
 
 QString Timer::State() {
     switch (d->state) {
-        case 0:
+        case TimerPrivate::Running:
             return "Running";
-        case 1:
+        case TimerPrivate::Paused:
             return "Paused";
-        case 2:
+        case TimerPrivate::Stopped:
             return "Stopped";
     }
     return "";
@@ -162,10 +168,10 @@ void Timer::updateFromDatabase() {
     bool haveTimeout = !query.isNull("timeout");
     bool isPaused = !query.isNull("pausedRemaining");
     if (isPaused) {
-        d->state = 1;
+        d->state = TimerPrivate::Paused;
         d->pauseLengthRemain = query.value("pausedRemaining").toLongLong();
     } else if (haveTimeout) {
-        d->state = 0;
+        d->state = TimerPrivate::Running;
         d->timeoutDate = query.value("timeout").toLongLong();
 
         int interval = QDateTime::currentDateTimeUtc().msecsTo(QDateTime::fromMSecsSinceEpoch(d->timeoutDate));
@@ -178,7 +184,7 @@ void Timer::updateFromDatabase() {
             d->timer->start();
         }
     } else {
-        d->state = 2;
+        d->state = TimerPrivate::Stopped;
     }
     d->note = query.value("note").toString();
     d->length = query.value("length").toLongLong();
@@ -188,15 +194,15 @@ void Timer::writeToDatabase() {
     QSqlQuery query;
 
     switch (d->state) {
-        case 0: //Running
+        case TimerPrivate::Running: //Running
             query.prepare("UPDATE timers SET timeout=:timeout, length=:length, pausedRemaining=null, note=:note WHERE id=:id");
             query.bindValue(":timeout", d->timeoutDate);
             break;
-        case 1: //Paused
+        case TimerPrivate::Paused: //Paused
             query.prepare("UPDATE timers SET timeout=null, length=:length, pausedRemaining=:pausedRemaining, note=:note WHERE id=:id");
             query.bindValue(":pausedRemaining", d->pauseLengthRemain);
             break;
-        case 2: //Stopped
+        case TimerPrivate::Stopped: //Stopped
             query.prepare("UPDATE timers SET timeout=null, length=:length, pausedRemaining=null, note=:note WHERE id=:id");
     }
 
@@ -212,7 +218,7 @@ void Timer::writeToDatabase() {
 }
 
 void Timer::doTimeout() {
-    d->state = 2;
+    d->state = TimerPrivate::Stopped;
     d->timeoutDate = 0;
     d->pauseLengthRemain = 0;
 
@@ -230,6 +236,8 @@ void Timer::doTimeout() {
     notification->setCategory("x-thesuite.the24.timer-elapsed");
     notification->setTimeout(0);
     notification->post(true);
+
+    //TODO: Play some music?
 
     writeToDatabase();
 }

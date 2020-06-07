@@ -1,0 +1,31 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="com.vicr123.the24.Stopwatch">
+    <signal name="Removing">
+    </signal>
+    <signal name="LapsChanged">
+    </signal>
+    <signal name="StateChanged">
+    </signal>
+    <method name="Remove">
+    </method>
+    <method name="Elapsed">
+      <arg type="t" direction="out"/>
+    </method>
+    <method name="Paused">
+      <arg type="b" direction="out"/>
+    </method>
+    <method name="Start">
+    </method>
+    <method name="Stop">
+    </method>
+    <method name="Reset">
+    </method>
+    <method name="Lap">
+    </method>
+    <method name="Laps">
+      <arg type="at" direction="out"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.Out0" value="QList&lt;qulonglong&gt;"/>
+    </method>
+  </interface>
+</node>

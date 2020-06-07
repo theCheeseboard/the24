@@ -37,7 +37,6 @@ class TimerWidget : public QWidget {
     private slots:
         void on_actionButton_clicked();
 
-    private slots:
         void update();
 
         void on_resetButton_clicked();

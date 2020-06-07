@@ -38,6 +38,15 @@
     </message>
 </context>
 <context>
+    <name>ClockHelpers</name>
+    <message>
+        <location filename="../clockhelpers.cpp" line="38"/>
+        <source>d</source>
+        <comment>d for &quot;Day&quot; (1d)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
@@ -111,8 +120,36 @@
 <context>
     <name>Stopwatch</name>
     <message>
-        <location filename="../stopwatch.ui" line="14"/>
+        <location filename="../stopwatch/stopwatch.ui" line="14"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stopwatch/stopwatch.ui" line="100"/>
+        <source>Start Stopwatch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stopwatch/stopwatch.ui" line="153"/>
+        <source>Hmm...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stopwatch/stopwatch.ui" line="163"/>
+        <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>StopwatchWidget</name>
+    <message>
+        <location filename="../stopwatch/stopwatchwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stopwatch/stopwatchwidget.ui" line="49"/>
+        <source>00:00:00</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

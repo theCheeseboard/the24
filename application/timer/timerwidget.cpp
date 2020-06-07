@@ -25,6 +25,8 @@
 #include <QTime>
 #include <the-libs_global.h>
 
+#include "clockhelpers.h"
+
 struct TimerWidgetPrivate {
     QDBusInterface* interface;
 
@@ -91,13 +93,13 @@ void TimerWidget::update() {
             }
 
             updateDisplay();
+            remainWatcher->deleteLater();
         });
     });
 }
 
 void TimerWidget::updateDisplay() {
-    QTime time = QTime(0, 0).addMSecs(d->msecsLeft);
-    ui->remainingLabel->setText(time.toString("hh:mm:ss"));
+    ui->remainingLabel->setText(ClockHelpers::msecsToString(d->msecsLeft));
 }
 
 void TimerWidget::on_actionButton_clicked() {

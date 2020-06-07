@@ -28,11 +28,13 @@
 #include <QSqlError>
 
 #include "timer.h"
+#include "stopwatch.h"
 #include "the24_adaptor.h"
 
 struct The24ManagerPrivate {
     tSettings settings;
     QList<Timer*> timers;
+    QList<Stopwatch*> stopwatches;
 };
 
 The24Manager::The24Manager(QObject* parent) : QObject(parent) {
@@ -51,6 +53,18 @@ The24Manager::The24Manager(QObject* parent) : QObject(parent) {
             d->timers.removeAll(timer);
         });
         d->timers.append(timer);
+    }
+
+    //Initialise stopwatches
+    QSqlQuery stopwatchQuery("SELECT id FROM stopwatch");
+    while (stopwatchQuery.next()) {
+        Stopwatch* stopwatch = new Stopwatch(stopwatchQuery.value("id").toInt());
+        QString objectPath = stopwatch->objectPath();
+        connect(stopwatch, &Stopwatch::destroyed, this, [ = ] {
+            emit StopwatchRemoved(objectPath);
+            d->stopwatches.removeAll(stopwatch);
+        });
+        d->stopwatches.append(stopwatch);
     }
 }
 
@@ -71,7 +85,11 @@ QStringList The24Manager::EnumerateTimers() {
 }
 
 QStringList The24Manager::EnumerateStopwatches() {
-    return {};
+    QStringList objectPaths;
+    for (Stopwatch* stopwatch : d->stopwatches) {
+        objectPaths.append(stopwatch->objectPath());
+    }
+    return objectPaths;
 }
 
 QString The24Manager::AddTimer(qint64 msecsFromNow) {
@@ -92,6 +110,24 @@ QString The24Manager::AddTimer(qint64 msecsFromNow) {
     emit TimerAdded(objectPath);
 
     return timer->objectPath();
+}
+
+QString The24Manager::AddStopwatch() {
+    QSqlQuery query;
+    query.prepare("INSERT INTO stopwatch(starttime) VALUES(:starttime)");
+    query.bindValue(":starttime", QDateTime::currentMSecsSinceEpoch());
+    query.exec();
+
+    Stopwatch* stopwatch = new Stopwatch(query.lastInsertId().toInt());
+    QString objectPath = stopwatch->objectPath();
+    connect(stopwatch, &Stopwatch::destroyed, this, [ = ] {
+        emit StopwatchRemoved(objectPath);
+        d->stopwatches.removeAll(stopwatch);
+    });
+    d->stopwatches.append(stopwatch);
+    emit StopwatchAdded(objectPath);
+
+    return stopwatch->objectPath();
 }
 
 void The24Manager::RequestExit() {

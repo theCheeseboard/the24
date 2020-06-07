@@ -17,17 +17,37 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "stopwatch.h"
-#include "ui_stopwatch.h"
+#ifndef STOPWATCHWIDGET_H
+#define STOPWATCHWIDGET_H
 
-Stopwatch::Stopwatch(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Stopwatch)
-{
-    ui->setupUi(this);
+#include <QWidget>
+
+namespace Ui {
+    class StopwatchWidget;
 }
 
-Stopwatch::~Stopwatch()
-{
-    delete ui;
-}
+struct StopwatchWidgetPrivate;
+class StopwatchWidget : public QWidget {
+        Q_OBJECT
+
+    public:
+        explicit StopwatchWidget(QString objectPath, QWidget* parent = nullptr);
+        ~StopwatchWidget();
+
+    private slots:
+        void update();
+
+        void on_removeButton_clicked();
+
+        void on_resetButton_clicked();
+
+        void on_actionButton_clicked();
+
+    private:
+        Ui::StopwatchWidget* ui;
+        StopwatchWidgetPrivate* d;
+
+        void updateDisplay();
+};
+
+#endif // STOPWATCHWIDGET_H

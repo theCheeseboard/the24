@@ -6,7 +6,8 @@ CONFIG -= app_bundle
 TARGET = the24d
 
 DBUS_ADAPTORS += com.vicr123.the24.xml \
-    com.vicr123.the24.Timer.xml
+    com.vicr123.the24.Timer.xml \
+    com.vicr123.the24.Stopwatch.xml
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -21,6 +22,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
+        stopwatch.cpp \
         the24manager.cpp \
         timer.cpp
 
@@ -30,5 +32,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    stopwatch.h \
     the24manager.h \
     timer.h

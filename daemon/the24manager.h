@@ -38,12 +38,15 @@ class The24Manager : public QObject {
         Q_SCRIPTABLE QStringList EnumerateStopwatches();
 
         Q_SCRIPTABLE QString AddTimer(qint64 msecsFromNow);
+        Q_SCRIPTABLE QString AddStopwatch();
 
         Q_SCRIPTABLE void RequestExit();
 
     Q_SIGNALS:
         Q_SCRIPTABLE void TimerAdded(QString objectPath);
         Q_SCRIPTABLE void TimerRemoved(QString objectPath);
+        Q_SCRIPTABLE void StopwatchAdded(QString objectPath);
+        Q_SCRIPTABLE void StopwatchRemoved(QString objectPath);
 
     private:
         The24ManagerPrivate* d;
