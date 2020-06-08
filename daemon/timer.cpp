@@ -24,6 +24,8 @@
 #include <QDBusConnection>
 #include <tnotification.h>
 
+#include <QSoundEffect>
+
 #include "timer_adaptor.h"
 
 struct TimerPrivate {
@@ -43,6 +45,7 @@ struct TimerPrivate {
     QString note;
 
     QTimer* timer;
+    QSoundEffect* effect = nullptr;
 };
 
 Timer::Timer(int id, QObject* parent) : QObject(parent) {
@@ -121,6 +124,8 @@ void Timer::Resume() {
     }
     d->state = TimerPrivate::Running;
 
+    prepareTone();
+
     d->timer->setInterval(QDateTime::currentDateTimeUtc().msecsTo(QDateTime::fromMSecsSinceEpoch(d->timeoutDate)));
     d->timer->start();
 
@@ -180,6 +185,8 @@ void Timer::updateFromDatabase() {
                 this->doTimeout();
             });
         } else {
+            prepareTone();
+
             d->timer->setInterval(interval);
             d->timer->start();
         }
@@ -235,9 +242,23 @@ void Timer::doTimeout() {
     }
     notification->setCategory("x-thesuite.the24.timer-elapsed");
     notification->setTimeout(0);
+    connect(notification, &tNotification::dismissed, this, [ = ] {
+        d->effect->stop();
+        d->effect->deleteLater();
+        d->effect = nullptr;
+    });
     notification->post(true);
 
-    //TODO: Play some music?
+    prepareTone();
+    d->effect->play();
 
     writeToDatabase();
+}
+
+void Timer::prepareTone() {
+    if (!d->effect) {
+        d->effect = new QSoundEffect();
+        d->effect->setSource(QUrl::fromLocalFile("/usr/share/sounds/the24/tones/silly.wav"));
+        d->effect->setLoopCount(QSoundEffect::Infinite);
+    }
 }

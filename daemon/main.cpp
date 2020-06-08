@@ -17,7 +17,7 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include <QCoreApplication>
+#include <tapplication.h>
 
 #include <QDBusConnection>
 #include <QSqlDatabase>
@@ -29,10 +29,27 @@
 #include "the24manager.h"
 
 int main(int argc, char* argv[]) {
-    QCoreApplication a(argc, argv);
+    tApplication a(argc, argv);
 
-    a.setApplicationName("the24");
+    if (QDir("/usr/share/the24/daemon/").exists()) {
+        a.setShareDir("/usr/share/the24/daemon/");
+    } else if (QDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/daemon/")).exists()) {
+        a.setShareDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/daemon/"));
+    }
+    a.installTranslators();
+
+    a.setApplicationVersion("1.0");
+    a.setApplicationLicense(tApplication::Gpl3OrLater);
+    a.setCopyrightHolder("Victor Tran");
+    a.setCopyrightYear("2020");
     a.setOrganizationName("theSuite");
+#ifdef T_BLUEPRINT_BUILD
+    a.setApplicationName("the24 Blueprint");
+    a.setDesktopFileName("com.vicr123.the24-blueprint");
+#else
+    a.setApplicationName("the24");
+    a.setDesktopFileName("com.vicr123.the24");
+#endif
 
     tSettings::registerDefaults(a.applicationDirPath() + "../application/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");

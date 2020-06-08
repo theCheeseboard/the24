@@ -57,6 +57,7 @@ class Timer : public QObject {
         void updateFromDatabase();
         void writeToDatabase();
         void doTimeout();
+        void prepareTone();
 };
 
 #endif // TIMER_H

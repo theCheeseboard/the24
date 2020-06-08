@@ -90,6 +90,7 @@ void Timer::serviceUnavailable() {
     for (TimerWidget* timer : d->timers) {
         timer->deleteLater();
     }
+    d->timers.clear();
     ui->stackedWidget->setCurrentWidget(ui->serviceUnavailablePage);
 }
 

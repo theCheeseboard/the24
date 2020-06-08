@@ -87,6 +87,7 @@ void Stopwatch::serviceUnavailable() {
     for (StopwatchWidget* stopwatch : d->stopwatches) {
         stopwatch->deleteLater();
     }
+    d->stopwatches.clear();
     ui->stackedWidget->setCurrentWidget(ui->serviceUnavailablePage);
 }
 

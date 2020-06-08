@@ -1,9 +1,12 @@
-QT -= gui
-QT += dbus thelib sql
+QT += gui widgets dbus thelib sql multimedia
+SHARE_APP_NAME = the24/daemon
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
 TARGET = the24d
+
+# Include the-libs build tools
+include(/usr/share/the-libs/pri/buildmaster.pri)
 
 DBUS_ADAPTORS += com.vicr123.the24.xml \
     com.vicr123.the24.Timer.xml \
@@ -26,12 +29,18 @@ SOURCES += \
         the24manager.cpp \
         timer.cpp
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+unix {
+    target.path = /usr/bin/
+
+    tones.files = tones
+    tones.path = /usr/share/sounds/the24/
+
+    INSTALLS += target tones
+}
 
 HEADERS += \
     stopwatch.h \
     the24manager.h \
     timer.h
+
+RESOURCES +=
