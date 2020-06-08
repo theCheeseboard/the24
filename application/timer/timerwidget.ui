@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string notr="true">Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -74,7 +74,8 @@
            <string notr="true"/>
           </property>
           <property name="icon">
-           <iconset theme="view-refresh"/>
+           <iconset theme="view-refresh">
+            <normaloff>.</normaloff>.</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>
@@ -94,7 +95,8 @@
            <string/>
           </property>
           <property name="icon">
-           <iconset theme="list-remove"/>
+           <iconset theme="list-remove">
+            <normaloff>.</normaloff>.</iconset>
           </property>
           <property name="flat">
            <bool>true</bool>

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US" language="vi_VN">
+<TS version="2.1" language="vi_VN" sourcelanguage="en_US">
 <context>
     <name>AddClockPopover</name>
-    <message>
-        <location filename="../worldclock/addclockpopover.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="35"/>
         <source>Add Clock</source>
@@ -26,11 +21,6 @@
 </context>
 <context>
     <name>Alarms</name>
-    <message>
-        <location filename="../alarms.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../alarms.ui" line="26"/>
         <source>Alarms</source>
@@ -120,11 +110,6 @@
 <context>
     <name>Stopwatch</name>
     <message>
-        <location filename="../stopwatch/stopwatch.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stopwatch/stopwatch.ui" line="100"/>
         <source>Start Stopwatch</source>
         <translation>Bắt đầu bộ bấm giờ</translation>
@@ -143,11 +128,6 @@
 <context>
     <name>StopwatchWidget</name>
     <message>
-        <location filename="../stopwatch/stopwatchwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="49"/>
         <source>00:00:00</source>
         <translation type="unfinished"></translation>
@@ -155,11 +135,6 @@
 </context>
 <context>
     <name>Timer</name>
-    <message>
-        <location filename="../timer/timer.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../timer/timer.ui" line="100"/>
         <source>Add Timer</source>
@@ -179,11 +154,6 @@
 <context>
     <name>TimerWidget</name>
     <message>
-        <location filename="../timer/timerwidget.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../timer/timerwidget.ui" line="49"/>
         <source>00:00:00</source>
         <translation type="unfinished"></translation>
@@ -191,11 +161,6 @@
 </context>
 <context>
     <name>WorldClock</name>
-    <message>
-        <location filename="../worldclock/worldclock.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../worldclock/worldclock.ui" line="78"/>
         <source>Add Clock</source>
