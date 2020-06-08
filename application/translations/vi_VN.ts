@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US">
+<TS version="2.1" sourcelanguage="en_US" language="vi_VN">
 <context>
     <name>AddClockPopover</name>
     <message>
@@ -11,17 +11,17 @@
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="35"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm đồng hồ</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="42"/>
         <source>What timezone do you want to add?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn muốn thêm vào múi giờ nào?</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="71"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Tìm kiếm</translation>
     </message>
 </context>
 <context>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../alarms.ui" line="26"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>Báo thức</translation>
     </message>
 </context>
 <context>
@@ -43,7 +43,7 @@
         <location filename="../clockhelpers.cpp" line="38"/>
         <source>d</source>
         <comment>d for &quot;Day&quot; (1d)</comment>
-        <translation type="unfinished"></translation>
+        <translation>ng</translation>
     </message>
 </context>
 <context>
@@ -51,57 +51,57 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>the24</source>
-        <translation type="unfinished"></translation>
+        <translation>the24</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="94"/>
         <source>World Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Đồng hồ thế giới</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>Báo thức</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="143"/>
         <source>Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Bấm giờ</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="166"/>
         <source>Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Đếm ngược</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="215"/>
         <source>File Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Báo cáo lỗi</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="220"/>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Mã nguồn</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="229"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Giới thiệu</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="238"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="241"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="51"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Trợ giúp</translation>
     </message>
 </context>
 <context>
@@ -109,12 +109,12 @@
     <message>
         <location filename="../timer/newtimerpopover.ui" line="35"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm bộ đếm ngược</translation>
     </message>
     <message>
         <location filename="../timer/newtimerpopover.ui" line="45"/>
         <source>Start Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu đếm ngược</translation>
     </message>
 </context>
 <context>
@@ -127,17 +127,17 @@
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="100"/>
         <source>Start Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu bộ bấm giờ</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="153"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ừm...</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="163"/>
         <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Có vẻ như dịch vụ the24 không có chạy, và bộ bấm giờ không thể hoạt động.</translation>
     </message>
 </context>
 <context>
@@ -163,17 +163,17 @@
     <message>
         <location filename="../timer/timer.ui" line="100"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm bộ đếm ngược</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="153"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ừm...</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="163"/>
         <source>Looks like the the24 service is not running, and timers won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Có vẻ như dịch vụ the24 không có chạy, và bộ đếm ngược không thể hoạt động.</translation>
     </message>
 </context>
 <context>
@@ -199,7 +199,7 @@
     <message>
         <location filename="../worldclock/worldclock.ui" line="78"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm đồng hồ</translation>
     </message>
 </context>
 <context>
@@ -212,41 +212,41 @@
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="61"/>
         <source>For this clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Cho đồng hồ này</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="62"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="89"/>
         <source>Current Timezone</source>
-        <translation type="unfinished"></translation>
+        <translation>Giờ địa phương</translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="94"/>
         <source>%n hours behind</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n giờ sau</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
         <source>%n hours ahead</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n giờ trước</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="100"/>
         <source>%1 behind</source>
-        <translation type="unfinished"></translation>
+        <translation>%n sau</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="102"/>
         <source>%1 ahead</source>
-        <translation type="unfinished"></translation>
+        <translation>%n trước</translation>
     </message>
 </context>
 <context>
@@ -254,7 +254,7 @@
     <message>
         <location filename="../main.cpp" line="39"/>
         <source>Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Đồng hồ</translation>
     </message>
 </context>
 </TS>
