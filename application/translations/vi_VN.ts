@@ -206,12 +206,12 @@
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="100"/>
         <source>%1 behind</source>
-        <translation>%n sau</translation>
+        <translation>%1 sau</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="102"/>
         <source>%1 ahead</source>
-        <translation>%n trước</translation>
+        <translation>%1 trước</translation>
     </message>
 </context>
 <context>
