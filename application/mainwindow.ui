@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="the24" resource="resources.qrc">
-    <normaloff>:/icons/icon.svg</normaloff>:/icons/icon.svg</iconset>
+    <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -75,7 +75,7 @@
          </property>
          <property name="icon">
           <iconset theme="the24" resource="resources.qrc">
-           <normaloff>:/icons/icon.svg</normaloff>:/icons/icon.svg</iconset>
+           <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
          </property>
          <property name="popupMode">
           <enum>QToolButton::InstantPopup</enum>
@@ -211,11 +211,17 @@
    </layout>
   </widget>
   <action name="actionFileBug">
+   <property name="icon">
+    <iconset theme="tools-report-bug"/>
+   </property>
    <property name="text">
     <string>File Bug</string>
    </property>
   </action>
   <action name="actionSources">
+   <property name="icon">
+    <iconset theme="commit"/>
+   </property>
    <property name="text">
     <string>Sources</string>
    </property>

@@ -70,11 +70,18 @@ unix {
     defaults.files = defaults.conf
     defaults.path = /etc/theSuite/the24/
 
-    INSTALLS += target defaults
+    desktop.path = /usr/share/applications
+    desktop.files = com.vicr123.the24.desktop
+
+    icon.path = /usr/share/icons/hicolor/scalable/apps/
+    icon.files = icons/the24.svg
+
+    INSTALLS += target defaults icon desktop
 }
 
 RESOURCES += \
     resources.qrc
 
 DISTFILES += \
+    com.vicr123.the24.desktop \
     defaults.conf

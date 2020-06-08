@@ -35,7 +35,10 @@ unix {
     tones.files = tones
     tones.path = /usr/share/sounds/the24/
 
-    INSTALLS += target tones
+    autostart.path = /etc/xdg/autostart
+    autostart.files = com.vicr123.the24.daemon.desktop
+
+    INSTALLS += target tones autostart
 }
 
 HEADERS += \
@@ -44,3 +47,6 @@ HEADERS += \
     timer.h
 
 RESOURCES +=
+
+DISTFILES += \
+    com.vicr123.the24.daemon.desktop

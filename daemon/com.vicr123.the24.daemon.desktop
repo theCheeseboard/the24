@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=the24 Daemon
+GenericName=Clock
+Comment=Keeps track of started timers, stopwatches and alarms
+Exec=the24d
+Icon=the24
+Categories=Utility;

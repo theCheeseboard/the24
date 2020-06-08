@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     }
     a.installTranslators();
 
-    a.setApplicationIcon(QIcon::fromTheme("the24", QIcon(":/icons/icon.svg")));
+    a.setApplicationIcon(QIcon::fromTheme("the24", QIcon(":/icons/the24.svg")));
     a.setApplicationVersion("1.0");
     a.setGenericName(QApplication::translate("main", "Clock"));
     a.setAboutDialogSplashGraphic(a.aboutDialogSplashGraphicFromSvg(":/icons/aboutsplash.svg"));
