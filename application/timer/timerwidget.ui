@@ -70,6 +70,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="resetButton">
+          <property name="toolTip">
+           <string>Reset</string>
+          </property>
           <property name="text">
            <string notr="true"/>
           </property>
@@ -91,11 +94,14 @@
         </item>
         <item>
          <widget class="QPushButton" name="removeButton">
+          <property name="toolTip">
+           <string>Remove</string>
+          </property>
           <property name="text">
            <string/>
           </property>
           <property name="icon">
-           <iconset theme="list-remove">
+           <iconset theme="edit-delete">
             <normaloff>.</normaloff>.</iconset>
           </property>
           <property name="flat">

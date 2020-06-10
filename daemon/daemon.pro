@@ -1,7 +1,7 @@
 QT += gui widgets dbus thelib sql multimedia
 SHARE_APP_NAME = the24/daemon
 
-CONFIG += c++11 console
+CONFIG += c++14 console
 CONFIG -= app_bundle
 TARGET = the24d
 

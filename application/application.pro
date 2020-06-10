@@ -3,7 +3,7 @@ SHARE_APP_NAME = the24
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++14
 TARGET = the24
 
 # Include the-libs build tools

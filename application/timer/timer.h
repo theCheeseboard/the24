@@ -40,12 +40,32 @@ class Timer : public QWidget {
     private slots:
         void on_addButton_clicked();
 
+        void on_oneMinButton_clicked();
+
+        void on_twoMinButton_clicked();
+
+        void on_fiveMinButton_clicked();
+
+        void on_tenMinButton_clicked();
+
+        void on_fifteenMinButton_clicked();
+
+        void on_thirtyMinButton_clicked();
+
+        void on_oneHrButton_clicked();
+
+        void on_twoHrButton_clicked();
+
+        void on_customAddButton_clicked();
+
     private:
         Ui::Timer* ui;
         TimerPrivate* d;
 
         void serviceAvailable();
         void serviceUnavailable();
+
+        void startTimer(std::chrono::milliseconds msecs);
 };
 
 #endif // TIMER_H
