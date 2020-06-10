@@ -24,7 +24,9 @@ QMAKE_POST_LINK += $$QMAKE_COPY_DIR $$quote($$PWD/translations) $$shell_quote($$
     $$QMAKE_COPY $$quote($$PWD/defaults.conf) $$shell_quote($$OUT_PWD)
 
 SOURCES += \
-    alarms.cpp \
+    alarm/alarmpopover.cpp \
+    alarm/alarms.cpp \
+    alarm/alarmwidget.cpp \
     clockhelpers.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -39,7 +41,9 @@ SOURCES += \
     worldclock/worldclockwidget.cpp
 
 HEADERS += \
-    alarms.h \
+    alarm/alarmpopover.h \
+    alarm/alarms.h \
+    alarm/alarmwidget.h \
     clockhelpers.h \
     mainwindow.h \
     stopwatch/stopwatch.h \
@@ -53,7 +57,9 @@ HEADERS += \
     worldclock/worldclockwidget.h
 
 FORMS += \
-    alarms.ui \
+    alarm/alarmpopover.ui \
+    alarm/alarms.ui \
+    alarm/alarmwidget.ui \
     mainwindow.ui \
     stopwatch/stopwatch.ui \
     stopwatch/stopwatchwidget.ui \

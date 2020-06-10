@@ -39,6 +39,7 @@ class The24Manager : public QObject {
 
         Q_SCRIPTABLE QString AddTimer(qint64 msecsFromNow);
         Q_SCRIPTABLE QString AddStopwatch();
+        Q_SCRIPTABLE QString AddAlarm(quint64 offset, quint64 repeats);
 
         Q_SCRIPTABLE void RequestExit();
 
@@ -47,6 +48,8 @@ class The24Manager : public QObject {
         Q_SCRIPTABLE void TimerRemoved(QString objectPath);
         Q_SCRIPTABLE void StopwatchAdded(QString objectPath);
         Q_SCRIPTABLE void StopwatchRemoved(QString objectPath);
+        Q_SCRIPTABLE void AlarmAdded(QString objectPath);
+        Q_SCRIPTABLE void AlarmRemoved(QString objectPath);
 
     private:
         The24ManagerPrivate* d;

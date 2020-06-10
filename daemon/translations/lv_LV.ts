@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="lv_LV" sourcelanguage="en_US">
 <context>
+    <name>Alarm</name>
+    <message>
+        <location filename="../alarm.cpp" line="106"/>
+        <source>the24</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm.cpp" line="107"/>
+        <source>Alarm!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm.cpp" line="110"/>
+        <source>Snooze</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Stopwatch</name>
     <message>
         <location filename="../stopwatch.cpp" line="183"/>

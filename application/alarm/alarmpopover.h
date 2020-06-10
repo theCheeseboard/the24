@@ -17,25 +17,34 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#ifndef ALARMS_H
-#define ALARMS_H
+#ifndef ALARMPOPOVER_H
+#define ALARMPOPOVER_H
 
 #include <QWidget>
 
 namespace Ui {
-    class Alarms;
+    class AlarmPopover;
 }
 
-class Alarms : public QWidget
-{
+struct AlarmPopoverPrivate;
+class AlarmPopover : public QWidget {
         Q_OBJECT
 
     public:
-        explicit Alarms(QWidget *parent = nullptr);
-        ~Alarms();
+        explicit AlarmPopover(QString objectPath = "", QWidget* parent = nullptr);
+        ~AlarmPopover();
+
+    signals:
+        void done();
+
+    private slots:
+        void on_titleLabel_backButtonClicked();
+
+        void on_addButton_clicked();
 
     private:
-        Ui::Alarms *ui;
+        Ui::AlarmPopover* ui;
+        AlarmPopoverPrivate* d;
 };
 
-#endif // ALARMS_H
+#endif // ALARMPOPOVER_H

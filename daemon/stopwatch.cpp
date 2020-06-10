@@ -188,6 +188,8 @@ void Stopwatch::updateRunningValues() {
         return;
     }
 
+    if (d->paused) return;
+
     qulonglong difference;
     if (d->elapsed.isValid()) {
         difference = d->elapsed.restart();

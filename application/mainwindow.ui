@@ -212,7 +212,8 @@
   </widget>
   <action name="actionFileBug">
    <property name="icon">
-    <iconset theme="tools-report-bug"/>
+    <iconset theme="tools-report-bug">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>File Bug</string>
@@ -220,7 +221,8 @@
   </action>
   <action name="actionSources">
    <property name="icon">
-    <iconset theme="commit"/>
+    <iconset theme="commit">
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Sources</string>
@@ -267,7 +269,7 @@
   <customwidget>
    <class>Alarms</class>
    <extends>QWidget</extends>
-   <header>alarms.h</header>
+   <header>alarm/alarms.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

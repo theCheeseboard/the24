@@ -17,17 +17,35 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * *************************************/
-#include "alarms.h"
-#include "ui_alarms.h"
+#ifndef ALARMS_H
+#define ALARMS_H
 
-Alarms::Alarms(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Alarms)
-{
-    ui->setupUi(this);
+#include <QWidget>
+
+namespace Ui {
+    class Alarms;
 }
 
-Alarms::~Alarms()
-{
-    delete ui;
-}
+struct AlarmsPrivate;
+class Alarms : public QWidget {
+        Q_OBJECT
+
+    public:
+        explicit Alarms(QWidget* parent = nullptr);
+        ~Alarms();
+
+    public slots:
+        void addAlarm(QString path);
+
+    private slots:
+        void on_addButton_clicked();
+
+    private:
+        Ui::Alarms* ui;
+        AlarmsPrivate* d;
+
+        void serviceAvailable();
+        void serviceUnavailable();
+};
+
+#endif // ALARMS_H

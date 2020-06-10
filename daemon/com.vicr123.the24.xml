@@ -13,6 +13,12 @@
     <signal name="StopwatchRemoved">
       <arg name="objectPath" type="s" direction="out"/>
     </signal>
+    <signal name="AlarmAdded">
+      <arg name="objectPath" type="s" direction="out"/>
+    </signal>
+    <signal name="AlarmRemoved">
+      <arg name="objectPath" type="s" direction="out"/>
+    </signal>
     <method name="EnumerateAlarms">
       <arg type="as" direction="out"/>
     </method>
@@ -28,6 +34,11 @@
     </method>
     <method name="AddStopwatch">
       <arg type="s" direction="out"/>
+    </method>
+    <method name="AddAlarm">
+      <arg type="s" direction="out"/>
+      <arg name="offset" type="t" direction="in"/>
+      <arg name="repeats" type="t" direction="in"/>
     </method>
     <method name="RequestExit">
     </method>

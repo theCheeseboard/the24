@@ -20,11 +20,97 @@
     </message>
 </context>
 <context>
+    <name>AlarmPopover</name>
+    <message>
+        <location filename="../alarm/alarmpopover.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmpopover.ui" line="97"/>
+        <source>Repeat on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmpopover.ui" line="135"/>
+        <source>Add Alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmpopover.cpp" line="47"/>
+        <source>Edit Alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmpopover.cpp" line="49"/>
+        <source>New Alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>AlarmWidget</name>
+    <message>
+        <location filename="../alarm/alarmwidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="117"/>
+        <source>Repeats every day</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="120"/>
+        <source>Repeats on Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="123"/>
+        <source>Repeats on Weekends</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="138"/>
+        <source>Repeats on %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="152"/>
+        <source>Snoozed until %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="166"/>
+        <source>For this alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="167"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarmwidget.cpp" line="176"/>
+        <source>Remove</source>
+        <translation type="unfinished">Xóa</translation>
+    </message>
+</context>
+<context>
     <name>Alarms</name>
     <message>
-        <location filename="../alarms.ui" line="26"/>
-        <source>Alarms</source>
-        <translation>Báo thức</translation>
+        <location filename="../alarm/alarms.ui" line="100"/>
+        <source>Add Alarm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarms.ui" line="153"/>
+        <source>Hmm...</source>
+        <translation type="unfinished">Ừm...</translation>
+    </message>
+    <message>
+        <location filename="../alarm/alarms.ui" line="163"/>
+        <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -64,27 +150,27 @@
         <translation>Đếm ngược</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="218"/>
+        <location filename="../mainwindow.ui" line="219"/>
         <source>File Bug</source>
         <translation>Báo cáo lỗi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="226"/>
+        <location filename="../mainwindow.ui" line="228"/>
         <source>Sources</source>
         <translation>Mã nguồn</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="235"/>
+        <location filename="../mainwindow.ui" line="237"/>
         <source>About</source>
         <translation>Giới thiệu</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="244"/>
+        <location filename="../mainwindow.ui" line="246"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="247"/>
+        <location filename="../mainwindow.ui" line="249"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
@@ -126,14 +212,6 @@
     </message>
 </context>
 <context>
-    <name>StopwatchWidget</name>
-    <message>
-        <location filename="../stopwatch/stopwatchwidget.ui" line="49"/>
-        <source>00:00:00</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>Timer</name>
     <message>
         <location filename="../timer/timer.ui" line="100"/>
@@ -152,14 +230,6 @@
     </message>
 </context>
 <context>
-    <name>TimerWidget</name>
-    <message>
-        <location filename="../timer/timerwidget.ui" line="49"/>
-        <source>00:00:00</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>WorldClock</name>
     <message>
         <location filename="../worldclock/worldclock.ui" line="78"/>
@@ -169,11 +239,6 @@
 </context>
 <context>
     <name>WorldClockWidget</name>
-    <message>
-        <location filename="../worldclock/worldclockwidget.ui" line="64"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="61"/>
         <source>For this clock</source>

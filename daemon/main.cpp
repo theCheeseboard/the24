@@ -83,6 +83,9 @@ int main(int argc, char* argv[]) {
     if (!tables.contains("LAPS")) {
         db.exec("CREATE TABLE laps(id INTEGER PRIMARY KEY, stopwatch INTEGER CONSTRAINT laps_stopwatch_id_fk REFERENCES stopwatch, offset INTEGER)");
     }
+    if (!tables.contains("ALARMS")) {
+        db.exec("CREATE TABLE alarms(id INTEGER PRIMARY KEY, offset INTEGER, repeat INTEGER, active BOOLEAN DEFAULT TRUE)");
+    }
 
     if (!QDBusConnection::sessionBus().registerService("com.vicr123.the24")) {
         //Couldn't register the service, so bail out here

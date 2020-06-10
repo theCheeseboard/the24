@@ -29,12 +29,16 @@
 
 #include "timer.h"
 #include "stopwatch.h"
+#include "alarm.h"
 #include "the24_adaptor.h"
 
 struct The24ManagerPrivate {
     tSettings settings;
     QList<Timer*> timers;
     QList<Stopwatch*> stopwatches;
+    QList<Alarm*> alarms;
+
+    QTimer* alarmTimer;
 };
 
 The24Manager::The24Manager(QObject* parent) : QObject(parent) {
@@ -42,6 +46,16 @@ The24Manager::The24Manager(QObject* parent) : QObject(parent) {
 
     new The24Adaptor(this);
     QDBusConnection::sessionBus().registerObject("/com/vicr123/the24", this);
+
+    d->alarmTimer = new QTimer(this);
+    d->alarmTimer->setInterval((60 - QTime::currentTime().second()) * 1000);
+    connect(d->alarmTimer, &QTimer::timeout, this, [ = ] {
+        d->alarmTimer->setInterval(60000);
+        for (Alarm* alarm : d->alarms) {
+            alarm->tick();
+        }
+    });
+    d->alarmTimer->start();
 
     //Initialise timers
     QSqlQuery timerQuery("SELECT id FROM timers");
@@ -66,6 +80,18 @@ The24Manager::The24Manager(QObject* parent) : QObject(parent) {
         });
         d->stopwatches.append(stopwatch);
     }
+
+    //Initialise stopwatches
+    QSqlQuery alarmQuery("SELECT id FROM alarms");
+    while (alarmQuery.next()) {
+        Alarm* alarm = new Alarm(alarmQuery.value("id").toInt());
+        QString objectPath = alarm->objectPath();
+        connect(alarm, &Alarm::destroyed, this, [ = ] {
+            emit AlarmRemoved(objectPath);
+            d->alarms.removeAll(alarm);
+        });
+        d->alarms.append(alarm);
+    }
 }
 
 The24Manager::~The24Manager() {
@@ -73,7 +99,11 @@ The24Manager::~The24Manager() {
 }
 
 QStringList The24Manager::EnumerateAlarms() {
-    return {};
+    QStringList objectPaths;
+    for (Alarm* alarm : d->alarms) {
+        objectPaths.append(alarm->objectPath());
+    }
+    return objectPaths;
 }
 
 QStringList The24Manager::EnumerateTimers() {
@@ -128,6 +158,25 @@ QString The24Manager::AddStopwatch() {
     emit StopwatchAdded(objectPath);
 
     return stopwatch->objectPath();
+}
+
+QString The24Manager::AddAlarm(quint64 offset, quint64 repeats) {
+    QSqlQuery query;
+    query.prepare("INSERT INTO alarms(offset, repeat) VALUES(:offset, :repeat)");
+    query.bindValue(":offset", offset);
+    query.bindValue(":repeat", repeats);
+    query.exec();
+
+    Alarm* alarm = new Alarm(query.lastInsertId().toInt());
+    QString objectPath = alarm->objectPath();
+    connect(alarm, &Alarm::destroyed, this, [ = ] {
+        emit AlarmRemoved(objectPath);
+        d->alarms.removeAll(alarm);
+    });
+    d->alarms.append(alarm);
+    emit AlarmAdded(objectPath);
+
+    return alarm->objectPath();
 }
 
 void The24Manager::RequestExit() {
