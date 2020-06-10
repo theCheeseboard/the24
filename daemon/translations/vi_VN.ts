@@ -6,17 +6,17 @@
     <message>
         <location filename="../alarm.cpp" line="106"/>
         <source>the24</source>
-        <translation type="unfinished">the24</translation>
+        <translation>the24</translation>
     </message>
     <message>
         <location filename="../alarm.cpp" line="107"/>
         <source>Alarm!</source>
-        <translation type="unfinished"></translation>
+        <translation>Báo thức!</translation>
     </message>
     <message>
         <location filename="../alarm.cpp" line="110"/>
         <source>Snooze</source>
-        <translation type="unfinished"></translation>
+        <translation>Báo lại</translation>
     </message>
 </context>
 <context>
