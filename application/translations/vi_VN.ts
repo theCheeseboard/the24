@@ -29,22 +29,22 @@
     <message>
         <location filename="../alarm/alarmpopover.ui" line="97"/>
         <source>Repeat on</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại vào</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.ui" line="135"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm chuông báo thức</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="47"/>
         <source>Edit Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa chuông báo thức</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="49"/>
         <source>New Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Chuông báo thức mới</translation>
     </message>
 </context>
 <context>
@@ -57,42 +57,42 @@
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="117"/>
         <source>Repeats every day</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại hàng ngày</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="120"/>
         <source>Repeats on Weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại ngày thường</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="123"/>
         <source>Repeats on Weekends</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại ngày cuối tuần</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="138"/>
         <source>Repeats on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lặp lại vào %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="152"/>
         <source>Snoozed until %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sẽ báo lại tại %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="166"/>
         <source>For this alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Cho chuông báo thức này</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="167"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Chỉnh sửa</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="176"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
 </context>
 <context>
@@ -100,17 +100,17 @@
     <message>
         <location filename="../alarm/alarms.ui" line="100"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Thêm chuông báo thức</translation>
     </message>
     <message>
         <location filename="../alarm/alarms.ui" line="153"/>
         <source>Hmm...</source>
-        <translation type="unfinished">Ừm...</translation>
+        <translation>Ừm...</translation>
     </message>
     <message>
         <location filename="../alarm/alarms.ui" line="163"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Có vẻ như dịch vụ the24 không có chạy, và chuông báo thức không thể hoạt động.</translation>
     </message>
 </context>
 <context>
