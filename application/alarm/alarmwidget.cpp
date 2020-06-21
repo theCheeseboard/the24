@@ -96,15 +96,9 @@ void AlarmWidget::update() {
         AlarmWidgetPrivate::Days repeats = static_cast<AlarmWidgetPrivate::Days>(repeatsWatcher->reply().arguments().first().toInt());
         QLocale l;
 
-        AlarmWidgetPrivate::Days weekdayDays;
+        AlarmWidgetPrivate::Days weekdayDays = AlarmWidgetPrivate::None;
         for (Qt::DayOfWeek day : l.weekdays()) {
-            if (day == Qt::Monday) weekdayDays |= AlarmWidgetPrivate::Monday;
-            if (day == Qt::Tuesday) weekdayDays |= AlarmWidgetPrivate::Tuesday;
-            if (day == Qt::Wednesday) weekdayDays |= AlarmWidgetPrivate::Wednesday;
-            if (day == Qt::Thursday) weekdayDays |= AlarmWidgetPrivate::Thursday;
-            if (day == Qt::Friday) weekdayDays |= AlarmWidgetPrivate::Friday;
-            if (day == Qt::Saturday) weekdayDays |= AlarmWidgetPrivate::Saturday;
-            if (day == Qt::Sunday) weekdayDays |= AlarmWidgetPrivate::Sunday;
+            weekdayDays |= static_cast<AlarmWidgetPrivate::Day>(1 << (day - 1));
         }
 
         bool alldays = repeats == AlarmWidgetPrivate::AllDays;

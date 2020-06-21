@@ -23,6 +23,7 @@
 #include <QTimer>
 #include <QMenu>
 #include <QContextMenuEvent>
+//#include <QGraphicsDropShadowEffect>
 
 struct WorldClockWidgetPrivate {
     QTimeZone tz;
@@ -38,8 +39,13 @@ WorldClockWidget::WorldClockWidget(QTimeZone tz, QWidget* parent) :
     d = new WorldClockWidgetPrivate();
     d->tz = tz;
 
+//    QGraphicsDropShadowEffect* shadow = new QGraphicsDropShadowEffect(this);
+//    shadow->setBlurRadius(20);
+//    shadow->setOffset(0, 0);
+//    ui->clockWidget->setGraphicsEffect(shadow);
+
     d->ticker = new QTimer(this);
-    d->ticker->setInterval(1000);
+    d->ticker->setInterval(50);
     connect(d->ticker, &QTimer::timeout, this, &WorldClockWidget::updateClock);
     d->ticker->start();
     updateClock();
@@ -70,6 +76,7 @@ void WorldClockWidget::updateClock() {
     int utcOffset = d->tz.offsetFromUtc(date);
     date = date.addSecs(d->tz.offsetFromUtc(date));
     ui->timeLabel->setText(QLocale().toString(date.time(), QLocale::ShortFormat));
+    ui->clockWidget->setTime(date.time());
 
     int dayDifference = QDateTime::currentDateTime().daysTo(date);
     if (dayDifference == 0) {

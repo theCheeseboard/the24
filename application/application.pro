@@ -36,6 +36,7 @@ SOURCES += \
     timer/timer.cpp \
     timer/timerwidget.cpp \
     worldclock/addclockpopover.cpp \
+    worldclock/analogueclock.cpp \
     worldclock/timezonesmodel.cpp \
     worldclock/worldclock.cpp \
     worldclock/worldclockwidget.cpp
@@ -52,6 +53,7 @@ HEADERS += \
     timer/timer.h \
     timer/timerwidget.h \
     worldclock/addclockpopover.h \
+    worldclock/analogueclock.h \
     worldclock/timezonesmodel.h \
     worldclock/worldclock.h \
     worldclock/worldclockwidget.h
@@ -67,6 +69,7 @@ FORMS += \
     timer/timer.ui \
     timer/timerwidget.ui \
     worldclock/addclockpopover.ui \
+    worldclock/analogueclock.ui \
     worldclock/worldclock.ui \
     worldclock/worldclockwidget.ui
 

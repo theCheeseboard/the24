@@ -45,42 +45,42 @@
 <context>
     <name>AlarmWidget</name>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="117"/>
+        <location filename="../alarm/alarmwidget.cpp" line="111"/>
         <source>Repeats every day</source>
         <translation>Lặp lại hàng ngày</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="120"/>
+        <location filename="../alarm/alarmwidget.cpp" line="114"/>
         <source>Repeats on Weekdays</source>
         <translation>Lặp lại ngày thường</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="123"/>
+        <location filename="../alarm/alarmwidget.cpp" line="117"/>
         <source>Repeats on Weekends</source>
         <translation>Lặp lại ngày cuối tuần</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="138"/>
+        <location filename="../alarm/alarmwidget.cpp" line="132"/>
         <source>Repeats on %1</source>
         <translation>Lặp lại vào %1</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="152"/>
+        <location filename="../alarm/alarmwidget.cpp" line="146"/>
         <source>Snoozed until %1</source>
         <translation>Sẽ báo lại tại %1</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="166"/>
+        <location filename="../alarm/alarmwidget.cpp" line="160"/>
         <source>For this alarm</source>
         <translation>Cho chuông báo thức này</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="167"/>
+        <location filename="../alarm/alarmwidget.cpp" line="161"/>
         <source>Edit</source>
         <translation>Chỉnh sửa</translation>
     </message>
     <message>
-        <location filename="../alarm/alarmwidget.cpp" line="176"/>
+        <location filename="../alarm/alarmwidget.cpp" line="170"/>
         <source>Remove</source>
         <translation>Xóa</translation>
     </message>
@@ -101,6 +101,14 @@
         <location filename="../alarm/alarms.ui" line="163"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
         <translation>Có vẻ như dịch vụ the24 không có chạy, và chuông báo thức không thể hoạt động.</translation>
+    </message>
+</context>
+<context>
+    <name>AnalogueClock</name>
+    <message>
+        <location filename="../worldclock/analogueclock.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -316,41 +324,41 @@
 <context>
     <name>WorldClockWidget</name>
     <message>
-        <location filename="../worldclock/worldclockwidget.cpp" line="61"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="67"/>
         <source>For this clock</source>
         <translation>Cho đồng hồ này</translation>
     </message>
     <message>
-        <location filename="../worldclock/worldclockwidget.cpp" line="62"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="68"/>
         <source>Remove</source>
         <translation>Xóa</translation>
     </message>
     <message>
-        <location filename="../worldclock/worldclockwidget.cpp" line="89"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
         <source>Current Timezone</source>
         <translation>Giờ địa phương</translation>
     </message>
     <message numerus="yes">
-        <location filename="../worldclock/worldclockwidget.cpp" line="94"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="101"/>
         <source>%n hours behind</source>
         <translation>
             <numerusform>%n giờ sau</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="103"/>
         <source>%n hours ahead</source>
         <translation>
             <numerusform>%n giờ trước</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../worldclock/worldclockwidget.cpp" line="100"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="107"/>
         <source>%1 behind</source>
         <translation>%1 sau</translation>
     </message>
     <message>
-        <location filename="../worldclock/worldclockwidget.cpp" line="102"/>
+        <location filename="../worldclock/worldclockwidget.cpp" line="109"/>
         <source>%1 ahead</source>
         <translation>%1 trước</translation>
     </message>
