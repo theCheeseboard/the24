@@ -104,14 +104,6 @@
     </message>
 </context>
 <context>
-    <name>AnalogueClock</name>
-    <message>
-        <location filename="../worldclock/analogueclock.ui" line="14"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>ClockHelpers</name>
     <message>
         <location filename="../clockhelpers.cpp" line="38"/>
