@@ -23,6 +23,9 @@
 #include <tsettings.h>
 #include <tapplication.h>
 
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QProcess>
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
@@ -52,6 +55,10 @@ int main(int argc, char* argv[]) {
 
     tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");
+
+    if (!QDBusConnection::sessionBus().interface()->isServiceRegistered("com.vicr123.the24").value()) {
+        QProcess::startDetached("the24d", {});
+    }
 
     MainWindow w;
     w.show();

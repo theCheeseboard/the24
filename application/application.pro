@@ -74,7 +74,7 @@ FORMS += \
     worldclock/worldclockwidget.ui
 
 unix {
-    target.path = /usr/bin/
+    target.path = $$[QT_INSTALL_BINS]
 
     defaults.files = defaults.conf
     defaults.path = /etc/theSuite/the24/

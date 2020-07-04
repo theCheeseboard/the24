@@ -32,7 +32,7 @@ SOURCES += \
         timer.cpp
 
 unix {
-    target.path = /usr/bin/
+    target.path = $$[QT_INSTALL_BINS]
 
     tones.files = tones
     tones.path = /usr/share/sounds/the24/
