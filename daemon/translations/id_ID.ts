@@ -16,7 +16,7 @@
     <message>
         <location filename="../alarm.cpp" line="110"/>
         <source>Snooze</source>
-        <translation type="unfinished"></translation>
+        <translation>Tunda</translation>
     </message>
 </context>
 <context>
@@ -34,7 +34,7 @@
     <message>
         <location filename="../stopwatch.cpp" line="185"/>
         <source>A stopwatch was reset because the system clock was changed unexpectedly.</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopwatch reset karena jam sistem berubah secara tak terduga.</translation>
     </message>
 </context>
 <context>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../timer.cpp" line="237"/>
         <source>Time&apos;s up!</source>
-        <translation type="unfinished"></translation>
+        <translation>Waktu habis!</translation>
     </message>
     <message>
         <location filename="../timer.cpp" line="239"/>
         <source>Your timer has elapsed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Waktu timer telah habis!</translation>
     </message>
 </context>
 </TS>
