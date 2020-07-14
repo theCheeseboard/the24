@@ -6,7 +6,7 @@
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="35"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambah Jam</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="42"/>
