@@ -64,8 +64,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>606</width>
-            <height>427</height>
+            <width>108</width>
+            <height>57</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -166,7 +166,7 @@
           <bool>false</bool>
          </property>
          <property name="text">
-          <string>TextLabel</string>
+          <string notr="true">TextLabel</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

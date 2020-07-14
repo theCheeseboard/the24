@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" sourcelanguage="en_US" language="zh_CN">
+<TS version="2.1" language="zh_CN" sourcelanguage="en_US">
 <context>
     <name>AddClockPopover</name>
     <message>
@@ -225,11 +225,6 @@
         <location filename="../timer/timer.ui" line="156"/>
         <source>Start a timer</source>
         <translation>启动计时器</translation>
-    </message>
-    <message>
-        <location filename="../timer/timer.ui" line="169"/>
-        <source>TextLabel</source>
-        <translation>文字标签</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="203"/>

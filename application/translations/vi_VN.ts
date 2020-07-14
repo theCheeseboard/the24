@@ -227,11 +227,6 @@
         <translation>Bắt đầu đếm ngược</translation>
     </message>
     <message>
-        <location filename="../timer/timer.ui" line="169"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../timer/timer.ui" line="203"/>
         <source>15 min</source>
         <translation>15 phút</translation>
