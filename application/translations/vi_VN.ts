@@ -206,12 +206,12 @@
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Đặt lại</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
 </context>
 <context>
@@ -224,7 +224,7 @@
     <message>
         <location filename="../timer/timer.ui" line="156"/>
         <source>Start a timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Bắt đầu đếm ngược</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="169"/>
@@ -234,52 +234,52 @@
     <message>
         <location filename="../timer/timer.ui" line="203"/>
         <source>15 min</source>
-        <translation type="unfinished"></translation>
+        <translation>15 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="210"/>
         <source>2 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>2 giờ</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="224"/>
         <source>1 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>1 giờ</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="231"/>
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="238"/>
         <source>2 min</source>
-        <translation type="unfinished"></translation>
+        <translation>2 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="245"/>
         <source>30 min</source>
-        <translation type="unfinished"></translation>
+        <translation>30 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="252"/>
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="259"/>
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 phút</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="217"/>
         <source>Something Else</source>
-        <translation type="unfinished"></translation>
+        <translation>Thời lượng khác</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="272"/>
         <source>TIMER DURATION</source>
-        <translation type="unfinished"></translation>
+        <translation>THỜI LƯỢNG</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="332"/>
@@ -297,12 +297,12 @@
     <message>
         <location filename="../timer/timerwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Đặt lại</translation>
     </message>
     <message>
         <location filename="../timer/timerwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished">Xóa</translation>
+        <translation>Xóa</translation>
     </message>
 </context>
 <context>
