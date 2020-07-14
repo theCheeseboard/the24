@@ -11,12 +11,12 @@
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="42"/>
         <source>What timezone do you want to add?</source>
-        <translation type="unfinished"></translation>
+        <translation>Zona waktu mana yang ingin Anda tambahkan?</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="71"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Cari</translation>
     </message>
 </context>
 <context>
@@ -24,22 +24,22 @@
     <message>
         <location filename="../alarm/alarmpopover.ui" line="97"/>
         <source>Repeat on</source>
-        <translation type="unfinished"></translation>
+        <translation>Ulangi pada</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.ui" line="135"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Alarm</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="47"/>
         <source>Edit Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubah Alarm</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="49"/>
         <source>New Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarm Baru</translation>
     </message>
 </context>
 <context>
@@ -47,42 +47,42 @@
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="111"/>
         <source>Repeats every day</source>
-        <translation type="unfinished"></translation>
+        <translation>Berulang setiap hari</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="114"/>
         <source>Repeats on Weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Diulang setiap Senin sampai Jumat</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="117"/>
         <source>Repeats on Weekends</source>
-        <translation type="unfinished"></translation>
+        <translation>Diulang setiap Sabtu dan Minggu</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="132"/>
         <source>Repeats on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Diulang setiap %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="146"/>
         <source>Snoozed until %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditunda hingga %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="160"/>
         <source>For this alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk alarm ini</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="161"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubah</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="170"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
 </context>
 <context>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../alarm/alarms.ui" line="100"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Alarm</translation>
     </message>
     <message>
         <location filename="../alarm/alarms.ui" line="153"/>
@@ -100,7 +100,7 @@
     <message>
         <location filename="../alarm/alarms.ui" line="163"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sepertinya layanan the24 tidak berjalan, sehingga alarm belum dapat berfungsi.</translation>
     </message>
 </context>
 <context>
@@ -109,7 +109,7 @@
         <location filename="../clockhelpers.cpp" line="38"/>
         <source>d</source>
         <comment>d for &quot;Day&quot; (1d)</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">h</translation>
     </message>
 </context>
 <context>
@@ -122,12 +122,12 @@
     <message>
         <location filename="../mainwindow.ui" line="94"/>
         <source>World Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Jam Dunia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>Alarm</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="143"/>
@@ -142,22 +142,22 @@
     <message>
         <location filename="../mainwindow.ui" line="219"/>
         <source>File Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Laporkan Bug</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Kode Sumber</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="237"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Tentang</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Keluar</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="249"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../mainwindow.cpp" line="51"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Bantuan</translation>
     </message>
 </context>
 <context>
@@ -175,12 +175,12 @@
     <message>
         <location filename="../timer/newtimerpopover.ui" line="35"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Timer</translation>
     </message>
     <message>
         <location filename="../timer/newtimerpopover.ui" line="45"/>
         <source>Start Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Mulai Timer</translation>
     </message>
 </context>
 <context>
@@ -188,7 +188,7 @@
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="100"/>
         <source>Start Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Mulai Stopwatch</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="153"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="163"/>
         <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sepertinya layanan the24 tidak berjalan, sehingga stopwatch belum dapat berfungsi.</translation>
     </message>
 </context>
 <context>
@@ -206,12 +206,12 @@
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Setel ulang</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
 </context>
 <context>
@@ -219,62 +219,62 @@
     <message>
         <location filename="../timer/timer.ui" line="100"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Timer</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="156"/>
         <source>Start a timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Mulai timer</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="203"/>
         <source>15 min</source>
-        <translation type="unfinished"></translation>
+        <translation>15 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="210"/>
         <source>2 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>2 jam</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="224"/>
         <source>1 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>1 jam</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="231"/>
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="238"/>
         <source>2 min</source>
-        <translation type="unfinished"></translation>
+        <translation>2 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="245"/>
         <source>30 min</source>
-        <translation type="unfinished"></translation>
+        <translation>30 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="252"/>
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="259"/>
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 menit</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="217"/>
         <source>Something Else</source>
-        <translation type="unfinished"></translation>
+        <translation>Lainnya</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="272"/>
         <source>TIMER DURATION</source>
-        <translation type="unfinished"></translation>
+        <translation>LAMA TIMER</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="332"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../timer/timer.ui" line="342"/>
         <source>Looks like the the24 service is not running, and timers won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sepertinya layanan the24 tidak berjalan, sehingga timer belum dapat berfungsi.</translation>
     </message>
 </context>
 <context>
@@ -292,12 +292,12 @@
     <message>
         <location filename="../timer/timerwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Setel ulang</translation>
     </message>
     <message>
         <location filename="../timer/timerwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../worldclock/worldclock.ui" line="78"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Tambahkan Jam</translation>
     </message>
 </context>
 <context>
@@ -313,41 +313,41 @@
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="67"/>
         <source>For this clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Untuk jam ini</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="68"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
         <source>Current Timezone</source>
-        <translation type="unfinished"></translation>
+        <translation>Zona Waktu Lokal</translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="101"/>
         <source>%n hours behind</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Tertinggal %n jam</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="103"/>
         <source>%n hours ahead</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Maju %n jam</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="107"/>
         <source>%1 behind</source>
-        <translation type="unfinished"></translation>
+        <translation>Tertinggal %1</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="109"/>
         <source>%1 ahead</source>
-        <translation type="unfinished"></translation>
+        <translation>Maju %1</translation>
     </message>
 </context>
 <context>
@@ -355,7 +355,7 @@
     <message>
         <location filename="../main.cpp" line="42"/>
         <source>Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Jam</translation>
     </message>
 </context>
 </TS>
