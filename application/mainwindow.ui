@@ -14,7 +14,7 @@
    <string>the24</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="the24" resource="resources.qrc">
+   <iconset theme="the24">
     <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -74,7 +74,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="the24" resource="resources.qrc">
+          <iconset theme="the24">
            <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
          </property>
          <property name="popupMode">
@@ -285,8 +285,6 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
