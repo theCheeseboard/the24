@@ -109,7 +109,7 @@
         <location filename="../clockhelpers.cpp" line="38"/>
         <source>d</source>
         <comment>d for &quot;Day&quot; (1d)</comment>
-        <translation>d</translation>
+        <translation>g</translation>
     </message>
 </context>
 <context>
