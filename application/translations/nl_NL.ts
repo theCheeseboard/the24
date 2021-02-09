@@ -6,17 +6,17 @@
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="35"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Klok Toevoegen</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="42"/>
         <source>What timezone do you want to add?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welke tijdzone wil je toevoegen?</translation>
     </message>
     <message>
         <location filename="../worldclock/addclockpopover.ui" line="71"/>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken</translation>
     </message>
 </context>
 <context>
@@ -24,22 +24,22 @@
     <message>
         <location filename="../alarm/alarmpopover.ui" line="97"/>
         <source>Repeat on</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhalen op</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.ui" line="135"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekker Toevoegen</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="47"/>
         <source>Edit Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekker Bewerken</translation>
     </message>
     <message>
         <location filename="../alarm/alarmpopover.cpp" line="49"/>
         <source>New Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe Wekker</translation>
     </message>
 </context>
 <context>
@@ -47,42 +47,42 @@
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="111"/>
         <source>Repeats every day</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalt elke dag</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="114"/>
         <source>Repeats on Weekdays</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalt op Werkdagen</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="117"/>
         <source>Repeats on Weekends</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalt in Weekenden</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="132"/>
         <source>Repeats on %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaald op %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="146"/>
         <source>Snoozed until %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gesnoozet tot %1</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="160"/>
         <source>For this alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor deze wekker</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="161"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerken</translation>
     </message>
     <message>
         <location filename="../alarm/alarmwidget.cpp" line="170"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Vewijderen</translation>
     </message>
 </context>
 <context>
@@ -90,17 +90,17 @@
     <message>
         <location filename="../alarm/alarms.ui" line="100"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekker Toevoegen</translation>
     </message>
     <message>
         <location filename="../alarm/alarms.ui" line="153"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm...</translation>
     </message>
     <message>
         <location filename="../alarm/alarms.ui" line="163"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het lijkt erop dat de the24-service niet aan staat, en wekkers werken niet zonder deze service.</translation>
     </message>
 </context>
 <context>
@@ -109,7 +109,7 @@
         <location filename="../clockhelpers.cpp" line="38"/>
         <source>d</source>
         <comment>d for &quot;Day&quot; (1d)</comment>
-        <translation type="unfinished"></translation>
+        <translation>d</translation>
     </message>
 </context>
 <context>
@@ -117,57 +117,57 @@
     <message>
         <location filename="../mainwindow.ui" line="14"/>
         <source>the24</source>
-        <translation type="unfinished"></translation>
+        <translation>the24</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="94"/>
         <source>World Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Wereldklok</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>Wekkers</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="143"/>
         <source>Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopwatch</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="166"/>
         <source>Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Timer</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="219"/>
         <source>File Bug</source>
-        <translation type="unfinished"></translation>
+        <translation>Een Bug Rapporteren</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="228"/>
         <source>Sources</source>
-        <translation type="unfinished"></translation>
+        <translation>Bron</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="237"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Over</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="246"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="249"/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="51"/>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Help</translation>
     </message>
 </context>
 <context>
@@ -175,12 +175,12 @@
     <message>
         <location filename="../timer/newtimerpopover.ui" line="35"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Timer Toevoegen</translation>
     </message>
     <message>
         <location filename="../timer/newtimerpopover.ui" line="45"/>
         <source>Start Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Timer Starten</translation>
     </message>
 </context>
 <context>
@@ -188,17 +188,17 @@
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="100"/>
         <source>Start Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopwatch Starten</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="153"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm...</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatch.ui" line="163"/>
         <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het lijkt erop dat de the24-service niet aan staat, en stopwatches werken niet zonder deze service.</translation>
     </message>
 </context>
 <context>
@@ -206,12 +206,12 @@
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetten</translation>
     </message>
     <message>
         <location filename="../stopwatch/stopwatchwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -219,72 +219,72 @@
     <message>
         <location filename="../timer/timer.ui" line="100"/>
         <source>Add Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Timer Toevoegen</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="156"/>
         <source>Start a timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Een Timer Starten</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="203"/>
         <source>15 min</source>
-        <translation type="unfinished"></translation>
+        <translation>15 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="210"/>
         <source>2 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>2 u.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="224"/>
         <source>1 hr</source>
-        <translation type="unfinished"></translation>
+        <translation>1 u.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="231"/>
         <source>1 min</source>
-        <translation type="unfinished"></translation>
+        <translation>1 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="238"/>
         <source>2 min</source>
-        <translation type="unfinished"></translation>
+        <translation>2 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="245"/>
         <source>30 min</source>
-        <translation type="unfinished"></translation>
+        <translation>30 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="252"/>
         <source>5 min</source>
-        <translation type="unfinished"></translation>
+        <translation>5 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="259"/>
         <source>10 min</source>
-        <translation type="unfinished"></translation>
+        <translation>10 min.</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="217"/>
         <source>Something Else</source>
-        <translation type="unfinished"></translation>
+        <translation>Iets Anders</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="272"/>
         <source>TIMER DURATION</source>
-        <translation type="unfinished"></translation>
+        <translation>DUUR</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="332"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>Hmm...</translation>
     </message>
     <message>
         <location filename="../timer/timer.ui" line="342"/>
         <source>Looks like the the24 service is not running, and timers won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het lijkt erop dat de the24-service niet aan staat, en timers werken niet zonder deze service.</translation>
     </message>
 </context>
 <context>
@@ -292,12 +292,12 @@
     <message>
         <location filename="../timer/timerwidget.ui" line="74"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetten</translation>
     </message>
     <message>
         <location filename="../timer/timerwidget.ui" line="98"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -305,7 +305,7 @@
     <message>
         <location filename="../worldclock/worldclock.ui" line="78"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Klok Toevoegen</translation>
     </message>
 </context>
 <context>
@@ -313,43 +313,43 @@
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="67"/>
         <source>For this clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor deze klok</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="68"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
         <source>Current Timezone</source>
-        <translation type="unfinished"></translation>
+        <translation>Huidige Tijdzonde</translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="101"/>
         <source>%n hours behind</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n uur terug</numerusform>
+            <numerusform>%n uur terug</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="103"/>
         <source>%n hours ahead</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n uur vooruit</numerusform>
+            <numerusform>%n uur vooruit</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="107"/>
         <source>%1 behind</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 terug</translation>
     </message>
     <message>
         <location filename="../worldclock/worldclockwidget.cpp" line="109"/>
         <source>%1 ahead</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 voorhuit</translation>
     </message>
 </context>
 <context>
@@ -357,7 +357,7 @@
     <message>
         <location filename="../main.cpp" line="42"/>
         <source>Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>Klok</translation>
     </message>
 </context>
 </TS>
