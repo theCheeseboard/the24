@@ -116,58 +116,57 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="94"/>
+        <location filename="../mainwindow.cpp" line="55"/>
         <source>World Clock</source>
         <translation>นาฬิกาโลก</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../mainwindow.cpp" line="56"/>
         <source>Alarms</source>
         <translation>การตั้งปลุก</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="143"/>
+        <location filename="../mainwindow.cpp" line="57"/>
         <source>Stopwatch</source>
         <translation>นาฬิกาจับเวลา</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>Timer</source>
         <translation>ตั้งนับถอยหลัง</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="219"/>
         <source>File Bug</source>
-        <translation>แจ้งข้อผิดพลาด</translation>
+        <translation type="vanished">แจ้งข้อผิดพลาด</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="228"/>
         <source>Sources</source>
-        <translation>ซอร์ซ</translation>
+        <translation type="vanished">ซอร์ซ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
         <source>About</source>
-        <translation>เกี่ยวกับ</translation>
+        <translation type="vanished">เกี่ยวกับ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="246"/>
+        <location filename="../mainwindow.ui" line="121"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148"/>
         <source>Exit</source>
         <translation>ออก</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="249"/>
+        <location filename="../mainwindow.ui" line="124"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="51"/>
         <source>Help</source>
-        <translation>ช่วยเหลือ</translation>
+        <translation type="vanished">ช่วยเหลือ</translation>
     </message>
 </context>
 <context>

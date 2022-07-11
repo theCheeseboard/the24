@@ -116,58 +116,57 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="94"/>
+        <location filename="../mainwindow.cpp" line="55"/>
         <source>World Clock</source>
         <translation>Dünya Saati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../mainwindow.cpp" line="56"/>
         <source>Alarms</source>
         <translation>Alarmlar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="143"/>
+        <location filename="../mainwindow.cpp" line="57"/>
         <source>Stopwatch</source>
         <translation>Kronometre</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>Timer</source>
         <translation>Zamanlayıcı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="219"/>
         <source>File Bug</source>
-        <translation>Dosya Hatası</translation>
+        <translation type="vanished">Dosya Hatası</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="228"/>
         <source>Sources</source>
-        <translation>Kaynaklar</translation>
+        <translation type="vanished">Kaynaklar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="237"/>
         <source>About</source>
-        <translation>Hakkında</translation>
+        <translation type="vanished">Hakkında</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="246"/>
+        <location filename="../mainwindow.ui" line="121"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148"/>
         <source>Exit</source>
         <translation>Vazgeç</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="249"/>
+        <location filename="../mainwindow.ui" line="124"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="51"/>
         <source>Help</source>
-        <translation>Yardım</translation>
+        <translation type="vanished">Yardım</translation>
     </message>
 </context>
 <context>
@@ -330,14 +329,12 @@
         <source>%n hours behind</source>
         <translation>
             <numerusform>%n saat geride</numerusform>
-            <numerusform>%n saat geride</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../worldclock/worldclockwidget.cpp" line="103"/>
         <source>%n hours ahead</source>
         <translation>
-            <numerusform>%n saat önde</numerusform>
             <numerusform>%n saat önde</numerusform>
         </translation>
     </message>
