@@ -20,16 +20,16 @@
 #include "worldclock.h"
 #include "ui_worldclock.h"
 
-#include <the-libs_global.h>
 #include "worldclockwidget.h"
+#include <libcontemporary_global.h>
 
-#include <tsettings.h>
-#include <tpopover.h>
 #include "addclockpopover.h"
+#include <tpopover.h>
+#include <tsettings.h>
 
 struct WorldClockPrivate {
-    QList<WorldClockWidget*> clocks;
-    tSettings settings;
+        QList<WorldClockWidget*> clocks;
+        tSettings settings;
 };
 
 WorldClock::WorldClock(QWidget* parent) :
@@ -41,7 +41,7 @@ WorldClock::WorldClock(QWidget* parent) :
 
     ui->clocksContainer->setFixedWidth(SC_DPI(600));
 
-    connect(&d->settings, &tSettings::settingChanged, this, [ = ](QString key) {
+    connect(&d->settings, &tSettings::settingChanged, this, [=](QString key) {
         if (key == "WorldClock/timezones") {
             updateClocks();
         }
@@ -59,14 +59,14 @@ void WorldClock::on_addButton_clicked() {
     tPopover* popover = new tPopover(add);
     popover->setPopoverWidth(SC_DPI(600));
     connect(add, &AddClockPopover::done, popover, &tPopover::dismiss);
-    connect(add, &AddClockPopover::addClock, this, [ = ](QByteArray tz) {
+    connect(add, &AddClockPopover::addClock, this, [=](QByteArray tz) {
         QStringList clocks = d->settings.delimitedList("WorldClock/timezones");
         clocks.append(tz);
         d->settings.setDelimitedList("WorldClock/timezones", clocks);
     });
     connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
     connect(popover, &tPopover::dismissed, add, &AddClockPopover::deleteLater);
-    popover->show(this);
+    popover->show(this->window());
 }
 
 void WorldClock::updateClocks() {
@@ -83,7 +83,7 @@ void WorldClock::updateClocks() {
 
     for (QString tz : d->settings.delimitedList("WorldClock/timezones")) {
         WorldClockWidget* wc = new WorldClockWidget(QTimeZone(tz.toUtf8()));
-        connect(wc, &WorldClockWidget::remove, this, [ = ] {
+        connect(wc, &WorldClockWidget::remove, this, [=] {
             QStringList clocks = d->settings.delimitedList("WorldClock/timezones");
             clocks.removeAll(tz);
             d->settings.setDelimitedList("WorldClock/timezones", clocks);

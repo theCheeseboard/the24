@@ -116,58 +116,41 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="94"/>
+        <location filename="../mainwindow.cpp" line="55"/>
         <source>World Clock</source>
         <translation>Đồng hồ thế giới</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../mainwindow.cpp" line="56"/>
         <source>Alarms</source>
         <translation>Báo thức</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="143"/>
+        <location filename="../mainwindow.cpp" line="57"/>
         <source>Stopwatch</source>
         <translation>Bấm giờ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>Timer</source>
         <translation>Đếm ngược</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="219"/>
-        <source>File Bug</source>
-        <translation>Báo cáo lỗi</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="228"/>
-        <source>Sources</source>
-        <translation>Mã nguồn</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="237"/>
-        <source>About</source>
-        <translation>Giới thiệu</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="246"/>
+        <location filename="../mainwindow.ui" line="121"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="249"/>
+        <location filename="../mainwindow.ui" line="124"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="51"/>
-        <source>Help</source>
-        <translation>Trợ giúp</translation>
     </message>
 </context>
 <context>

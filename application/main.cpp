@@ -20,8 +20,8 @@
 #include "mainwindow.h"
 
 #include <QDir>
-#include <tsettings.h>
 #include <tapplication.h>
+#include <tsettings.h>
 
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
@@ -38,12 +38,12 @@ int main(int argc, char* argv[]) {
     a.installTranslators();
 
     a.setApplicationIcon(QIcon::fromTheme("the24", QIcon(":/icons/the24.svg")));
-    a.setApplicationVersion("1.0");
+    a.setApplicationVersion("2.0");
     a.setGenericName(QApplication::translate("main", "Clock"));
     a.setAboutDialogSplashGraphic(a.aboutDialogSplashGraphicFromSvg(":/icons/aboutsplash.svg"));
     a.setApplicationLicense(tApplication::Gpl3OrLater);
     a.setCopyrightHolder("Victor Tran");
-    a.setCopyrightYear("2020");
+    a.setCopyrightYear("2022");
     a.setOrganizationName("theSuite");
 #ifdef T_BLUEPRINT_BUILD
     a.setApplicationName("the24 Blueprint");
@@ -52,6 +52,8 @@ int main(int argc, char* argv[]) {
     a.setApplicationName("the24");
     a.setDesktopFileName("com.vicr123.the24");
 #endif
+    a.setApplicationUrl(tApplication::Sources, QUrl("http://github.com/vicr123/the24"));
+    a.setApplicationUrl(tApplication::FileBug, QUrl("http://github.com/vicr123/the24/issues"));
 
     tSettings::registerDefaults(a.applicationDirPath() + "/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");

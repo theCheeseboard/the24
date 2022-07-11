@@ -20,21 +20,22 @@
 #include "stopwatchwidget.h"
 #include "ui_stopwatchwidget.h"
 
+#include <QCoroDBusPendingCall>
 #include <QDBusInterface>
-#include <the-libs_global.h>
 #include <QElapsedTimer>
 #include <QTimer>
+#include <libcontemporary_global.h>
 
 #include "clockhelpers.h"
 
 struct StopwatchWidgetPrivate {
-    QDBusInterface* interface;
+        QDBusInterface* interface;
 
-    bool paused = false;
-    qulonglong initialElapsed;
-    QElapsedTimer elapsed;
+        bool paused = false;
+        qulonglong initialElapsed;
+        QElapsedTimer elapsed;
 
-    QTimer* timer;
+        QTimer* timer;
 };
 
 StopwatchWidget::StopwatchWidget(QString objectPath, QWidget* parent) :
@@ -62,36 +63,30 @@ StopwatchWidget::~StopwatchWidget() {
     delete ui;
 }
 
-void StopwatchWidget::update() {
-    QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(d->interface->asyncCall("Paused"));
-    connect(watcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
-        d->paused = watcher->reply().arguments().first().toBool();
-        watcher->deleteLater();
+QCoro::Task<> StopwatchWidget::update() {
+    auto pausedReply = co_await d->interface->asyncCall("Paused");
+    d->paused = pausedReply.arguments().first().toBool();
 
-        QDBusPendingCallWatcher* remainWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("Elapsed"));
-        connect(remainWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
-            ui->remainingLabel->setEnabled(false);
-            d->initialElapsed = remainWatcher->reply().arguments().first().toLongLong();
+    auto elapsedReply = co_await d->interface->asyncCall("Elapsed");
+    d->initialElapsed = elapsedReply.arguments().first().toLongLong();
 
-            if (d->paused) {
-                ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
-                ui->remainingLabel->setEnabled(false);
-                ui->resetButton->setEnabled(true);
+    ui->remainingLabel->setEnabled(false);
+    if (d->paused) {
+        ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->remainingLabel->setEnabled(false);
+        ui->resetButton->setEnabled(true);
 
-                d->timer->stop();
-            } else {
-                ui->actionButton->setIcon(QIcon::fromTheme("media-playback-pause"));
-                ui->remainingLabel->setEnabled(true);
-                ui->resetButton->setEnabled(false);
+        d->timer->stop();
+    } else {
+        ui->actionButton->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->remainingLabel->setEnabled(true);
+        ui->resetButton->setEnabled(false);
 
-                d->elapsed.start();
-                d->timer->start();
-            }
+        d->elapsed.start();
+        d->timer->start();
+    }
 
-            updateDisplay();
-            remainWatcher->deleteLater();
-        });
-    });
+    updateDisplay();
 }
 
 void StopwatchWidget::on_removeButton_clicked() {

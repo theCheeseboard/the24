@@ -116,58 +116,41 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="94"/>
+        <location filename="../mainwindow.cpp" line="55"/>
         <source>World Clock</source>
         <translation>世界时间</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../mainwindow.cpp" line="56"/>
         <source>Alarms</source>
         <translation>闹钟</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="143"/>
+        <location filename="../mainwindow.cpp" line="57"/>
         <source>Stopwatch</source>
         <translation>跑表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="166"/>
+        <location filename="../mainwindow.cpp" line="58"/>
         <source>Timer</source>
         <translation>计时器</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="219"/>
-        <source>File Bug</source>
-        <translation>文件报错</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="228"/>
-        <source>Sources</source>
-        <translation>来源</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="237"/>
-        <source>About</source>
-        <translation>关于</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="246"/>
+        <location filename="../mainwindow.ui" line="121"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148"/>
         <source>Exit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="249"/>
+        <location filename="../mainwindow.ui" line="124"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="51"/>
-        <source>Help</source>
-        <translation>帮助</translation>
     </message>
 </context>
 <context>

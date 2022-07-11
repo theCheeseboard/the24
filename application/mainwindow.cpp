@@ -20,19 +20,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QMenu>
 #include <QDesktopServices>
+#include <QMenu>
 #include <QUrl>
-#include <taboutdialog.h>
 #include <tcsdtools.h>
+#include <thelpmenu.h>
 
 struct MainWindowPrivate {
-    tCsdTools csd;
+        tCsdTools csd;
 };
 
-MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow) {
+MainWindow::MainWindow(QWidget* parent) :
+    QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     d = new MainWindowPrivate();
@@ -46,20 +45,17 @@ MainWindow::MainWindow(QWidget* parent)
     }
 
     QMenu* menu = new QMenu(this);
-
-    QMenu* helpMenu = new QMenu(this);
-    helpMenu->setTitle(tr("Help"));
-    helpMenu->addAction(ui->actionFileBug);
-    helpMenu->addAction(ui->actionSources);
-    helpMenu->addSeparator();
-    helpMenu->addAction(ui->actionAbout);
-
-    menu->addMenu(helpMenu);
+    menu->addMenu(new tHelpMenu(this));
     menu->addAction(ui->actionExit);
 
     ui->menuButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
     ui->menuButton->setMenu(menu);
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::SlideHorizontal);
+
+    ui->windowTabber->addButton(new tWindowTabberButton(QIcon::fromTheme("clock-world"), tr("World Clock"), ui->stackedWidget, ui->worldClockPage));
+    ui->windowTabber->addButton(new tWindowTabberButton(QIcon::fromTheme("clock-alarm"), tr("Alarms"), ui->stackedWidget, ui->alarmsPage));
+    ui->windowTabber->addButton(new tWindowTabberButton(QIcon::fromTheme("clock-stopwatch"), tr("Stopwatch"), ui->stackedWidget, ui->stopwatchPage));
+    ui->windowTabber->addButton(new tWindowTabberButton(QIcon::fromTheme("clock-timer"), tr("Timer"), ui->stackedWidget, ui->timerPage));
 }
 
 MainWindow::~MainWindow() {
@@ -67,44 +63,6 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-
-void MainWindow::on_worldClockButton_toggled(bool checked) {
-    if (checked) {
-        ui->stackedWidget->setCurrentWidget(ui->worldClockPage);
-    }
-}
-
-void MainWindow::on_alarmsButton_toggled(bool checked) {
-    if (checked) {
-        ui->stackedWidget->setCurrentWidget(ui->alarmsPage);
-    }
-}
-
-void MainWindow::on_stopwatchButton_toggled(bool checked) {
-    if (checked) {
-        ui->stackedWidget->setCurrentWidget(ui->stopwatchPage);
-    }
-}
-
-void MainWindow::on_timerButton_toggled(bool checked) {
-    if (checked) {
-        ui->stackedWidget->setCurrentWidget(ui->timerPage);
-    }
-}
-
 void MainWindow::on_actionExit_triggered() {
     QApplication::exit();
-}
-
-void MainWindow::on_actionAbout_triggered() {
-    tAboutDialog d;
-    d.exec();
-}
-
-void MainWindow::on_actionSources_triggered() {
-    QDesktopServices::openUrl(QUrl("http://github.com/vicr123/the24"));
-}
-
-void MainWindow::on_actionFileBug_triggered() {
-    QDesktopServices::openUrl(QUrl("http://github.com/vicr123/the24/issues"));
 }

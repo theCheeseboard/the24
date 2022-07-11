@@ -19,36 +19,37 @@
  * *************************************/
 #include "timer.h"
 
+#include <QDBusConnection>
 #include <QSqlQuery>
 #include <QVariant>
-#include <QDBusConnection>
 #include <tnotification.h>
 
 #include <QSoundEffect>
 
-#include "timer_adaptor.h"
+#include "timeradaptor.h"
 
 struct TimerPrivate {
-    enum State {
-        Running,
-        Paused,
-        Stopped
-    };
+        enum State {
+            Running,
+            Paused,
+            Stopped
+        };
 
-    int id;
-    State state;
+        int id;
+        State state;
 
-    quint64 length;
-    quint64 timeoutDate;
-    quint64 pauseLengthRemain = 0;
+        quint64 length;
+        quint64 timeoutDate;
+        quint64 pauseLengthRemain = 0;
 
-    QString note;
+        QString note;
 
-    QTimer* timer;
-    QSoundEffect* effect = nullptr;
+        QTimer* timer;
+        QSoundEffect* effect = nullptr;
 };
 
-Timer::Timer(int id, QObject* parent) : QObject(parent) {
+Timer::Timer(int id, QObject* parent) :
+    QObject(parent) {
     d = new TimerPrivate();
     d->id = id;
 
@@ -82,11 +83,11 @@ void Timer::Remove() {
 }
 
 qlonglong Timer::MillisecondsRemaining() {
-    if (d->state == TimerPrivate::Running) { //Running
+    if (d->state == TimerPrivate::Running) { // Running
         return d->timer->remainingTime();
-    } else if (d->state == TimerPrivate::Paused) { //Paused
+    } else if (d->state == TimerPrivate::Paused) { // Paused
         return d->pauseLengthRemain;
-    } else { //Stopped
+    } else { // Stopped
         return d->length;
     }
 }
@@ -117,9 +118,9 @@ void Timer::Pause() {
 }
 
 void Timer::Resume() {
-    if (d->state == TimerPrivate::Paused) { //Paused
+    if (d->state == TimerPrivate::Paused) { // Paused
         d->timeoutDate = QDateTime::currentMSecsSinceEpoch() + d->pauseLengthRemain;
-    } else { //Stopped
+    } else { // Stopped
         d->timeoutDate = QDateTime::currentMSecsSinceEpoch() + d->length;
     }
     d->state = TimerPrivate::Running;
@@ -181,7 +182,7 @@ void Timer::updateFromDatabase() {
 
         int interval = QDateTime::currentDateTimeUtc().msecsTo(QDateTime::fromMSecsSinceEpoch(d->timeoutDate));
         if (interval < 0) {
-            QTimer::singleShot(0, [ = ] {
+            QTimer::singleShot(0, [=] {
                 this->doTimeout();
             });
         } else {
@@ -201,15 +202,15 @@ void Timer::writeToDatabase() {
     QSqlQuery query;
 
     switch (d->state) {
-        case TimerPrivate::Running: //Running
+        case TimerPrivate::Running: // Running
             query.prepare("UPDATE timers SET timeout=:timeout, length=:length, pausedRemaining=null, note=:note WHERE id=:id");
             query.bindValue(":timeout", d->timeoutDate);
             break;
-        case TimerPrivate::Paused: //Paused
+        case TimerPrivate::Paused: // Paused
             query.prepare("UPDATE timers SET timeout=null, length=:length, pausedRemaining=:pausedRemaining, note=:note WHERE id=:id");
             query.bindValue(":pausedRemaining", d->pauseLengthRemain);
             break;
-        case TimerPrivate::Stopped: //Stopped
+        case TimerPrivate::Stopped: // Stopped
             query.prepare("UPDATE timers SET timeout=null, length=:length, pausedRemaining=null, note=:note WHERE id=:id");
     }
 
@@ -242,7 +243,7 @@ void Timer::doTimeout() {
     }
     notification->setCategory("x-thesuite.the24.timer-elapsed");
     notification->setTimeout(0);
-    connect(notification, &tNotification::dismissed, this, [ = ] {
+    connect(notification, &tNotification::dismissed, this, [=] {
         d->effect->stop();
         d->effect->deleteLater();
         d->effect = nullptr;

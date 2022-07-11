@@ -21,6 +21,7 @@
 #define ALARMS_H
 
 #include <QWidget>
+#include <Task>
 
 namespace Ui {
     class Alarms;
@@ -44,7 +45,7 @@ class Alarms : public QWidget {
         Ui::Alarms* ui;
         AlarmsPrivate* d;
 
-        void serviceAvailable();
+        QCoro::Task<> serviceAvailable();
         void serviceUnavailable();
 };
 

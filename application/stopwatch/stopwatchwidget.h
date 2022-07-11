@@ -21,6 +21,7 @@
 #define STOPWATCHWIDGET_H
 
 #include <QWidget>
+#include <Task>
 
 namespace Ui {
     class StopwatchWidget;
@@ -35,7 +36,7 @@ class StopwatchWidget : public QWidget {
         ~StopwatchWidget();
 
     private slots:
-        void update();
+        QCoro::Task<> update();
 
         void on_removeButton_clicked();
 

@@ -5,6 +5,7 @@ Version=1.0
 Name=the24
 GenericName=Clock
 GenericName[vi]=Đồng hồ
+GenericName[de]=Uhr
 Exec=the24
 Icon=the24
 Categories=Utility;

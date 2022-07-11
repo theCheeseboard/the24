@@ -40,13 +40,13 @@ QString ClockHelpers::msecsToString(qlonglong msecs) {
         duration = QStringLiteral("%1:%2:%3");
     }
 
-    duration = duration.arg(hours, 2, 10, locale.zeroDigit()).arg(mins, 2, 10, locale.zeroDigit()).arg(secs, 2, 10, locale.zeroDigit());
+    duration = duration.arg(hours, 2, 10, locale.zeroDigit().at(0)).arg(mins, 2, 10, locale.zeroDigit().at(0)).arg(secs, 2, 10, locale.zeroDigit().at(0));
 
     return duration;
 }
 
 QString ClockHelpers::msecsToStringWithMsecs(qlonglong msecs) {
     QString duration = msecsToString(msecs);
-    duration += "." + QStringLiteral("%1").arg(msecs % 1000, 3, 10, QLocale().zeroDigit());
+    duration += "." + QStringLiteral("%1").arg(msecs % 1000, 3, 10, QLocale().zeroDigit().at(0));
     return duration;
 }

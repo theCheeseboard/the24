@@ -21,6 +21,7 @@
 #define STOPWATCH_H
 
 #include <QWidget>
+#include <Task>
 
 namespace Ui {
     class Stopwatch;
@@ -44,7 +45,7 @@ class Stopwatch : public QWidget {
         Ui::Stopwatch* ui;
         StopwatchPrivate* d;
 
-        void serviceAvailable();
+        QCoro::Task<> serviceAvailable();
         void serviceUnavailable();
 };
 

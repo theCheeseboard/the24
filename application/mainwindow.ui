@@ -14,7 +14,7 @@
    <string>the24</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="the24">
+   <iconset theme="the24" resource="resources.qrc">
     <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -74,7 +74,7 @@
           <string/>
          </property>
          <property name="icon">
-          <iconset theme="the24">
+          <iconset theme="the24" resource="resources.qrc">
            <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
          </property>
          <property name="popupMode">
@@ -83,112 +83,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="worldClockButton">
+        <widget class="tWindowTabber" name="windowTabber" native="true">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="text">
-          <string>World Clock</string>
-         </property>
-         <property name="icon">
-          <iconset theme="clock-world">
-           <normaloff>.</normaloff>.</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
         </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="alarmsButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Alarms</string>
-         </property>
-         <property name="icon">
-          <iconset theme="clock-alarm">
-           <normaloff>.</normaloff>.</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="stopwatchButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Stopwatch</string>
-         </property>
-         <property name="icon">
-          <iconset theme="clock-stopwatch">
-           <normaloff>.</normaloff>.</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="timerButton">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Timer</string>
-         </property>
-         <property name="icon">
-          <iconset theme="clock-timer">
-           <normaloff>.</normaloff>.</iconset>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item>
         <layout class="QHBoxLayout" name="rightCsdLayout">
@@ -210,33 +112,6 @@
     </item>
    </layout>
   </widget>
-  <action name="actionFileBug">
-   <property name="icon">
-    <iconset theme="tools-report-bug">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>File Bug</string>
-   </property>
-  </action>
-  <action name="actionSources">
-   <property name="icon">
-    <iconset theme="commit">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>Sources</string>
-   </property>
-  </action>
-  <action name="actionAbout">
-   <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
   <action name="actionExit">
    <property name="icon">
     <iconset theme="application-exit">
@@ -284,7 +159,15 @@
    <header>timer/timer.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>tWindowTabber</class>
+   <extends>QWidget</extends>
+   <header location="global">twindowtabber.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

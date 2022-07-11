@@ -19,42 +19,43 @@
  * *************************************/
 #include "alarm.h"
 
-#include <QSqlQuery>
 #include <QDBusConnection>
 #include <QSoundEffect>
+#include <QSqlQuery>
 #include <tnotification.h>
 
-#include "alarm_adaptor.h"
+#include "alarmadaptor.h"
 
 struct AlarmPrivate {
-    int id;
+        int id;
 
-    enum Day {
-        None = 0,
-        Monday = 0x1,
-        Tuesday = 0x2,
-        Wednesday = 0x4,
-        Thursday = 0x8,
-        Friday = 0x10,
-        Saturday = 0x20,
-        Sunday = 0x40,
+        enum Day {
+            None = 0,
+            Monday = 0x1,
+            Tuesday = 0x2,
+            Wednesday = 0x4,
+            Thursday = 0x8,
+            Friday = 0x10,
+            Saturday = 0x20,
+            Sunday = 0x40,
 
-        AllDays = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+            AllDays = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
 
-            //Keep this in sync with AlarmWidget
-    };
-    typedef QFlags<Day> Days;
+            // Keep this in sync with AlarmWidget
+        };
+        typedef QFlags<Day> Days;
 
-    QTime offset;
-    QTime snooze;
-    Days repeatDays = None;
-    bool active;
-    bool ignoreNext = false;
+        QTime offset;
+        QTime snooze;
+        Days repeatDays = None;
+        bool active;
+        bool ignoreNext = false;
 
-    QSoundEffect* effect = nullptr;
+        QSoundEffect* effect = nullptr;
 };
 
-Alarm::Alarm(int id, QObject* parent) : QObject(parent) {
+Alarm::Alarm(int id, QObject* parent) :
+    QObject(parent) {
     d = new AlarmPrivate();
     d->id = id;
 
@@ -75,16 +76,16 @@ QString Alarm::objectPath() {
 }
 
 void Alarm::tick() {
-    //Check if alarm is active
+    // Check if alarm is active
     if (!d->active) return;
 
-    //Check if we should run on this day
+    // Check if we should run on this day
     if (d->repeatDays != AlarmPrivate::None) {
         AlarmPrivate::Day day = static_cast<AlarmPrivate::Day>(1 << (QDate::currentDate().dayOfWeek() - 1));
         if ((d->repeatDays & day) == 0) return;
     }
 
-    auto compareTime = [ = ](QTime time) {
+    auto compareTime = [=](QTime time) {
         QTime t = QTime::currentTime();
         return t.hour() == time.hour() && t.minute() == time.minute();
     };
@@ -94,14 +95,14 @@ void Alarm::tick() {
         emit SnoozeOffsetChanged(-1);
 
         if (d->ignoreNext) {
-            //Ignore this one
+            // Ignore this one
             d->ignoreNext = false;
             emit IgnoringNextChanged(false);
         }
 
         prepareTone();
 
-        //Activate!
+        // Activate!
         tNotification* notification = new tNotification();
         notification->setAppName(tr("the24"));
         notification->setSummary(tr("Alarm!"));
@@ -109,10 +110,10 @@ void Alarm::tick() {
         notification->setCategory("x-thesuite.the24.alarm-elapsed");
         notification->insertAction("snooze", tr("Snooze"));
         notification->setTimeout(0);
-        connect(notification, &tNotification::actionClicked, this, [ = ](QString key) {
+        connect(notification, &tNotification::actionClicked, this, [=](QString key) {
             if (key == "snooze") {
-                //Snooze the alarm
-                d->snooze = QTime::currentTime().addSecs(600); //10 minutes
+                // Snooze the alarm
+                d->snooze = QTime::currentTime().addSecs(600); // 10 minutes
                 emit SnoozeOffsetChanged(d->snooze.msecsSinceStartOfDay());
 
                 if (d->effect) {
@@ -122,7 +123,7 @@ void Alarm::tick() {
                 }
             }
         });
-        connect(notification, &tNotification::dismissed, this, [ = ] {
+        connect(notification, &tNotification::dismissed, this, [=] {
             if (d->repeatDays == AlarmPrivate::None && !d->snooze.isValid()) this->SetActive(false);
 
             if (d->effect) {

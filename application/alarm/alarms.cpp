@@ -20,18 +20,19 @@
 #include "alarms.h"
 #include "ui_alarms.h"
 
+#include "alarmpopover.h"
+#include "alarmwidget.h"
+#include <QCoroDBusPendingCall>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
-#include <QDBusServiceWatcher>
 #include <QDBusMessage>
 #include <QDBusPendingCallWatcher>
+#include <QDBusServiceWatcher>
 #include <tpopover.h>
-#include "alarmwidget.h"
-#include "alarmpopover.h"
 
 struct AlarmsPrivate {
-    QList<AlarmWidget*> alarms;
-    QDBusServiceWatcher* watcher;
+        QList<AlarmWidget*> alarms;
+        QDBusServiceWatcher* watcher;
 };
 
 Alarms::Alarms(QWidget* parent) :
@@ -64,7 +65,7 @@ Alarms::~Alarms() {
 
 void Alarms::addAlarm(QString path) {
     AlarmWidget* timer = new AlarmWidget(path);
-    connect(timer, &AlarmWidget::deleteLater, this, [ = ] {
+    connect(timer, &AlarmWidget::deleteLater, this, [=] {
         ui->alarmsLayout->removeWidget(timer);
         d->alarms.removeAll(timer);
     });
@@ -72,16 +73,14 @@ void Alarms::addAlarm(QString path) {
     d->alarms.append(timer);
 }
 
-void Alarms::serviceAvailable() {
+QCoro::Task<> Alarms::serviceAvailable() {
     QDBusMessage enumerate = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "EnumerateAlarms");
-    QDBusPendingCallWatcher* enumerateCall = new QDBusPendingCallWatcher(QDBusConnection::sessionBus().asyncCall(enumerate));
-    connect(enumerateCall, &QDBusPendingCallWatcher::finished, this, [ = ] {
-        QStringList paths = enumerateCall->reply().arguments().first().toStringList();
-        for (QString path : paths) {
-            addAlarm(path);
-        }
-        enumerateCall->deleteLater();
-    });
+    auto reply = co_await QDBusConnection::sessionBus().asyncCall(enumerate);
+    QStringList paths = reply.arguments().first().toStringList();
+    for (QString path : paths) {
+        addAlarm(path);
+    }
+
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 
@@ -100,5 +99,5 @@ void Alarms::on_addButton_clicked() {
     connect(add, &AlarmPopover::done, popover, &tPopover::dismiss);
     connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
     connect(popover, &tPopover::dismissed, add, &AlarmPopover::deleteLater);
-    popover->show(this);
+    popover->show(this->window());
 }

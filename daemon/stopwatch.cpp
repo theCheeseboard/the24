@@ -19,25 +19,26 @@
  * *************************************/
 #include "stopwatch.h"
 
-#include <QSqlQuery>
-#include <QVariant>
 #include <QDBusConnection>
 #include <QElapsedTimer>
+#include <QSqlQuery>
+#include <QVariant>
 
 #include <tnotification.h>
 
-#include "stopwatch_adaptor.h"
+#include "stopwatchadaptor.h"
 
 struct StopwatchPrivate {
-    int id;
+        int id;
 
-    QDateTime startTime;
-    QElapsedTimer elapsed;
-    qulonglong offset = 0;
-    bool paused = false;
+        QDateTime startTime;
+        QElapsedTimer elapsed;
+        qulonglong offset = 0;
+        bool paused = false;
 };
 
-Stopwatch::Stopwatch(int id, QObject* parent) : QObject(parent) {
+Stopwatch::Stopwatch(int id, QObject* parent) :
+    QObject(parent) {
     d = new StopwatchPrivate();
     d->id = id;
 
@@ -173,7 +174,7 @@ void Stopwatch::updateRunningValues() {
     QDateTime current = QDateTime::currentDateTimeUtc();
 
     if (d->startTime > current) {
-        //Bail out here
+        // Bail out here
         d->paused = true;
         d->offset = 0;
 

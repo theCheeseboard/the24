@@ -37,21 +37,7 @@ class MainWindow : public QMainWindow {
         ~MainWindow();
 
     private slots:
-        void on_worldClockButton_toggled(bool checked);
-
-        void on_alarmsButton_toggled(bool checked);
-
-        void on_stopwatchButton_toggled(bool checked);
-
-        void on_timerButton_toggled(bool checked);
-
         void on_actionExit_triggered();
-
-        void on_actionAbout_triggered();
-
-        void on_actionSources_triggered();
-
-        void on_actionFileBug_triggered();
 
     private:
         Ui::MainWindow* ui;

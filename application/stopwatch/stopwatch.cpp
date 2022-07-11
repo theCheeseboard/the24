@@ -20,16 +20,17 @@
 #include "stopwatch.h"
 #include "ui_stopwatch.h"
 
+#include "stopwatchwidget.h"
+#include <QCoroDBusPendingCall>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
-#include <QDBusServiceWatcher>
 #include <QDBusMessage>
 #include <QDBusPendingCallWatcher>
-#include "stopwatchwidget.h"
+#include <QDBusServiceWatcher>
 
 struct StopwatchPrivate {
-    QList<StopwatchWidget*> stopwatches;
-    QDBusServiceWatcher* watcher;
+        QList<StopwatchWidget*> stopwatches;
+        QDBusServiceWatcher* watcher;
 };
 
 Stopwatch::Stopwatch(QWidget* parent) :
@@ -62,7 +63,7 @@ Stopwatch::~Stopwatch() {
 
 void Stopwatch::addStopwatch(QString path) {
     StopwatchWidget* timer = new StopwatchWidget(path);
-    connect(timer, &StopwatchWidget::deleteLater, this, [ = ] {
+    connect(timer, &StopwatchWidget::deleteLater, this, [=] {
         ui->stopwatchesLayout->removeWidget(timer);
         d->stopwatches.removeAll(timer);
     });
@@ -70,16 +71,13 @@ void Stopwatch::addStopwatch(QString path) {
     d->stopwatches.append(timer);
 }
 
-void Stopwatch::serviceAvailable() {
+QCoro::Task<> Stopwatch::serviceAvailable() {
     QDBusMessage enumerate = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "EnumerateStopwatches");
-    QDBusPendingCallWatcher* enumerateCall = new QDBusPendingCallWatcher(QDBusConnection::sessionBus().asyncCall(enumerate));
-    connect(enumerateCall, &QDBusPendingCallWatcher::finished, this, [ = ] {
-        QStringList paths = enumerateCall->reply().arguments().first().toStringList();
-        for (QString path : paths) {
-            addStopwatch(path);
-        }
-        enumerateCall->deleteLater();
-    });
+    auto reply = co_await QDBusConnection::sessionBus().asyncCall(enumerate);
+    QStringList paths = reply.arguments().first().toStringList();
+    for (QString path : paths) {
+        addStopwatch(path);
+    }
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 

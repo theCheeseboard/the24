@@ -19,29 +19,30 @@
  * *************************************/
 #include "the24manager.h"
 
-#include <tsettings.h>
 #include <QDBusConnection>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <tsettings.h>
 
-#include <QSqlQuery>
 #include <QSqlError>
+#include <QSqlQuery>
 
-#include "timer.h"
-#include "stopwatch.h"
 #include "alarm.h"
-#include "the24_adaptor.h"
+#include "stopwatch.h"
+#include "the24adaptor.h"
+#include "timer.h"
 
 struct The24ManagerPrivate {
-    tSettings settings;
-    QList<Timer*> timers;
-    QList<Stopwatch*> stopwatches;
-    QList<Alarm*> alarms;
+        tSettings settings;
+        QList<Timer*> timers;
+        QList<Stopwatch*> stopwatches;
+        QList<Alarm*> alarms;
 
-    QTimer* alarmTimer;
+        QTimer* alarmTimer;
 };
 
-The24Manager::The24Manager(QObject* parent) : QObject(parent) {
+The24Manager::The24Manager(QObject* parent) :
+    QObject(parent) {
     d = new The24ManagerPrivate();
 
     new The24Adaptor(this);
@@ -49,7 +50,7 @@ The24Manager::The24Manager(QObject* parent) : QObject(parent) {
 
     d->alarmTimer = new QTimer(this);
     d->alarmTimer->setInterval((60 - QTime::currentTime().second()) * 1000);
-    connect(d->alarmTimer, &QTimer::timeout, this, [ = ] {
+    connect(d->alarmTimer, &QTimer::timeout, this, [=] {
         d->alarmTimer->setInterval(60000);
         for (Alarm* alarm : d->alarms) {
             alarm->tick();
@@ -57,36 +58,36 @@ The24Manager::The24Manager(QObject* parent) : QObject(parent) {
     });
     d->alarmTimer->start();
 
-    //Initialise timers
+    // Initialise timers
     QSqlQuery timerQuery("SELECT id FROM timers");
     while (timerQuery.next()) {
         Timer* timer = new Timer(timerQuery.value("id").toInt());
         QString objectPath = timer->objectPath();
-        connect(timer, &Timer::destroyed, this, [ = ] {
+        connect(timer, &Timer::destroyed, this, [=] {
             emit TimerRemoved(objectPath);
             d->timers.removeAll(timer);
         });
         d->timers.append(timer);
     }
 
-    //Initialise stopwatches
+    // Initialise stopwatches
     QSqlQuery stopwatchQuery("SELECT id FROM stopwatch");
     while (stopwatchQuery.next()) {
         Stopwatch* stopwatch = new Stopwatch(stopwatchQuery.value("id").toInt());
         QString objectPath = stopwatch->objectPath();
-        connect(stopwatch, &Stopwatch::destroyed, this, [ = ] {
+        connect(stopwatch, &Stopwatch::destroyed, this, [=] {
             emit StopwatchRemoved(objectPath);
             d->stopwatches.removeAll(stopwatch);
         });
         d->stopwatches.append(stopwatch);
     }
 
-    //Initialise stopwatches
+    // Initialise stopwatches
     QSqlQuery alarmQuery("SELECT id FROM alarms");
     while (alarmQuery.next()) {
         Alarm* alarm = new Alarm(alarmQuery.value("id").toInt());
         QString objectPath = alarm->objectPath();
-        connect(alarm, &Alarm::destroyed, this, [ = ] {
+        connect(alarm, &Alarm::destroyed, this, [=] {
             emit AlarmRemoved(objectPath);
             d->alarms.removeAll(alarm);
         });
@@ -132,7 +133,7 @@ QString The24Manager::AddTimer(qint64 msecsFromNow) {
 
     Timer* timer = new Timer(query.lastInsertId().toInt());
     QString objectPath = timer->objectPath();
-    connect(timer, &Timer::destroyed, this, [ = ] {
+    connect(timer, &Timer::destroyed, this, [=] {
         emit TimerRemoved(objectPath);
         d->timers.removeAll(timer);
     });
@@ -150,7 +151,7 @@ QString The24Manager::AddStopwatch() {
 
     Stopwatch* stopwatch = new Stopwatch(query.lastInsertId().toInt());
     QString objectPath = stopwatch->objectPath();
-    connect(stopwatch, &Stopwatch::destroyed, this, [ = ] {
+    connect(stopwatch, &Stopwatch::destroyed, this, [=] {
         emit StopwatchRemoved(objectPath);
         d->stopwatches.removeAll(stopwatch);
     });
@@ -169,7 +170,7 @@ QString The24Manager::AddAlarm(quint64 offset, quint64 repeats) {
 
     Alarm* alarm = new Alarm(query.lastInsertId().toInt());
     QString objectPath = alarm->objectPath();
-    connect(alarm, &Alarm::destroyed, this, [ = ] {
+    connect(alarm, &Alarm::destroyed, this, [=] {
         emit AlarmRemoved(objectPath);
         d->alarms.removeAll(alarm);
     });

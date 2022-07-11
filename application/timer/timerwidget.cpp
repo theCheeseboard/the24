@@ -20,19 +20,20 @@
 #include "timerwidget.h"
 #include "ui_timerwidget.h"
 
-#include <QTimer>
+#include <QCoroDBusPendingCall>
 #include <QDBusInterface>
 #include <QTime>
-#include <the-libs_global.h>
+#include <QTimer>
+#include <libcontemporary_global.h>
 
 #include "clockhelpers.h"
 
 struct TimerWidgetPrivate {
-    QDBusInterface* interface;
+        QDBusInterface* interface;
 
-    QString state;
-    qlonglong msecsLeft;
-    QTimer* timer;
+        QString state;
+        qlonglong msecsLeft;
+        QTimer* timer;
 };
 
 TimerWidget::TimerWidget(QString objectPath, QWidget* parent) :
@@ -51,7 +52,7 @@ TimerWidget::TimerWidget(QString objectPath, QWidget* parent) :
 
     d->timer = new QTimer(this);
     d->timer->setInterval(1000);
-    connect(d->timer, &QTimer::timeout, this, [ = ] {
+    connect(d->timer, &QTimer::timeout, this, [=] {
         d->msecsLeft -= 1000;
         updateDisplay();
     });
@@ -64,38 +65,32 @@ TimerWidget::~TimerWidget() {
     delete ui;
 }
 
-void TimerWidget::update() {
+QCoro::Task<> TimerWidget::update() {
     d->timer->stop();
 
-    QDBusPendingCallWatcher* watcher = new QDBusPendingCallWatcher(d->interface->asyncCall("State"));
-    connect(watcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
-        d->state = watcher->reply().arguments().first().toString();
-        watcher->deleteLater();
+    auto stateReply = co_await d->interface->asyncCall("State");
+    d->state = stateReply.arguments().first().toString();
 
-        QDBusPendingCallWatcher* remainWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("MillisecondsRemaining"));
-        connect(remainWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
-            d->msecsLeft = remainWatcher->reply().arguments().first().toLongLong();
+    auto msRemainReply = co_await d->interface->asyncCall("MillisecondsRemaining");
+    d->msecsLeft = msRemainReply.arguments().first().toLongLong();
 
-            if (d->state == "Running") {
-                ui->actionButton->setIcon(QIcon::fromTheme("media-playback-pause"));
-                ui->remainingLabel->setEnabled(true);
-                d->timer->start();
+    if (d->state == "Running") {
+        ui->actionButton->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->remainingLabel->setEnabled(true);
+        d->timer->start();
 
-                ui->resetButton->setEnabled(false);
-            } else if (d->state == "Paused") {
-                ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
-                ui->remainingLabel->setEnabled(false);
-                ui->resetButton->setEnabled(true);
-            } else {
-                ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
-                ui->remainingLabel->setEnabled(true);
-                ui->resetButton->setEnabled(false);
-            }
+        ui->resetButton->setEnabled(false);
+    } else if (d->state == "Paused") {
+        ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->remainingLabel->setEnabled(false);
+        ui->resetButton->setEnabled(true);
+    } else {
+        ui->actionButton->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->remainingLabel->setEnabled(true);
+        ui->resetButton->setEnabled(false);
+    }
 
-            updateDisplay();
-            remainWatcher->deleteLater();
-        });
-    });
+    updateDisplay();
 }
 
 void TimerWidget::updateDisplay() {

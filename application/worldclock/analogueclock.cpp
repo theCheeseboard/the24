@@ -22,10 +22,10 @@
 
 #include <QPainter>
 #include <QTime>
-#include <the-libs_global.h>
+#include <libcontemporary_global.h>
 
 struct AnalogueClockPrivate {
-    QTime time;
+        QTime time;
 };
 
 AnalogueClock::AnalogueClock(QWidget* parent) :
@@ -66,7 +66,7 @@ void AnalogueClock::paintEvent(QPaintEvent* event) {
     font.setPixelSize(8);
     QFontMetrics fontMetrics(font);
 
-    //TODO: Fractional portions of the angles
+    // TODO: Fractional portions of the angles
     double hourHandAngle = static_cast<double>(d->time.msecsSinceStartOfDay()) / 43200000 * 360;
     double minuteHandAngle = static_cast<double>(d->time.msecsSinceStartOfDay()) / 3600000 * 360;
     double secondHandAngle = static_cast<double>(d->time.msecsSinceStartOfDay()) / 60000 * 360;
@@ -78,7 +78,7 @@ void AnalogueClock::paintEvent(QPaintEvent* event) {
     QColor accentCol = this->palette().color(QPalette::Highlight);
     QColor handCol = isDarkClock ? Qt::white : Qt::black;
 
-    //Draw the clock circle
+    // Draw the clock circle
     if (isDarkClock) {
         if (isDarkBackground) {
             p.setBrush(QColor(0x14, 0x14, 0x14));
@@ -109,7 +109,7 @@ void AnalogueClock::paintEvent(QPaintEvent* event) {
             textRect.moveRight(20);
         } else if (number == "6") {
             textRect.moveBottom(20);
-        } else { //number == 9
+        } else { // number == 9
             textRect.moveLeft(-20);
         }
 
@@ -119,7 +119,7 @@ void AnalogueClock::paintEvent(QPaintEvent* event) {
         p.restore();
     }
 
-    //Draw the second hand
+    // Draw the second hand
     p.save();
     p.rotate(secondHandAngle);
     p.setPen(accentCol);
@@ -128,13 +128,13 @@ void AnalogueClock::paintEvent(QPaintEvent* event) {
 
     p.setPen(handCol);
 
-    //Draw the minute hand
+    // Draw the minute hand
     p.save();
     p.rotate(minuteHandAngle);
     p.drawLine(0, -19, 0, 0);
     p.restore();
 
-    //Draw the hour hand
+    // Draw the hour hand
     p.save();
     p.rotate(hourHandAngle);
     p.drawLine(0, -10, 0, 0);

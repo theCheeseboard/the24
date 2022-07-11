@@ -20,13 +20,14 @@
 #include "newtimerpopover.h"
 #include "ui_newtimerpopover.h"
 
-#include <QDBusMessage>
 #include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDBusPendingCall>
 
 #include <tdatetimepicker.h>
 
 struct NewTimerPopoverPrivate {
-    tDateTimePicker* picker;
+        tDateTimePicker* picker;
 };
 
 NewTimerPopover::NewTimerPopover(QWidget* parent) :
@@ -60,9 +61,7 @@ void NewTimerPopover::on_titleLabel_backButtonClicked() {
 
 void NewTimerPopover::on_startButton_clicked() {
     QDBusMessage message = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "AddTimer");
-    message.setArguments({
-        static_cast<qint64>(d->picker->currentDateTime().time().msecsSinceStartOfDay())
-    });
+    message.setArguments({static_cast<qint64>(d->picker->currentDateTime().time().msecsSinceStartOfDay())});
     QDBusConnection::sessionBus().asyncCall(message);
     emit done();
 }

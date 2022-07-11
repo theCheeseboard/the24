@@ -21,6 +21,7 @@
 #define TIMER_H
 
 #include <QWidget>
+#include <Task>
 
 namespace Ui {
     class Timer;
@@ -62,7 +63,7 @@ class Timer : public QWidget {
         Ui::Timer* ui;
         TimerPrivate* d;
 
-        void serviceAvailable();
+        QCoro::Task<> serviceAvailable();
         void serviceUnavailable();
 
         void startTimer(std::chrono::milliseconds msecs);

@@ -20,13 +20,15 @@
 #include "timer.h"
 #include "ui_timer.h"
 
+#include <QCoroDBusPendingCall>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusMessage>
 #include <QDBusServiceWatcher>
+#include <QTimer>
 
-#include <tpopover.h>
 #include "newtimerpopover.h"
+#include <tpopover.h>
 
 #include "timerwidget.h"
 
@@ -34,9 +36,9 @@ using std::chrono_literals::operator""min;
 using std::chrono_literals::operator""h;
 
 struct TimerPrivate {
-    QList<TimerWidget*> timers;
-    QDBusServiceWatcher* watcher;
-    bool available;
+        QList<TimerWidget*> timers;
+        QDBusServiceWatcher* watcher;
+        bool available;
 };
 
 Timer::Timer(QWidget* parent) :
@@ -64,13 +66,14 @@ Timer::Timer(QWidget* parent) :
 }
 
 Timer::~Timer() {
+    for (auto widget : d->timers) widget->disconnect(this);
     delete d;
     delete ui;
 }
 
 void Timer::addTimer(QString path) {
     TimerWidget* timer = new TimerWidget(path);
-    connect(timer, &TimerWidget::destroyed, this, [ = ] {
+    connect(timer, &TimerWidget::destroyed, this, [this, timer] {
         ui->timersLayout->removeWidget(timer);
         d->timers.removeAll(timer);
         if (d->timers.count() == 0 && d->available) {
@@ -82,17 +85,15 @@ void Timer::addTimer(QString path) {
     ui->stackedWidget->setCurrentWidget(ui->mainPage);
 }
 
-void Timer::serviceAvailable() {
+QCoro::Task<> Timer::serviceAvailable() {
     d->available = true;
     QDBusMessage enumerate = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "EnumerateTimers");
-    QDBusPendingCallWatcher* enumerateCall = new QDBusPendingCallWatcher(QDBusConnection::sessionBus().asyncCall(enumerate));
-    connect(enumerateCall, &QDBusPendingCallWatcher::finished, this, [ = ] {
-        QStringList paths = enumerateCall->reply().arguments().first().toStringList();
-        for (QString path : paths) {
-            addTimer(path);
-        }
-        enumerateCall->deleteLater();
-    });
+    auto reply = co_await QDBusConnection::sessionBus().asyncCall(enumerate);
+
+    QStringList paths = reply.arguments().first().toStringList();
+    for (QString path : paths) {
+        addTimer(path);
+    }
 }
 
 void Timer::serviceUnavailable() {
@@ -106,20 +107,18 @@ void Timer::serviceUnavailable() {
 
 void Timer::startTimer(std::chrono::milliseconds msecs) {
     QDBusMessage message = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "AddTimer");
-    message.setArguments({
-        static_cast<qint64>(msecs.count())
-    });
+    message.setArguments({static_cast<qint64>(msecs.count())});
     QDBusConnection::sessionBus().asyncCall(message);
 }
 
 void Timer::on_addButton_clicked() {
     NewTimerPopover* add = new NewTimerPopover(this);
     tPopover* popover = new tPopover(add);
-    popover->setPopoverWidth(SC_DPI(400));
+    popover->setPopoverWidth(SC_DPI_W(400, this));
     connect(add, &NewTimerPopover::done, popover, &tPopover::dismiss);
     connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
     connect(popover, &tPopover::dismissed, add, &NewTimerPopover::deleteLater);
-    popover->show(this);
+    popover->show(this->window());
 }
 
 void Timer::on_oneMinButton_clicked() {

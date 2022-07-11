@@ -21,6 +21,7 @@
 #define TIMERWIDGET_H
 
 #include <QWidget>
+#include <Task>
 
 namespace Ui {
     class TimerWidget;
@@ -37,7 +38,7 @@ class TimerWidget : public QWidget {
     private slots:
         void on_actionButton_clicked();
 
-        void update();
+        QCoro::Task<> update();
 
         void on_resetButton_clicked();
 
