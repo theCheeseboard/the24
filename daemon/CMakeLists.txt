@@ -31,8 +31,6 @@ set_target_properties(the24d PROPERTIES
 cntp_init(the24d 20)
 cntp_translate(the24d)
 cntp_target_name(the24d "the24d")
-cntp_defaults_file(the24d
-    DEFAULTS_FILE the24d.conf)
 
 target_link_libraries(the24d Qt6::Sql libcontemporary)
 

@@ -19,23 +19,18 @@
  * *************************************/
 #include <tapplication.h>
 
+#include "the24manager.h"
 #include <QDBusConnection>
+#include <QDebug>
+#include <QDir>
 #include <QSqlDatabase>
 #include <QSqlQuery>
-#include <QDir>
 #include <QStandardPaths>
-#include <QDebug>
 #include <tsettings.h>
-#include "the24manager.h"
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
-
-    if (QDir("/usr/share/the24/daemon/").exists()) {
-        a.setShareDir("/usr/share/the24/daemon/");
-    } else if (QDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/daemon/")).exists()) {
-        a.setShareDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/daemon/"));
-    }
+    a.setApplicationShareDir("the24/daemon");
     a.installTranslators();
 
     a.setApplicationVersion("1.0");
@@ -59,20 +54,20 @@ int main(int argc, char* argv[]) {
     QString dbPath = QDir(dataPath).absoluteFilePath("clocks.db");
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     if (!db.isValid()) {
-        //Couldn't open the database, so bail out here
+        // Couldn't open the database, so bail out here
         qWarning() << "Couldn't open database";
         return 1;
     }
     db.setDatabaseName(dbPath);
     if (!db.open()) {
-        //Couldn't open the database, so bail out here
+        // Couldn't open the database, so bail out here
         qWarning() << "Couldn't open database";
         return 1;
     }
 
     db.exec("PRAGMA foreign_keys = ON");
 
-    //Initialise the tables
+    // Initialise the tables
     QStringList tables = db.tables();
     if (!tables.contains("TIMERS")) {
         db.exec("CREATE TABLE timers(id INTEGER PRIMARY KEY, timeout INTEGER, length INTEGER, pausedRemaining INTEGER DEFAULT NULL, note TEXT DEFAULT NULL)");
@@ -88,7 +83,7 @@ int main(int argc, char* argv[]) {
     }
 
     if (!QDBusConnection::sessionBus().registerService("com.vicr123.the24")) {
-        //Couldn't register the service, so bail out here
+        // Couldn't register the service, so bail out here
         qWarning() << "Couldn't register D-Bus service";
         return 1;
     }

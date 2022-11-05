@@ -29,12 +29,7 @@
 
 int main(int argc, char* argv[]) {
     tApplication a(argc, argv);
-
-    if (QDir("/usr/share/the24/").exists()) {
-        a.setShareDir("/usr/share/the24/");
-    } else if (QDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/")).exists()) {
-        a.setShareDir(QDir::cleanPath(QApplication::applicationDirPath() + "/../share/the24/"));
-    }
+    a.setApplicationShareDir("the24");
     a.installTranslators();
 
     a.setApplicationIcon(QIcon::fromTheme("the24", QIcon(":/icons/the24.svg")));

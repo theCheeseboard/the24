@@ -1,0 +1,23 @@
+{
+    "name": "theFrisbee",
+    "subprojects": [
+        {
+            "name": "the24 Daemon",
+            "type": "qt",
+            "path": "/daemon/translations/{lang}.ts",
+            "baseLang": "en_US"
+        },
+        {
+            "name": "the24 Desktop",
+            "type": "qt",
+            "path": "/application/translations/{lang}.ts",
+            "baseLang": "en_US"
+        },
+        {
+            "name": "the24 Desktop File",
+            "type": "webext-json",
+            "path": "/application/translations/desktop/com.vicr123.the24/{lang}.json",
+            "baseLang": "en"
+        }
+    ]
+}

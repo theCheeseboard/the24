@@ -354,7 +354,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="42"/>
+        <location filename="../main.cpp" line="37"/>
         <source>Clock</source>
         <translation>Klok</translation>
     </message>
