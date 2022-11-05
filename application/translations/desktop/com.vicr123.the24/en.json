@@ -1,2 +1,8 @@
 {
+    "GenericName": {
+        "message": "Clock"
+    },
+    "Keywords": {
+        "message": "alarm;stopwatch;time;timer;chronometer;world clock;"
+    }
 }

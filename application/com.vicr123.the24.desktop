@@ -3,10 +3,8 @@
 Type=Application
 Version=1.0
 Name=the24
-GenericName=Clock
-GenericName[vi]=Đồng hồ
-GenericName[de]=Uhr
+GenericName[]=Clock
 Exec=the24
 Icon=the24
 Categories=Utility;
-Keywords=alarm;stopwatch;time;timer;chronometer;world clock;
+Keywords[]=alarm;stopwatch;time;timer;chronometer;world clock;
