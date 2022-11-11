@@ -1,57 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="he_IL">
-  <context>
+<context>
     <name>Alarm</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../alarm.cpp" line="107" />
-      <source>the24</source>
+        <location filename="../alarm.cpp" line="107"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>שעון מעורר!</translation>
-      <location filename="../alarm.cpp" line="108" />
-      <source>Alarm!</source>
+        <location filename="../alarm.cpp" line="108"/>
+        <source>Alarm!</source>
+        <translation>שעון מעורר!</translation>
     </message>
     <message>
-      <translation>השהה</translation>
-      <location filename="../alarm.cpp" line="111" />
-      <source>Snooze</source>
+        <location filename="../alarm.cpp" line="111"/>
+        <source>Snooze</source>
+        <translation>השהה</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Stopwatch</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../stopwatch.cpp" line="184" />
-      <source>the24</source>
+        <location filename="../stopwatch.cpp" line="184"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>שעון עצר</translation>
-      <location filename="../stopwatch.cpp" line="185" />
-      <source>Stopwatch</source>
+        <location filename="../stopwatch.cpp" line="185"/>
+        <source>Stopwatch</source>
+        <translation>שעון עצר</translation>
     </message>
     <message>
-      <translation>שעון עצר אופס בגלל ששעון המערכת שונה באופן בלתי צפוי.</translation>
-      <location filename="../stopwatch.cpp" line="186" />
-      <source>A stopwatch was reset because the system clock was changed unexpectedly.</source>
+        <location filename="../stopwatch.cpp" line="186"/>
+        <source>A stopwatch was reset because the system clock was changed unexpectedly.</source>
+        <translation>שעון עצר אופס בגלל ששעון המערכת שונה באופן בלתי צפוי.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Timer</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../timer.cpp" line="237" />
-      <source>the24</source>
+        <location filename="../timer.cpp" line="237"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>הזמן נגמר!</translation>
-      <location filename="../timer.cpp" line="238" />
-      <source>Time's up!</source>
+        <location filename="../timer.cpp" line="238"/>
+        <source>Time&apos;s up!</source>
+        <translation>הזמן נגמר!</translation>
     </message>
     <message>
-      <translation>הטימר שלך חלף!</translation>
-      <location filename="../timer.cpp" line="240" />
-      <source>Your timer has elapsed!</source>
+        <location filename="../timer.cpp" line="240"/>
+        <source>Your timer has elapsed!</source>
+        <translation>הטימר שלך חלף!</translation>
     </message>
-  </context>
+</context>
 </TS>

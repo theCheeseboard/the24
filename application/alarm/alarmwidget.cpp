@@ -20,35 +20,35 @@
 #include "alarmwidget.h"
 #include "ui_alarmwidget.h"
 
-#include <QDBusInterface>
-#include <QTime>
 #include <QContextMenuEvent>
+#include <QDBusInterface>
 #include <QMenu>
+#include <QTime>
 
-#include <tpopover.h>
 #include "alarmpopover.h"
+#include <tpopover.h>
 
 struct AlarmWidgetPrivate {
-    QDBusInterface* interface;
+        QDBusInterface* interface;
 
-    enum Day {
-        None = 0,
-        Monday = 0x1,
-        Tuesday = 0x2,
-        Wednesday = 0x4,
-        Thursday = 0x8,
-        Friday = 0x10,
-        Saturday = 0x20,
-        Sunday = 0x40,
+        enum Day {
+            None = 0,
+            Monday = 0x1,
+            Tuesday = 0x2,
+            Wednesday = 0x4,
+            Thursday = 0x8,
+            Friday = 0x10,
+            Saturday = 0x20,
+            Sunday = 0x40,
 
-        AllDays = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+            AllDays = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
 
-            //Keep this in sync with Alarm
-    };
-    typedef QFlags<Day> Days;
+            // Keep this in sync with Alarm
+        };
+        typedef QFlags<Day> Days;
 
-    QTime offset;
-    QString objectPath;
+        QTime offset;
+        QString objectPath;
 };
 
 AlarmWidget::AlarmWidget(QString objectPath, QWidget* parent) :
@@ -76,7 +76,7 @@ AlarmWidget::~AlarmWidget() {
 
 void AlarmWidget::update() {
     QDBusPendingCallWatcher* activeWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("Active"));
-    connect(activeWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(activeWatcher, &QDBusPendingCallWatcher::finished, this, [=] {
         bool active = activeWatcher->reply().arguments().first().toBool();
         ui->activeSwitch->setChecked(active);
         ui->timeLabel->setEnabled(active);
@@ -84,7 +84,7 @@ void AlarmWidget::update() {
     });
 
     QDBusPendingCallWatcher* offsetWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("Offset"));
-    connect(offsetWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(offsetWatcher, &QDBusPendingCallWatcher::finished, this, [=] {
         d->offset = QTime::fromMSecsSinceStartOfDay(offsetWatcher->reply().arguments().first().toULongLong());
         ui->timeLabel->setText(d->offset.toString("hh:mm"));
 
@@ -92,7 +92,7 @@ void AlarmWidget::update() {
     });
 
     QDBusPendingCallWatcher* repeatsWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("Repeat"));
-    connect(repeatsWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(repeatsWatcher, &QDBusPendingCallWatcher::finished, this, [=] {
         AlarmWidgetPrivate::Days repeats = static_cast<AlarmWidgetPrivate::Days>(repeatsWatcher->reply().arguments().first().toInt());
         QLocale l;
 
@@ -122,13 +122,13 @@ void AlarmWidget::update() {
                 int day = i % 7;
                 if (repeats & 1 << day) repeatsList.append(l.dayName(day + 1, QLocale::ShortFormat));
             }
-//            if (repeats & AlarmWidgetPrivate::Monday) repeatsList.append(l.dayName(1, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Tuesday) repeatsList.append(l.dayName(2, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Wednesday) repeatsList.append(l.dayName(3, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Thursday) repeatsList.append(l.dayName(4, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Friday) repeatsList.append(l.dayName(5, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Saturday) repeatsList.append(l.dayName(6, QLocale::ShortFormat));
-//            if (repeats & AlarmWidgetPrivate::Sunday) repeatsList.append(l.dayName(7, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Monday) repeatsList.append(l.dayName(1, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Tuesday) repeatsList.append(l.dayName(2, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Wednesday) repeatsList.append(l.dayName(3, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Thursday) repeatsList.append(l.dayName(4, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Friday) repeatsList.append(l.dayName(5, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Saturday) repeatsList.append(l.dayName(6, QLocale::ShortFormat));
+            //            if (repeats & AlarmWidgetPrivate::Sunday) repeatsList.append(l.dayName(7, QLocale::ShortFormat));
             ui->repeatsLabel->setText(tr("Repeats on %1").arg(l.createSeparatedList(repeatsList)));
             ui->repeatsLabel->setVisible(true);
         }
@@ -137,7 +137,7 @@ void AlarmWidget::update() {
     });
 
     QDBusPendingCallWatcher* snoozeOffsetWatcher = new QDBusPendingCallWatcher(d->interface->asyncCall("SnoozeOffset"));
-    connect(snoozeOffsetWatcher, &QDBusPendingCallWatcher::finished, this, [ = ] {
+    connect(snoozeOffsetWatcher, &QDBusPendingCallWatcher::finished, this, [=] {
         qlonglong offset = snoozeOffsetWatcher->reply().arguments().first().toLongLong();
         if (offset < 0) {
             ui->snoozeLabel->setVisible(false);
@@ -158,16 +158,16 @@ void AlarmWidget::on_activeSwitch_toggled(bool checked) {
 void AlarmWidget::contextMenuEvent(QContextMenuEvent* event) {
     QMenu* menu = new QMenu();
     menu->addSection(tr("For this alarm"));
-    menu->addAction(QIcon::fromTheme("edit-rename"), tr("Edit"), this, [ = ] {
+    menu->addAction(QIcon::fromTheme("edit-rename"), tr("Edit"), this, [=] {
         AlarmPopover* add = new AlarmPopover(d->objectPath, this);
         tPopover* popover = new tPopover(add);
         popover->setPopoverWidth(SC_DPI(400));
         connect(add, &AlarmPopover::done, popover, &tPopover::dismiss);
         connect(popover, &tPopover::dismissed, popover, &tPopover::deleteLater);
         connect(popover, &tPopover::dismissed, add, &AlarmPopover::deleteLater);
-        popover->show(this->parentWidget()->parentWidget());
+        popover->show(this->window());
     });
-    menu->addAction(QIcon::fromTheme("list-remove"), tr("Remove"), this, [ = ] {
+    menu->addAction(QIcon::fromTheme("list-remove"), tr("Remove"), this, [=] {
         d->interface->asyncCall("Remove");
     });
 

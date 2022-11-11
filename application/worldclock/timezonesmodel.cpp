@@ -19,26 +19,27 @@
  * *************************************/
 #include "timezonesmodel.h"
 
-#include <QTimeZone>
 #include <QPainter>
+#include <QTimeZone>
+#include <tpaintcalculator.h>
 
 struct TimezonesModelPrivate {
-    QList<QTimeZone> timezones;
-    QList<QTimeZone> shownTimezones;
+        QList<QTimeZone> timezones;
+        QList<QTimeZone> shownTimezones;
 };
 
-TimezonesModel::TimezonesModel(QObject* parent)
-    : QAbstractListModel(parent) {
+TimezonesModel::TimezonesModel(QObject* parent) :
+    QAbstractListModel(parent) {
     d = new TimezonesModelPrivate();
     QDateTime now = QDateTime::currentDateTimeUtc();
     for (QByteArray timezone : QTimeZone::availableTimeZoneIds()) {
         QTimeZone tz(timezone);
-        if (timezone == tz.displayName(now, QTimeZone::OffsetName)) continue; //Ignore
+        if (timezone == tz.displayName(now, QTimeZone::OffsetName)) continue; // Ignore
         d->timezones.append(tz);
     }
 
-    //Sort timezones
-    std::sort(d->timezones.begin(), d->timezones.end(), [ = ](const QTimeZone & first, const QTimeZone & second) {
+    // Sort timezones
+    std::sort(d->timezones.begin(), d->timezones.end(), [=](const QTimeZone& first, const QTimeZone& second) {
         if (first.offsetFromUtc(now) < second.offsetFromUtc(now)) {
             return true;
         } else if (first.offsetFromUtc(now) > second.offsetFromUtc(now)) {
@@ -48,7 +49,7 @@ TimezonesModel::TimezonesModel(QObject* parent)
         }
     });
 
-    //Initialize the shown items
+    // Initialize the shown items
     search("");
 }
 
@@ -68,9 +69,10 @@ QVariant TimezonesModel::data(const QModelIndex& index, int role) const {
     QDateTime now = QDateTime::currentDateTimeUtc();
     QTimeZone tz = d->shownTimezones.at(index.row());
     switch (role) {
-        case Qt::DisplayRole: {
-            return QString(tz.id()).split("/").last().replace("_", " ");
-        }
+        case Qt::DisplayRole:
+            {
+                return QString(tz.id()).split("/").last().replace("_", " ");
+            }
         case Qt::UserRole:
             return tz.id();
         case Qt::UserRole + 1:
@@ -115,15 +117,19 @@ void TimezonesModel::search(QString query) {
     emit dataChanged(index(0), index(rowCount()));
 }
 
-TimezonesModelDelegate::TimezonesModelDelegate(QObject* parent) : QStyledItemDelegate(parent) {
-
+TimezonesModelDelegate::TimezonesModelDelegate(QObject* parent) :
+    QStyledItemDelegate(parent) {
 }
 
 TimezonesModelDelegate::~TimezonesModelDelegate() {
-
 }
 
 void TimezonesModelDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
+    tPaintCalculator calculator;
+    calculator.setPainter(painter);
+    calculator.setDrawBounds(option.rect);
+    calculator.setLayoutDirection(option.direction);
+
     QPen textPen, offsetPen;
     if (option.state & QStyle::State_Selected) {
         painter->setBrush(option.palette.brush(QPalette::Highlight));
@@ -146,19 +152,27 @@ void TimezonesModelDelegate::paint(QPainter* painter, const QStyleOptionViewItem
     QRect offsetRect = option.rect;
     offsetRect.setLeft(option.rect.left() + 6);
     offsetRect.setWidth(option.fontMetrics.horizontalAdvance(QStringLiteral("UTC+12:00")));
-    painter->setPen(offsetPen);
-    painter->setFont(option.font);
-    if (index.data(Qt::UserRole + 3).toBool()) painter->drawText(offsetRect, Qt::AlignRight | Qt::AlignVCenter, index.data(Qt::UserRole + 1).toString());
+    calculator.addRect(offsetRect, [offsetPen, option, painter, index](QRectF bounds) {
+        painter->setPen(offsetPen);
+        painter->setFont(option.font);
+        if (index.data(Qt::UserRole + 3).toBool()) painter->drawText(bounds, Qt::AlignRight | Qt::AlignVCenter, index.data(Qt::UserRole + 1).toString());
+    });
 
     QString mainText = index.data(Qt::DisplayRole).toString();
     QRect textRect = option.rect;
     textRect.setLeft(offsetRect.right() + 6);
     textRect.setWidth(option.fontMetrics.horizontalAdvance(mainText) + 1);
-    painter->setPen(textPen);
-    painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, mainText);
+    calculator.addRect(textRect, [painter, mainText, textPen](QRectF bounds) {
+        painter->setPen(textPen);
+        painter->drawText(bounds, Qt::AlignLeft | Qt::AlignVCenter, mainText);
+    });
 
     QRect zoneName = option.rect;
     zoneName.setLeft(textRect.right() + 6);
-    painter->setPen(offsetPen);
-    painter->drawText(zoneName, Qt::AlignLeft | Qt::AlignVCenter, index.data(Qt::UserRole + 2).toString());
+    calculator.addRect(zoneName, [offsetPen, index, painter](QRectF bounds) {
+        painter->setPen(offsetPen);
+        painter->drawText(bounds, Qt::AlignLeft | Qt::AlignVCenter, index.data(Qt::UserRole + 2).toString());
+    });
+
+    calculator.performPaint();
 }

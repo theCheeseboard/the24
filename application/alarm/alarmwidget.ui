@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>401</width>
-    <height>116</height>
+    <height>123</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
+        <item alignment="Qt::AlignLeft">
          <widget class="QLabel" name="timeLabel">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -58,14 +58,14 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item alignment="Qt::AlignLeft">
          <widget class="QLabel" name="snoozeLabel">
           <property name="text">
            <string notr="true">Snoozed</string>
           </property>
          </widget>
         </item>
-        <item>
+        <item alignment="Qt::AlignLeft">
          <widget class="QLabel" name="repeatsLabel">
           <property name="enabled">
            <bool>false</bool>
