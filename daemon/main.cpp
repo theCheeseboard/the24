@@ -36,15 +36,10 @@ int main(int argc, char* argv[]) {
     a.setApplicationVersion("1.0");
     a.setApplicationLicense(tApplication::Gpl3OrLater);
     a.setCopyrightHolder("Victor Tran");
-    a.setCopyrightYear("2020");
+    a.setCopyrightYear("2023");
     a.setOrganizationName("theSuite");
-#ifdef T_BLUEPRINT_BUILD
-    a.setApplicationName("the24 Blueprint");
-    a.setDesktopFileName("com.vicr123.the24-blueprint");
-#else
-    a.setApplicationName("the24");
-    a.setDesktopFileName("com.vicr123.the24");
-#endif
+    a.setApplicationName(T_APPMETA_READABLE_NAME);
+    a.setDesktopFileName(T_APPMETA_DESKTOP_ID);
 
     tSettings::registerDefaults(a.applicationDirPath() + "../application/defaults.conf");
     tSettings::registerDefaults("/etc/theSuite/the24/defaults.conf");

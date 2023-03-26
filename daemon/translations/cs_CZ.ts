@@ -1,57 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
-  <context>
+<context>
     <name>Alarm</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../alarm.cpp" line="107" />
-      <source>the24</source>
+        <location filename="../alarm.cpp" line="107"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>Budík!</translation>
-      <location filename="../alarm.cpp" line="108" />
-      <source>Alarm!</source>
+        <location filename="../alarm.cpp" line="108"/>
+        <source>Alarm!</source>
+        <translation>Budík!</translation>
     </message>
     <message>
-      <translation>Odložit</translation>
-      <location filename="../alarm.cpp" line="111" />
-      <source>Snooze</source>
+        <location filename="../alarm.cpp" line="111"/>
+        <source>Snooze</source>
+        <translation>Odložit</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Stopwatch</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../stopwatch.cpp" line="184" />
-      <source>the24</source>
+        <location filename="../stopwatch.cpp" line="184"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>Stopky</translation>
-      <location filename="../stopwatch.cpp" line="185" />
-      <source>Stopwatch</source>
+        <location filename="../stopwatch.cpp" line="185"/>
+        <source>Stopwatch</source>
+        <translation>Stopky</translation>
     </message>
     <message>
-      <translation>Stopky byly resetovány protože vaše systémové hodiny se neočekávaně změnily.</translation>
-      <location filename="../stopwatch.cpp" line="186" />
-      <source>A stopwatch was reset because the system clock was changed unexpectedly.</source>
+        <location filename="../stopwatch.cpp" line="186"/>
+        <source>A stopwatch was reset because the system clock was changed unexpectedly.</source>
+        <translation>Stopky byly resetovány protože vaše systémové hodiny se neočekávaně změnily.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Timer</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../timer.cpp" line="237" />
-      <source>the24</source>
+        <location filename="../timer.cpp" line="237"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>Časovač vypršel!</translation>
-      <location filename="../timer.cpp" line="238" />
-      <source>Time's up!</source>
+        <location filename="../timer.cpp" line="238"/>
+        <source>Time&apos;s up!</source>
+        <translation>Časovač vypršel!</translation>
     </message>
     <message>
-      <translation>Váš časovač vypršel!</translation>
-      <location filename="../timer.cpp" line="240" />
-      <source>Your timer has elapsed!</source>
+        <location filename="../timer.cpp" line="240"/>
+        <source>Your timer has elapsed!</source>
+        <translation>Váš časovač vypršel!</translation>
     </message>
-  </context>
+</context>
 </TS>

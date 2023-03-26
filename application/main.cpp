@@ -32,21 +32,14 @@ int main(int argc, char* argv[]) {
     a.setApplicationShareDir("the24");
     a.installTranslators();
 
-    a.setApplicationIcon(QIcon::fromTheme("the24", QIcon(":/icons/the24.svg")));
     a.setApplicationVersion("2.0");
     a.setGenericName(QApplication::translate("main", "Clock"));
-    a.setAboutDialogSplashGraphic(a.aboutDialogSplashGraphicFromSvg(":/icons/aboutsplash.svg"));
     a.setApplicationLicense(tApplication::Gpl3OrLater);
     a.setCopyrightHolder("Victor Tran");
-    a.setCopyrightYear("2022");
+    a.setCopyrightYear("2023");
     a.setOrganizationName("theSuite");
-#ifdef T_BLUEPRINT_BUILD
-    a.setApplicationName("the24 Blueprint");
-    a.setDesktopFileName("com.vicr123.the24-blueprint");
-#else
-    a.setApplicationName("the24");
-    a.setDesktopFileName("com.vicr123.the24");
-#endif
+    a.setApplicationName(T_APPMETA_READABLE_NAME);
+    a.setDesktopFileName(T_APPMETA_DESKTOP_ID);
     a.setApplicationUrl(tApplication::Sources, QUrl("http://github.com/vicr123/the24"));
     a.setApplicationUrl(tApplication::FileBug, QUrl("http://github.com/vicr123/the24/issues"));
 

@@ -1,6 +1,6 @@
 project(the24d VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Sql)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Sql)
 find_package(libcontemporary REQUIRED)
 
 set(SOURCES
@@ -32,7 +32,7 @@ cntp_init(the24d 20)
 cntp_translate(the24d)
 cntp_target_name(the24d "the24d")
 
-target_link_libraries(the24d Qt6::Sql libcontemporary)
+target_link_libraries(the24d Qt::Sql libcontemporary)
 
 install(TARGETS the24d
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

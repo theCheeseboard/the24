@@ -1,362 +1,368 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
-  <context>
+<context>
     <name>AddClockPopover</name>
     <message>
-      <translation>Přidat hodiny</translation>
-      <location filename="../worldclock/addclockpopover.ui" line="35" />
-      <source>Add Clock</source>
+        <location filename="../worldclock/addclockpopover.ui" line="35"/>
+        <source>Add Clock</source>
+        <translation>Přidat hodiny</translation>
     </message>
     <message>
-      <translation>Jaké časové pásmo chcete přidat?</translation>
-      <location filename="../worldclock/addclockpopover.ui" line="42" />
-      <source>What timezone do you want to add?</source>
+        <location filename="../worldclock/addclockpopover.ui" line="42"/>
+        <source>What timezone do you want to add?</source>
+        <translation>Jaké časové pásmo chcete přidat?</translation>
     </message>
     <message>
-      <translation>Hledat</translation>
-      <location filename="../worldclock/addclockpopover.ui" line="71" />
-      <source>Search</source>
+        <location filename="../worldclock/addclockpopover.ui" line="71"/>
+        <source>Search</source>
+        <translation>Hledat</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>AlarmPopover</name>
     <message>
-      <translation>Opakovat</translation>
-      <location filename="../alarm/alarmpopover.ui" line="97" />
-      <source>Repeat on</source>
+        <location filename="../alarm/alarmpopover.ui" line="97"/>
+        <source>Repeat on</source>
+        <translation>Opakovat</translation>
     </message>
     <message>
-      <translation>Přidat budík</translation>
-      <location filename="../alarm/alarmpopover.ui" line="135" />
-      <source>Add Alarm</source>
+        <location filename="../alarm/alarmpopover.ui" line="135"/>
+        <source>Add Alarm</source>
+        <translation>Přidat budík</translation>
     </message>
     <message>
-      <translation>Upravit budík</translation>
-      <location filename="../alarm/alarmpopover.cpp" line="47" />
-      <source>Edit Alarm</source>
+        <location filename="../alarm/alarmpopover.cpp" line="47"/>
+        <source>Edit Alarm</source>
+        <translation>Upravit budík</translation>
     </message>
     <message>
-      <translation>Nový budík</translation>
-      <location filename="../alarm/alarmpopover.cpp" line="49" />
-      <source>New Alarm</source>
+        <location filename="../alarm/alarmpopover.cpp" line="49"/>
+        <source>New Alarm</source>
+        <translation>Nový budík</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>AlarmWidget</name>
     <message>
-      <translation>Opakovat každý den</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="111" />
-      <source>Repeats every day</source>
+        <location filename="../alarm/alarmwidget.cpp" line="111"/>
+        <source>Repeats every day</source>
+        <translation>Opakovat každý den</translation>
     </message>
     <message>
-      <translation>Opakovat o pracovních dnech</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="114" />
-      <source>Repeats on Weekdays</source>
+        <location filename="../alarm/alarmwidget.cpp" line="114"/>
+        <source>Repeats on Weekdays</source>
+        <translation>Opakovat o pracovních dnech</translation>
     </message>
     <message>
-      <translation>Opakovat o víkendu</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="117" />
-      <source>Repeats on Weekends</source>
+        <location filename="../alarm/alarmwidget.cpp" line="117"/>
+        <source>Repeats on Weekends</source>
+        <translation>Opakovat o víkendu</translation>
     </message>
     <message>
-      <translation>Opakovat na %1</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="132" />
-      <source>Repeats on %1</source>
+        <location filename="../alarm/alarmwidget.cpp" line="132"/>
+        <source>Repeats on %1</source>
+        <translation>Opakovat na %1</translation>
     </message>
     <message>
-      <translation>Podřimovat do %1</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="146" />
-      <source>Snoozed until %1</source>
+        <location filename="../alarm/alarmwidget.cpp" line="146"/>
+        <source>Snoozed until %1</source>
+        <translation>Podřimovat do %1</translation>
     </message>
     <message>
-      <translation>Pro tento budík</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="160" />
-      <source>For this alarm</source>
+        <location filename="../alarm/alarmwidget.cpp" line="160"/>
+        <source>For this alarm</source>
+        <translation>Pro tento budík</translation>
     </message>
     <message>
-      <translation>Upravit</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="161" />
-      <source>Edit</source>
+        <location filename="../alarm/alarmwidget.cpp" line="161"/>
+        <source>Edit</source>
+        <translation>Upravit</translation>
     </message>
     <message>
-      <translation>Odstranit</translation>
-      <location filename="../alarm/alarmwidget.cpp" line="170" />
-      <source>Remove</source>
+        <location filename="../alarm/alarmwidget.cpp" line="170"/>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Alarms</name>
     <message>
-      <translation>Přidat budík</translation>
-      <location filename="../alarm/alarms.ui" line="100" />
-      <source>Add Alarm</source>
+        <location filename="../alarm/alarms.ui" line="100"/>
+        <source>Add Alarm</source>
+        <translation>Přidat budík</translation>
     </message>
     <message>
-      <translation>Hmm...</translation>
-      <location filename="../alarm/alarms.ui" line="153" />
-      <source>Hmm...</source>
+        <location filename="../alarm/alarms.ui" line="153"/>
+        <source>Hmm...</source>
+        <translation>Hmm...</translation>
     </message>
     <message>
-      <translation>Vypadá to, že the24 služba nefunguje, a budíky bez ní nefungují.</translation>
-      <location filename="../alarm/alarms.ui" line="163" />
-      <source>Looks like the the24 service is not running, and alarms won't work without it.</source>
+        <location filename="../alarm/alarms.ui" line="163"/>
+        <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
+        <translation>Vypadá to, že the24 služba nefunguje, a budíky bez ní nefungují.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>ClockHelpers</name>
     <message>
-      <translation>d</translation>
-      <location filename="../clockhelpers.cpp" line="38" />
-      <source>d</source>
+        <source>d</source>
+        <translation type="vanished">d</translation>
     </message>
-  </context>
-  <context>
+    <message>
+        <location filename="../clockhelpers.cpp" line="38"/>
+        <source>d</source>
+        <comment>d for &quot;Day&quot; (1d)</comment>
+        <translation type="unfinished">d</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
-      <translation>the24</translation>
-      <location filename="../mainwindow.ui" line="14" />
-      <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147" />
-      <source>the24</source>
+        <location filename="../mainwindow.ui" line="14"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="146"/>
+        <source>the24</source>
+        <translation>the24</translation>
     </message>
     <message>
-      <translation>Světový čas</translation>
-      <location filename="../mainwindow.cpp" line="55" />
-      <source>World Clock</source>
+        <location filename="../mainwindow.cpp" line="59"/>
+        <source>World Clock</source>
+        <translation>Světový čas</translation>
     </message>
     <message>
-      <translation>Budíky</translation>
-      <location filename="../mainwindow.cpp" line="56" />
-      <source>Alarms</source>
+        <location filename="../mainwindow.cpp" line="60"/>
+        <source>Alarms</source>
+        <translation>Budíky</translation>
     </message>
     <message>
-      <translation>Stopky</translation>
-      <location filename="../mainwindow.cpp" line="57" />
-      <source>Stopwatch</source>
+        <location filename="../mainwindow.cpp" line="61"/>
+        <source>Stopwatch</source>
+        <translation>Stopky</translation>
     </message>
     <message>
-      <translation>Časovač</translation>
-      <location filename="../mainwindow.cpp" line="58" />
-      <source>Timer</source>
+        <location filename="../mainwindow.cpp" line="62"/>
+        <source>Timer</source>
+        <translation>Časovač</translation>
     </message>
     <message>
-      <translation>Nahlásit chybu</translation>
-      <source>File Bug</source>
+        <source>File Bug</source>
+        <translation type="vanished">Nahlásit chybu</translation>
     </message>
     <message>
-      <translation>Zdroje</translation>
-      <source>Sources</source>
+        <source>Sources</source>
+        <translation type="vanished">Zdroje</translation>
     </message>
     <message>
-      <translation>O the24</translation>
-      <source>About</source>
+        <source>About</source>
+        <translation type="vanished">O the24</translation>
     </message>
     <message>
-      <translation>Ukončit</translation>
-      <location filename="../mainwindow.ui" line="121" />
-      <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148" />
-      <source>Exit</source>
+        <location filename="../mainwindow.ui" line="117"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
+        <source>Exit</source>
+        <translation>Ukončit</translation>
     </message>
     <message>
-      <translation>Ctrl+Q</translation>
-      <location filename="../mainwindow.ui" line="124" />
-      <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150" />
-      <source>Ctrl+Q</source>
+        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="149"/>
+        <source>Ctrl+Q</source>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
-      <translation>Nápověda</translation>
-      <source>Help</source>
+        <source>Help</source>
+        <translation type="vanished">Nápověda</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>NewTimerPopover</name>
     <message>
-      <translation>Přidat časovač</translation>
-      <location filename="../timer/newtimerpopover.ui" line="35" />
-      <source>Add Timer</source>
+        <location filename="../timer/newtimerpopover.ui" line="35"/>
+        <source>Add Timer</source>
+        <translation>Přidat časovač</translation>
     </message>
     <message>
-      <translation>Spustit časovač</translation>
-      <location filename="../timer/newtimerpopover.ui" line="45" />
-      <source>Start Timer</source>
+        <location filename="../timer/newtimerpopover.ui" line="45"/>
+        <source>Start Timer</source>
+        <translation>Spustit časovač</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Stopwatch</name>
     <message>
-      <translation>Spustit stopky</translation>
-      <location filename="../stopwatch/stopwatch.ui" line="100" />
-      <source>Start Stopwatch</source>
+        <location filename="../stopwatch/stopwatch.ui" line="100"/>
+        <source>Start Stopwatch</source>
+        <translation>Spustit stopky</translation>
     </message>
     <message>
-      <translation>Hmm...</translation>
-      <location filename="../stopwatch/stopwatch.ui" line="153" />
-      <source>Hmm...</source>
+        <location filename="../stopwatch/stopwatch.ui" line="153"/>
+        <source>Hmm...</source>
+        <translation>Hmm...</translation>
     </message>
     <message>
-      <translation>Vypadá to, že the24 služba nefunguje, a stopky bez ní nefungují.</translation>
-      <location filename="../stopwatch/stopwatch.ui" line="163" />
-      <source>Looks like the the24 service is not running, and stopwatches won't work without it.</source>
+        <location filename="../stopwatch/stopwatch.ui" line="163"/>
+        <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
+        <translation>Vypadá to, že the24 služba nefunguje, a stopky bez ní nefungují.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>StopwatchWidget</name>
     <message>
-      <translation>Resetovat</translation>
-      <location filename="../stopwatch/stopwatchwidget.ui" line="74" />
-      <source>Reset</source>
+        <location filename="../stopwatch/stopwatchwidget.ui" line="74"/>
+        <source>Reset</source>
+        <translation>Resetovat</translation>
     </message>
     <message>
-      <translation>Odstranit</translation>
-      <location filename="../stopwatch/stopwatchwidget.ui" line="98" />
-      <source>Remove</source>
+        <location filename="../stopwatch/stopwatchwidget.ui" line="98"/>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>Timer</name>
     <message>
-      <translation>Přidat časovač</translation>
-      <location filename="../timer/timer.ui" line="100" />
-      <source>Add Timer</source>
+        <location filename="../timer/timer.ui" line="100"/>
+        <source>Add Timer</source>
+        <translation>Přidat časovač</translation>
     </message>
     <message>
-      <translation>Spustit časovač</translation>
-      <location filename="../timer/timer.ui" line="156" />
-      <source>Start a timer</source>
+        <location filename="../timer/timer.ui" line="156"/>
+        <source>Start a timer</source>
+        <translation>Spustit časovač</translation>
     </message>
     <message>
-      <translation>15 min</translation>
-      <location filename="../timer/timer.ui" line="203" />
-      <source>15 min</source>
+        <location filename="../timer/timer.ui" line="203"/>
+        <source>15 min</source>
+        <translation>15 min</translation>
     </message>
     <message>
-      <translation>1 hod</translation>
-      <location filename="../timer/timer.ui" line="210" />
-      <source>2 hr</source>
+        <location filename="../timer/timer.ui" line="210"/>
+        <source>2 hr</source>
+        <translation>1 hod</translation>
     </message>
     <message>
-      <translation>1 hod</translation>
-      <location filename="../timer/timer.ui" line="224" />
-      <source>1 hr</source>
+        <location filename="../timer/timer.ui" line="224"/>
+        <source>1 hr</source>
+        <translation>1 hod</translation>
     </message>
     <message>
-      <translation>1 min</translation>
-      <location filename="../timer/timer.ui" line="231" />
-      <source>1 min</source>
+        <location filename="../timer/timer.ui" line="231"/>
+        <source>1 min</source>
+        <translation>1 min</translation>
     </message>
     <message>
-      <translation>2 min</translation>
-      <location filename="../timer/timer.ui" line="238" />
-      <source>2 min</source>
+        <location filename="../timer/timer.ui" line="238"/>
+        <source>2 min</source>
+        <translation>2 min</translation>
     </message>
     <message>
-      <translation>30 min</translation>
-      <location filename="../timer/timer.ui" line="245" />
-      <source>30 min</source>
+        <location filename="../timer/timer.ui" line="245"/>
+        <source>30 min</source>
+        <translation>30 min</translation>
     </message>
     <message>
-      <translation>5 min</translation>
-      <location filename="../timer/timer.ui" line="252" />
-      <source>5 min</source>
+        <location filename="../timer/timer.ui" line="252"/>
+        <source>5 min</source>
+        <translation>5 min</translation>
     </message>
     <message>
-      <translation>10 min</translation>
-      <location filename="../timer/timer.ui" line="259" />
-      <source>10 min</source>
+        <location filename="../timer/timer.ui" line="259"/>
+        <source>10 min</source>
+        <translation>10 min</translation>
     </message>
     <message>
-      <translation>Něco jiného</translation>
-      <location filename="../timer/timer.ui" line="217" />
-      <source>Something Else</source>
+        <location filename="../timer/timer.ui" line="217"/>
+        <source>Something Else</source>
+        <translation>Něco jiného</translation>
     </message>
     <message>
-      <translation>DOBA TRVÁNÍ</translation>
-      <location filename="../timer/timer.ui" line="272" />
-      <source>TIMER DURATION</source>
+        <location filename="../timer/timer.ui" line="272"/>
+        <source>TIMER DURATION</source>
+        <translation>DOBA TRVÁNÍ</translation>
     </message>
     <message>
-      <translation>Hmm...</translation>
-      <location filename="../timer/timer.ui" line="332" />
-      <source>Hmm...</source>
+        <location filename="../timer/timer.ui" line="332"/>
+        <source>Hmm...</source>
+        <translation>Hmm...</translation>
     </message>
     <message>
-      <translation>Vypadá to, že the24 služba nefunguje, a časovače bez ní nefungují.</translation>
-      <location filename="../timer/timer.ui" line="342" />
-      <source>Looks like the the24 service is not running, and timers won't work without it.</source>
+        <location filename="../timer/timer.ui" line="342"/>
+        <source>Looks like the the24 service is not running, and timers won&apos;t work without it.</source>
+        <translation>Vypadá to, že the24 služba nefunguje, a časovače bez ní nefungují.</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>TimerWidget</name>
     <message>
-      <translation>Resetovat</translation>
-      <location filename="../timer/timerwidget.ui" line="74" />
-      <source>Reset</source>
+        <location filename="../timer/timerwidget.ui" line="74"/>
+        <source>Reset</source>
+        <translation>Resetovat</translation>
     </message>
     <message>
-      <translation>Odstranit</translation>
-      <location filename="../timer/timerwidget.ui" line="98" />
-      <source>Remove</source>
+        <location filename="../timer/timerwidget.ui" line="98"/>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>WorldClock</name>
     <message>
-      <translation>Přidat hodiny</translation>
-      <location filename="../worldclock/worldclock.ui" line="78" />
-      <source>Add Clock</source>
+        <location filename="../worldclock/worldclock.ui" line="78"/>
+        <source>Add Clock</source>
+        <translation>Přidat hodiny</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>WorldClockWidget</name>
     <message>
-      <translation>Pro tyto hodiny</translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="67" />
-      <source>For this clock</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="67"/>
+        <source>For this clock</source>
+        <translation>Pro tyto hodiny</translation>
     </message>
     <message>
-      <translation>Odstranit</translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="68" />
-      <source>Remove</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="68"/>
+        <source>Remove</source>
+        <translation>Odstranit</translation>
     </message>
     <message>
-      <translation>Aktuální časové pásmo</translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="96" />
-      <source>Current Timezone</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="96"/>
+        <source>Current Timezone</source>
+        <translation>Aktuální časové pásmo</translation>
     </message>
     <message numerus="yes">
-      <translation>
-        <numerusform>%n hodina pozadu</numerusform>
-        <numerusform>%n hodiny pozadu</numerusform>
-        <numerusform>%n hodin pozadu</numerusform>
-      </translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="101" />
-      <source>%n hours behind</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="101"/>
+        <source>%n hours behind</source>
+        <translation>
+            <numerusform>%n hodina pozadu</numerusform>
+            <numerusform>%n hodiny pozadu</numerusform>
+            <numerusform>%n hodin pozadu</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
-      <translation>
-        <numerusform>%n hodina popředu</numerusform>
-        <numerusform>%n hodiny popředu</numerusform>
-        <numerusform>%n hodin popředu</numerusform>
-      </translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="103" />
-      <source>%n hours ahead</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="103"/>
+        <source>%n hours ahead</source>
+        <translation>
+            <numerusform>%n hodina popředu</numerusform>
+            <numerusform>%n hodiny popředu</numerusform>
+            <numerusform>%n hodin popředu</numerusform>
+        </translation>
     </message>
     <message>
-      <translation>%1 pozadu</translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="107" />
-      <source>%1 behind</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="107"/>
+        <source>%1 behind</source>
+        <translation>%1 pozadu</translation>
     </message>
     <message>
-      <translation>%1 popředu</translation>
-      <location filename="../worldclock/worldclockwidget.cpp" line="109" />
-      <source>%1 ahead</source>
+        <location filename="../worldclock/worldclockwidget.cpp" line="109"/>
+        <source>%1 ahead</source>
+        <translation>%1 popředu</translation>
     </message>
-  </context>
-  <context>
+</context>
+<context>
     <name>main</name>
     <message>
-      <translation>Hodiny</translation>
-      <location filename="../main.cpp" line="37" />
-      <source>Clock</source>
+        <location filename="../main.cpp" line="36"/>
+        <source>Clock</source>
+        <translation>Hodiny</translation>
     </message>
-  </context>
+</context>
 </TS>

@@ -116,27 +116,27 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="146"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="55"/>
+        <location filename="../mainwindow.cpp" line="59"/>
         <source>World Clock</source>
         <translation>Dünya Saati</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="56"/>
+        <location filename="../mainwindow.cpp" line="60"/>
         <source>Alarms</source>
         <translation>Alarmlar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="57"/>
+        <location filename="../mainwindow.cpp" line="61"/>
         <source>Stopwatch</source>
         <translation>Kronometre</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="58"/>
+        <location filename="../mainwindow.cpp" line="62"/>
         <source>Timer</source>
         <translation>Zamanlayıcı</translation>
     </message>
@@ -153,14 +153,14 @@
         <translation type="vanished">Hakkında</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="121"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="148"/>
+        <location filename="../mainwindow.ui" line="117"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>Exit</source>
         <translation>Vazgeç</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="124"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="150"/>
+        <location filename="../mainwindow.ui" line="120"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="149"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>
@@ -352,7 +352,7 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../main.cpp" line="37"/>
+        <location filename="../main.cpp" line="36"/>
         <source>Clock</source>
         <translation>Saat</translation>
     </message>

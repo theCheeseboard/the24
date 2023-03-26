@@ -23,6 +23,7 @@
 #include <QDesktopServices>
 #include <QMenu>
 #include <QUrl>
+#include <tapplication.h>
 #include <tcsdtools.h>
 #include <thelpmenu.h>
 
@@ -44,11 +45,14 @@ MainWindow::MainWindow(QWidget* parent) :
         ui->rightCsdLayout->addWidget(d->csd.csdBoxForWidget(this));
     }
 
+    this->setWindowIcon(tApplication::applicationIcon());
+
     QMenu* menu = new QMenu(this);
     menu->addMenu(new tHelpMenu(this));
     menu->addAction(ui->actionExit);
 
     ui->menuButton->setIconSize(SC_DPI_T(QSize(24, 24), QSize));
+    ui->menuButton->setIcon(tApplication::applicationIcon());
     ui->menuButton->setMenu(menu);
     ui->stackedWidget->setCurrentAnimation(tStackedWidget::SlideHorizontal);
 

@@ -1,6 +1,6 @@
 project(the24 VERSION 1.0.0 LANGUAGES CXX)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(libcontemporary REQUIRED)
 
 set(SOURCES
@@ -68,9 +68,9 @@ set_target_properties(the24 PROPERTIES
 cntp_init(the24 20)
 cntp_translate(the24)
 cntp_target_name(the24 "the24")
-#cntp_app_icon(the24
-#    BASEICON icons/baseicon.svg
-#    BASEICON_MAC icons/baseicon-mac.svg)
+cntp_app_icon(the24
+    BASEICON icons/baseicon.svg
+)
 cntp_target_desktop_file(the24
     DESKTOP_FILE com.vicr123.the24.desktop
 #    BLUEPRINT_DESKTOP_FILE com.vicr123.the24_blueprint.desktop
@@ -78,7 +78,7 @@ cntp_target_desktop_file(the24
 cntp_defaults_file(the24
     DEFAULTS_FILE the24.conf)
 
-target_link_libraries(the24 Qt6::Widgets libcontemporary)
+target_link_libraries(the24 Qt::Widgets libcontemporary)
 
 install(TARGETS the24
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

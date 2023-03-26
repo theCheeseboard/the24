@@ -73,10 +73,6 @@
          <property name="text">
           <string/>
          </property>
-         <property name="icon">
-          <iconset theme="the24" resource="resources.qrc">
-           <normaloff>:/icons/the24.svg</normaloff>:/icons/the24.svg</iconset>
-         </property>
          <property name="popupMode">
           <enum>QToolButton::InstantPopup</enum>
          </property>
@@ -136,6 +132,12 @@
    </slots>
   </customwidget>
   <customwidget>
+   <class>tWindowTabber</class>
+   <extends>QWidget</extends>
+   <header location="global">twindowtabber.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
    <class>WorldClock</class>
    <extends>QWidget</extends>
    <header>worldclock/worldclock.h</header>
@@ -157,12 +159,6 @@
    <class>Timer</class>
    <extends>QWidget</extends>
    <header>timer/timer.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>tWindowTabber</class>
-   <extends>QWidget</extends>
-   <header location="global">twindowtabber.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
