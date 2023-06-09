@@ -2,8 +2,7 @@
 
 ---
 <p align="center">
-<a href="https://travis-ci.org/vicr123/theheartbeat" target="_blank"><img src="https://img.shields.io/travis/vicr123/theheartbeat/master?label=Linux&style=for-the-badge" alt="Travis CI Build Status" /></a>
-<img src="https://img.shields.io/github/license/vicr123/theheartbeat?style=for-the-badge" />
+<img src="https://img.shields.io/github/license/vicr123/the24?style=for-the-badge" />
 </p>
 
 the24 is a digital clock with alarms, stopwatches and timers.
@@ -11,14 +10,14 @@ the24 is a digital clock with alarms, stopwatches and timers.
 ---
 
 # Dependencies
-- Qt 5
+- Qt 6
   - Qt Core
   - Qt GUI
   - Qt Widgets
   - Qt SVG
   - Qt SQL
   - Qt Multimedia
-- [the-libs](https://github.com/vicr123/the-libs)
+- [libcontemporary](https://github.com/theCheeseboard/libcontemporary)
 
 # Get
 If you're using a supported operating system, we may have binaries available:
@@ -30,18 +29,18 @@ If you're using a supported operating system, we may have binaries available:
 ## Build
 Run the following commands in your terminal. 
 ```
-qmake
-make
+cmake -B build -S .
+cmake --build build
 ```
 
 ## Install
 On Linux, run the following command in your terminal (with superuser permissions)
 ```
-make install
+cmake --install build
 ```
 
 ---
 
-> © Victor Tran, 2020. This project is licensed under the GNU General Public License, version 3, or at your option, any later version.
+> © Victor Tran, 2023. This project is licensed under the GNU General Public License, version 3, or at your option, any later version.
 > 
 > Check the [LICENSE](LICENSE) file for more information.
