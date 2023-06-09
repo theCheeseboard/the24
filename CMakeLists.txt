@@ -9,6 +9,5 @@ ENDIF()
 
 find_package(QT REQUIRED NAMES Qt6)
 
-#add_subdirectory(libtheslate)
 add_subdirectory(application)
 add_subdirectory(daemon)

@@ -40,6 +40,7 @@ int main(int argc, char* argv[]) {
     a.setOrganizationName("theSuite");
     a.setApplicationName(T_APPMETA_READABLE_NAME);
     a.setDesktopFileName(T_APPMETA_DESKTOP_ID);
+    a.setApplicationUrl(tApplication::HelpContents, QUrl("http://help.vicr123.com/docs/the24/intro"));
     a.setApplicationUrl(tApplication::Sources, QUrl("http://github.com/vicr123/the24"));
     a.setApplicationUrl(tApplication::FileBug, QUrl("http://github.com/vicr123/the24/issues"));
 
