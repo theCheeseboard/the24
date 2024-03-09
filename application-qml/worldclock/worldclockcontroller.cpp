@@ -90,10 +90,16 @@ QVariant WorldClockController::data(const QModelIndex& index, int role) const {
 }
 
 QHash<int, QByteArray> WorldClockController::roleNames() const {
-    QHash<int, QByteArray> roles;
-    roles[TimezoneRole] = "timezone";
-    roles[RemovableRole] = "removable";
-    return roles;
+    return {
+        {TimezoneRole,  "timezone" },
+        {RemovableRole, "removable"}
+    };
+}
+
+void WorldClockController::addClock(QString timezone) {
+    QStringList clocks = d->settings.delimitedList("WorldClock/timezones");
+    clocks.append(timezone);
+    d->settings.setDelimitedList("WorldClock/timezones", clocks);
 }
 
 void WorldClockController::removeClock(QString timezone) {

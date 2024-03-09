@@ -16,7 +16,7 @@ class WorldClockController : public QAbstractListModel {
         ~WorldClockController();
 
         enum WorldClockControllerRoles {
-            TimezoneRole = Qt::UserRole + 1,
+            TimezoneRole = Qt::UserRole,
             RemovableRole
         };
 
@@ -25,6 +25,7 @@ class WorldClockController : public QAbstractListModel {
         QVariant data(const QModelIndex& index, int role) const override;
         QHash<int, QByteArray> roleNames() const override;
 
+        Q_SCRIPTABLE void addClock(QString timezone);
         Q_SCRIPTABLE void removeClock(QString timezone);
 
     private:

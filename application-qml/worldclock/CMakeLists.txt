@@ -4,9 +4,12 @@ qt_add_qml_module(the24-qml-worldclock
     VERSION 1.0
     QML_FILES
         WorldClocksPane.qml
+        WorldClockDisplay.qml
+        AddClockPopup.qml
     SOURCES
         worldclockcontroller.h worldclockcontroller.cpp
         worldclock.h worldclock.cpp
+        timezonesmodel.h timezonesmodel.cpp
 )
 
 target_link_libraries(the24-qml-worldclock

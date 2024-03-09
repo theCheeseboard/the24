@@ -5,6 +5,7 @@ import com.vicr123.Contemporary
 import Contemporary
 import Qt.labs.platform as Labs
 import worldclock as WorldClock
+import alarm as Alarm
 
 ContemporaryWindow {
     id: window
@@ -72,7 +73,7 @@ ContemporaryWindow {
         currentAnimation: Pager.Animation.SlideHorizontal
         anchors.fill: parent
 
-        WorldClock.WorldClocksPane {
-        }
+        WorldClock.WorldClocksPane { }
+        Alarm.AlarmsPane { }
     }
 }

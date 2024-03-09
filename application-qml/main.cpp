@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
         &a,
         []() {
         QCoreApplication::exit(-1);
-        },
+    },
         Qt::QueuedConnection);
     engine.load(url);
 

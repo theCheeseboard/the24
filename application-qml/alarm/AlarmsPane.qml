@@ -5,10 +5,6 @@ import com.vicr123.Contemporary
 import Contemporary
 
 Item {
-    WorldClockController {
-        id: controller
-    }
-
     Grandstand {
         id: grandstand
         anchors.top: parent.top
@@ -17,8 +13,12 @@ Item {
         innerTopMargin: SafeZone.top
         z: 20
 
-        text: qsTr("World Clock")
+        text: qsTr("Alarms")
         color: Contemporary.calculateLayer(1)
+    }
+
+    AlarmModel {
+        id: model
     }
 
     ListView {
@@ -31,15 +31,14 @@ Item {
         anchors.topMargin: 6
         spacing: 6
 
-        model: controller
+        model: model
 
         ScrollBar.vertical: ScrollBar {
             active: true
         }
 
-        delegate: WorldClockDisplay {
+        delegate: AlarmDisplay {
             implicitWidth: list.width
-            onRemove: (timezone) => controller.removeClock(timezone)
         }
 
         footer: Item {
@@ -52,20 +51,8 @@ Item {
                 anchors.centerIn: parent
                 anchors.bottom: parent.top
                 implicitWidth: 600
-                text: qsTr("Add Clock")
+                text: qsTr("Add Alarm")
                 icon.name: "list-add"
-
-                AddClockPopup {
-                    id: addClockPopup
-                    x: Math.round((parent.width - width) / 2)
-                    y: -height
-                    width: 400
-                    height: 400
-
-                    onAdd: (timezone) => controller.addClock(timezone)
-                }
-
-                onClicked: addClockPopup.open()
             }
         }
         footerPositioning: ListView.PullBackFooter
