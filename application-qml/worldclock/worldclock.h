@@ -10,6 +10,7 @@ class WorldClock : public QObject {
         Q_OBJECT
         Q_PROPERTY(QString timezone READ timezone WRITE setTimezone NOTIFY currentTimezoneChanged)
         Q_PROPERTY(QDateTime currentDateTime READ currentDateTime NOTIFY currentDateTimeChanged)
+        Q_PROPERTY(QTime currentTime READ currentTime NOTIFY currentDateTimeChanged)
         Q_PROPERTY(QString currentDateTimeString READ currentDateTimeString NOTIFY currentDateTimeChanged)
         Q_PROPERTY(QString dateDifferenceString READ dateDifferenceString NOTIFY currentDateTimeChanged)
         Q_PROPERTY(QString informationString READ informationString NOTIFY informationStringChanged)
@@ -24,6 +25,7 @@ class WorldClock : public QObject {
         void setTimezone(QString timezone);
 
         QDateTime currentDateTime();
+        QTime currentTime();
         QString currentDateTimeString();
         QString dateDifferenceString();
         QString informationString();

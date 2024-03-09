@@ -38,6 +38,10 @@ QDateTime WorldClock::currentDateTime() {
     return date;
 }
 
+QTime WorldClock::currentTime() {
+    return this->currentDateTime().time();
+}
+
 QString WorldClock::currentDateTimeString() {
     return QLocale().toString(this->currentDateTime().time(), QLocale::ShortFormat);
 }

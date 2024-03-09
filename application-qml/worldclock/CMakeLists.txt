@@ -10,6 +10,7 @@ qt_add_qml_module(the24-qml-worldclock
         worldclockcontroller.h worldclockcontroller.cpp
         worldclock.h worldclock.cpp
         timezonesmodel.h timezonesmodel.cpp
+        SOURCES analogueclock.h analogueclock.cpp
 )
 
 target_link_libraries(the24-qml-worldclock

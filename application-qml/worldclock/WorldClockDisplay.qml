@@ -50,7 +50,7 @@ Item {
                 Label {
                     anchors.top: timeLabel.bottom
                     anchors.left: parent.left
-                    anchors.right: parent.right
+                    anchors.right: clock.left
                     anchors.topMargin: 6
                     anchors.leftMargin: 9
                     anchors.rightMargin: 9
@@ -61,10 +61,26 @@ Item {
                     id: dateDifferenceLabel
                     anchors.top: timeLabel.top
                     anchors.left: timeLabel.right
-                    anchors.right: parent.right
+                    anchors.right: clock.left
                     anchors.leftMargin: 6
 
                     text: itemController.dateDifferenceString
+                }
+
+                AnalogueClock {
+                    id: clock
+                    anchors.top: parent.top
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    anchors.topMargin: 9
+                    anchors.bottomMargin: 9
+                    anchors.leftMargin: 9
+                    anchors.rightMargin: 9
+                    width: clock.height
+
+                    time: itemController.currentTime
+                    backgroundColor: Contemporary.calculateLayer(1)
+                    accentColor: Contemporary.accent
                 }
             }
 
