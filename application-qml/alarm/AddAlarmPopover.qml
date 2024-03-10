@@ -9,6 +9,7 @@ Drawer {
     interactive: false
 
     property string objectPath
+    readonly property bool is24hour: false
 
     Grandstand {
         id: grandstand
@@ -36,12 +37,65 @@ Drawer {
         spacing: 6
 
         GroupBox {
+            id: offsetGroup
             Layout.alignment: Qt.AlignHCenter
             title: qsTr("Alarm Time")
             implicitWidth: 600
 
-            Label {
-                text: "Alarm Time"
+            Row {
+                anchors.horizontalCenter: parent.horizontalCenter
+                spacing: 6
+
+                Tumbler {
+                    id: offsetHour
+                    model: root.is24hour ? 24 : 12
+                    font.pointSize: 15
+                    delegate: Label {
+                        text: (index == 0 && !root.is24hour ? 12 : index).toLocaleString('f').padStart(2, Qt.locale().zeroDigit)
+                        opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetHour.visibleItemCount / 2)
+                        horizontalAlignment: Qt.AlignHCenter
+                        verticalAlignment: Qt.AlignVCenter
+                        required property int index
+                    }
+                    currentIndex: itemController.offsetHour % (root.is24hour ? 24 : 12)
+                    onMovingChanged: offsetGroup.updateOffset()
+                    onCurrentIndexChanged: offsetGroup.updateOffset()
+                }
+                Tumbler {
+                    id: offsetMinute
+                    model: 60
+                    font.pointSize: 15
+                    delegate: Label {
+                        text: index.toLocaleString('f').padStart(2, Qt.locale().zeroDigit)
+                        opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetMinute.visibleItemCount / 2)
+                        horizontalAlignment: Qt.AlignHCenter
+                        verticalAlignment: Qt.AlignVCenter
+                        required property int index
+                    }
+                    currentIndex: itemController.offsetMinute
+                    onMovingChanged: offsetGroup.updateOffset()
+                    onCurrentIndexChanged: offsetGroup.updateOffset()
+                }
+                Tumbler {
+                    id: offsetAmPm
+                    model: ["AM", "PM"]
+                    font.pointSize: 15
+                    visible: !root.is24hour
+                    currentIndex: itemController.offsetHour >= 12 ? 1 : 0
+                    onMovingChanged: offsetGroup.updateOffset()
+                    onCurrentIndexChanged: offsetGroup.updateOffset()
+                }
+            }
+
+            function updateOffset() {
+                if (offsetAmPm.moving || offsetHour.moving || offsetMinute.moving) return;
+
+                itemController.offsetMinute = offsetMinute.currentIndex
+                if (root.is24hour) {
+                    itemController.offsetHour = offsetHour.currentIndex;
+                } else {
+                    itemController.offsetHour = offsetHour.currentIndex + offsetAmPm.currentIndex * 12;
+                }
             }
         }
 
@@ -78,7 +132,7 @@ Drawer {
                             text: Qt.locale().dayName((Qt.locale().firstDayOfWeek + index) % 7, Locale.NarrowFormat)
                             checkable: true
 
-                            // firstDayOfWeek returns 0 for Sunday, but is represented by 0x40 in itemController
+                            // firstDayOfWeek returns 0 for Sunday, but is represented by 0x40 (2^6) in itemController
                             // Add 6 to displace every day by 1 so that Sunday becomes day #6
                             checked: itemController.repeat & Math.pow(2, (Qt.locale().firstDayOfWeek + index + 6) % 7)
                             onCheckedChanged: itemController.setRepeatDay((Qt.locale().firstDayOfWeek + index + 6) % 7, dayButton.checked)
@@ -87,7 +141,6 @@ Drawer {
                     }
                 }
             }
-
         }
 
         Button {

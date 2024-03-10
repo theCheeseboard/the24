@@ -11,6 +11,9 @@ struct AlarmPaneControllerPrivate {
         qulonglong offset = 0;
         qlonglong snoozeOffset = -1;
 
+        QTimer* setOffsetDebounce;
+        qulonglong pendingOffset = offset;
+
         enum Day {
             None = 0,
             Monday = 0x1,
@@ -32,6 +35,21 @@ struct AlarmPaneControllerPrivate {
 
 AlarmPaneController::AlarmPaneController(QObject* parent) :
     QObject{parent}, d{new AlarmPaneControllerPrivate()} {
+    d->offset = QTime::currentTime().msecsSinceStartOfDay();
+
+    // Debounce the setOffset call because QML sets the hour in two different controls
+    d->setOffsetDebounce = new QTimer(this);
+    d->setOffsetDebounce->setInterval(100);
+    d->setOffsetDebounce->setSingleShot(true);
+    connect(d->setOffsetDebounce, &QTimer::timeout, this, [this] {
+        if (!d->interface) {
+            d->offset = d->pendingOffset;
+            emit offsetChanged();
+            return;
+        }
+
+        d->interface->asyncCall("SetOffset", d->pendingOffset);
+    });
 }
 
 AlarmPaneController::~AlarmPaneController() {
@@ -83,10 +101,34 @@ qulonglong AlarmPaneController::offset() {
 }
 
 void AlarmPaneController::setOffset(qulonglong offset) {
+    // Debounce the setOffset call because QML sets the hour in two different controls
+    d->pendingOffset = offset;
+    d->setOffsetDebounce->stop();
+    d->setOffsetDebounce->start();
 }
 
 QString AlarmPaneController::offsetString() {
     return QTime::fromMSecsSinceStartOfDay(d->offset).toString("hh:mm");
+}
+
+int AlarmPaneController::offsetHour() {
+    return QTime::fromMSecsSinceStartOfDay(d->offset).hour();
+}
+
+void AlarmPaneController::setOffsetHour(int offsetHour) {
+    auto time = QTime::fromMSecsSinceStartOfDay(d->pendingOffset);
+    time.setHMS(offsetHour, time.minute(), time.second(), time.msec());
+    this->setOffset(time.msecsSinceStartOfDay());
+}
+
+int AlarmPaneController::offsetMinute() {
+    return QTime::fromMSecsSinceStartOfDay(d->offset).minute();
+}
+
+void AlarmPaneController::setOffsetMinute(int offsetMinute) {
+    auto time = QTime::fromMSecsSinceStartOfDay(d->pendingOffset);
+    time.setHMS(time.hour(), offsetMinute, time.second(), time.msec());
+    this->setOffset(time.msecsSinceStartOfDay());
 }
 
 qlonglong AlarmPaneController::snoozeOffset() {
@@ -147,9 +189,10 @@ void AlarmPaneController::setRepeatDay(quint8 day, bool on) {
         // Update the private member and notify
         d->repeats = repeats;
         emit repeatChanged();
-    } else {
-        d->interface->asyncCall("SetRepeat", static_cast<qulonglong>(repeats));
+        return;
     }
+
+    d->interface->asyncCall("SetRepeat", static_cast<qulonglong>(repeats));
 }
 
 QCoro::Task<> AlarmPaneController::updateActive() {
@@ -160,6 +203,7 @@ QCoro::Task<> AlarmPaneController::updateActive() {
 
 QCoro::Task<> AlarmPaneController::updateOffset() {
     auto offset = co_await d->interface->asyncCall("Offset");
+    if (d->pendingOffset == d->offset) d->pendingOffset = d->offset;
     d->offset = offset.arguments().constFirst().toULongLong();
     emit offsetChanged();
 }

@@ -131,7 +131,7 @@ Item {
     AddAlarmPopover {
         id: addAlarmPopover
         edge: Qt.BottomEdge
-        height: Math.max(300, root.Window.height - 300)
+        height: Math.max(500, root.Window.height - 300)
         width: root.Window.width
     }
 }

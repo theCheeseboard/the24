@@ -12,6 +12,8 @@ class AlarmPaneController : public QObject {
         Q_PROPERTY(bool active READ active WRITE setActive NOTIFY activeChanged)
         Q_PROPERTY(qulonglong offset READ offset WRITE setOffset NOTIFY offsetChanged)
         Q_PROPERTY(QString offsetString READ offsetString NOTIFY offsetChanged)
+        Q_PROPERTY(int offsetHour READ offsetHour WRITE setOffsetHour NOTIFY offsetChanged)
+        Q_PROPERTY(int offsetMinute READ offsetMinute WRITE setOffsetMinute NOTIFY offsetChanged)
         Q_PROPERTY(qlonglong snoozeOffset READ snoozeOffset NOTIFY snoozeOffsetChanged)
         Q_PROPERTY(QString snoozeOffsetString READ snoozeOffsetString NOTIFY snoozeOffsetChanged)
         Q_PROPERTY(quint8 repeat READ repeat NOTIFY repeatChanged)
@@ -30,6 +32,10 @@ class AlarmPaneController : public QObject {
         qulonglong offset();
         void setOffset(qulonglong offset);
         QString offsetString();
+        int offsetHour();
+        void setOffsetHour(int offsetHour);
+        int offsetMinute();
+        void setOffsetMinute(int offsetMinute);
 
         qlonglong snoozeOffset();
         QString snoozeOffsetString();
