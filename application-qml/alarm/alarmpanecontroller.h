@@ -43,6 +43,7 @@ class AlarmPaneController : public QObject {
         quint8 repeat();
         QString repeatString();
 
+        Q_SCRIPTABLE void addAsNewAlarm();
         Q_SCRIPTABLE void remove();
         Q_SCRIPTABLE void setRepeatDay(quint8 day, bool on);
 

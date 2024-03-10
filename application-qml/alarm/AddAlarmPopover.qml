@@ -9,7 +9,7 @@ Drawer {
     interactive: false
 
     property string objectPath
-    readonly property bool is24hour: false
+    readonly property bool is24hour: !Qt.locale().timeFormat(Locale.ShortFormat).includes("AP")
 
     Grandstand {
         id: grandstand
@@ -51,7 +51,7 @@ Drawer {
                     model: root.is24hour ? 24 : 12
                     font.pointSize: 15
                     delegate: Label {
-                        text: (index == 0 && !root.is24hour ? 12 : index).toLocaleString('f').padStart(2, Qt.locale().zeroDigit)
+                        text: Qt.locale().toString(index == 0 && !root.is24hour ? 12 : index).padStart(2, Qt.locale().zeroDigit)
                         opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetHour.visibleItemCount / 2)
                         horizontalAlignment: Qt.AlignHCenter
                         verticalAlignment: Qt.AlignVCenter
@@ -66,7 +66,7 @@ Drawer {
                     model: 60
                     font.pointSize: 15
                     delegate: Label {
-                        text: index.toLocaleString('f').padStart(2, Qt.locale().zeroDigit)
+                        text: Qt.locale().toString(index).padStart(2, Qt.locale().zeroDigit)
                         opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetMinute.visibleItemCount / 2)
                         horizontalAlignment: Qt.AlignHCenter
                         verticalAlignment: Qt.AlignVCenter
@@ -78,7 +78,7 @@ Drawer {
                 }
                 Tumbler {
                     id: offsetAmPm
-                    model: ["AM", "PM"]
+                    model: [Qt.locale().amText, Qt.locale().pmText]
                     font.pointSize: 15
                     visible: !root.is24hour
                     currentIndex: itemController.offsetHour >= 12 ? 1 : 0
@@ -149,6 +149,11 @@ Drawer {
             text: qsTr("Add Alarm")
             icon.name: "list-add"
             visible: root.objectPath === ""
+
+            onClicked: () => {
+                itemController.addAsNewAlarm()
+                root.visible = false
+            }
         }
 
         Item {

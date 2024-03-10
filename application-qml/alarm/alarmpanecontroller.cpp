@@ -108,7 +108,7 @@ void AlarmPaneController::setOffset(qulonglong offset) {
 }
 
 QString AlarmPaneController::offsetString() {
-    return QTime::fromMSecsSinceStartOfDay(d->offset).toString("hh:mm");
+    return QLocale().toString(QTime::fromMSecsSinceStartOfDay(d->offset), QLocale::ShortFormat);
 }
 
 int AlarmPaneController::offsetHour() {
@@ -176,6 +176,13 @@ QString AlarmPaneController::repeatString() {
         }
         return tr("Repeats on %1").arg(l.createSeparatedList(repeatsList));
     }
+}
+
+void AlarmPaneController::addAsNewAlarm() {
+    auto message = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "AddAlarm");
+    message.setArguments({d->offset,
+        static_cast<qulonglong>(d->repeats)});
+    QDBusConnection::sessionBus().asyncCall(message);
 }
 
 void AlarmPaneController::remove() {
