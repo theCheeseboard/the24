@@ -38,6 +38,7 @@ class AlarmPaneController : public QObject {
         QString repeatString();
 
         Q_SCRIPTABLE void remove();
+        Q_SCRIPTABLE void setRepeatDay(quint8 day, bool on);
 
     private slots:
         QCoro::Task<> updateActive();

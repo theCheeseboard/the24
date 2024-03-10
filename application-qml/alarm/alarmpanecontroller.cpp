@@ -49,22 +49,25 @@ void AlarmPaneController::setObjectPath(QString objectPath) {
         QDBusConnection::sessionBus().disconnect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "SnoozeOffsetChanged", this, SLOT(updateSnoozeOffset()));
         QDBusConnection::sessionBus().disconnect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "RepeatChanged", this, SLOT(updateRepeat()));
         d->interface->deleteLater();
+        d->interface = nullptr;
     }
 
     d->objectPath = objectPath;
 
-    d->interface = new QDBusInterface("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", QDBusConnection::sessionBus(), this);
-    QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "ActiveChanged", this, SLOT(updateActive()));
-    QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "OffsetChanged", this, SLOT(updateOffset()));
-    QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "SnoozeOffsetChanged", this, SLOT(updateSnoozeOffset()));
-    QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "RepeatChanged", this, SLOT(updateRepeat()));
+    if (!d->objectPath.isEmpty()) {
+        d->interface = new QDBusInterface("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", QDBusConnection::sessionBus(), this);
+        QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "ActiveChanged", this, SLOT(updateActive()));
+        QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "OffsetChanged", this, SLOT(updateOffset()));
+        QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "SnoozeOffsetChanged", this, SLOT(updateSnoozeOffset()));
+        QDBusConnection::sessionBus().connect("com.vicr123.the24", objectPath, "com.vicr123.the24.Alarm", "RepeatChanged", this, SLOT(updateRepeat()));
+
+        updateActive();
+        updateOffset();
+        updateSnoozeOffset();
+        updateRepeat();
+    }
 
     emit objectPathChanged();
-
-    updateActive();
-    updateOffset();
-    updateSnoozeOffset();
-    updateRepeat();
 }
 
 bool AlarmPaneController::active() {
@@ -135,6 +138,18 @@ QString AlarmPaneController::repeatString() {
 
 void AlarmPaneController::remove() {
     d->interface->asyncCall("Remove");
+}
+
+void AlarmPaneController::setRepeatDay(quint8 day, bool on) {
+    auto repeats = d->repeats;
+    repeats = repeats.setFlag(static_cast<AlarmPaneControllerPrivate::Day>(1 << day), on);
+    if (!d->interface) {
+        // Update the private member and notify
+        d->repeats = repeats;
+        emit repeatChanged();
+    } else {
+        d->interface->asyncCall("SetRepeat", static_cast<qulonglong>(repeats));
+    }
 }
 
 QCoro::Task<> AlarmPaneController::updateActive() {

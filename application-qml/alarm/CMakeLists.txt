@@ -7,6 +7,7 @@ qt_add_qml_module(the24-qml-alarm
         SOURCES alarmmodel.h alarmmodel.cpp
         QML_FILES AlarmDisplay.qml
         SOURCES alarmpanecontroller.h alarmpanecontroller.cpp
+        QML_FILES AddAlarmPopover.qml
 )
 
 target_link_libraries(the24-qml-alarm

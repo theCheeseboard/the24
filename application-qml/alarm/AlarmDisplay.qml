@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Window
 import com.vicr123.Contemporary
 import Contemporary
 
@@ -86,7 +87,7 @@ Item {
                 MenuItem {
                     text: qsTr("Edit")
                     icon.name: "edit-rename"
-                    // onTriggered: itemController.remove()
+                    onTriggered: addAlarmPopover.visible = true
                 }
 
                 MenuItem {
@@ -124,7 +125,16 @@ Item {
 
             SwipeDelegate.onClicked: () => {
                 swipeDelegate.swipe.close()
+                addAlarmPopover.visible = true
             }
         }
+    }
+
+    AddAlarmPopover {
+        id: addAlarmPopover
+        objectPath: root.objectPath
+        edge: Qt.BottomEdge
+        height: Math.max(300, root.Window.height - 300)
+        width: root.Window.width
     }
 }

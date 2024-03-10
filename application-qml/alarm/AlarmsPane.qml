@@ -5,6 +5,8 @@ import com.vicr123.Contemporary
 import Contemporary
 
 Item {
+    id: root
+
     Grandstand {
         id: grandstand
         anchors.top: parent.top
@@ -66,6 +68,8 @@ Item {
                     implicitWidth: 600
                     text: qsTr("Add Alarm")
                     icon.name: "list-add"
+
+                    onClicked: addAlarmPopover.visible = true
                 }
             }
             footerPositioning: ListView.PullBackFooter
@@ -122,5 +126,12 @@ Item {
                 }
             }
         }
+    }
+
+    AddAlarmPopover {
+        id: addAlarmPopover
+        edge: Qt.BottomEdge
+        height: Math.max(300, root.Window.height - 300)
+        width: root.Window.width
     }
 }
