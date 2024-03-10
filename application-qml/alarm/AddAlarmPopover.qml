@@ -46,35 +46,40 @@ Drawer {
                 anchors.horizontalCenter: parent.horizontalCenter
                 spacing: 6
 
-                Tumbler {
-                    id: offsetHour
-                    model: root.is24hour ? 24 : 12
-                    font.pointSize: 15
-                    delegate: Label {
-                        text: Qt.locale().toString(index == 0 && !root.is24hour ? 12 : index).padStart(2, Qt.locale().zeroDigit)
-                        opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetHour.visibleItemCount / 2)
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
-                        required property int index
+                Row {
+                    LayoutMirroring.enabled: false
+                    spacing: 6
+
+                    Tumbler {
+                        id: offsetHour
+                        model: root.is24hour ? 24 : 12
+                        font.pointSize: 15
+                        delegate: Label {
+                            text: Qt.locale().toString(index == 0 && !root.is24hour ? 12 : index).padStart(2, Qt.locale().zeroDigit)
+                            opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetHour.visibleItemCount / 2)
+                            horizontalAlignment: Qt.AlignHCenter
+                            verticalAlignment: Qt.AlignVCenter
+                            required property int index
+                        }
+                        currentIndex: itemController.offsetHour % (root.is24hour ? 24 : 12)
+                        onMovingChanged: offsetGroup.updateOffset()
+                        onCurrentIndexChanged: offsetGroup.updateOffset()
                     }
-                    currentIndex: itemController.offsetHour % (root.is24hour ? 24 : 12)
-                    onMovingChanged: offsetGroup.updateOffset()
-                    onCurrentIndexChanged: offsetGroup.updateOffset()
-                }
-                Tumbler {
-                    id: offsetMinute
-                    model: 60
-                    font.pointSize: 15
-                    delegate: Label {
-                        text: Qt.locale().toString(index).padStart(2, Qt.locale().zeroDigit)
-                        opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetMinute.visibleItemCount / 2)
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
-                        required property int index
+                    Tumbler {
+                        id: offsetMinute
+                        model: 60
+                        font.pointSize: 15
+                        delegate: Label {
+                            text: Qt.locale().toString(index).padStart(2, Qt.locale().zeroDigit)
+                            opacity: 1.0 - Math.abs(Tumbler.displacement) / (offsetMinute.visibleItemCount / 2)
+                            horizontalAlignment: Qt.AlignHCenter
+                            verticalAlignment: Qt.AlignVCenter
+                            required property int index
+                        }
+                        currentIndex: itemController.offsetMinute
+                        onMovingChanged: offsetGroup.updateOffset()
+                        onCurrentIndexChanged: offsetGroup.updateOffset()
                     }
-                    currentIndex: itemController.offsetMinute
-                    onMovingChanged: offsetGroup.updateOffset()
-                    onCurrentIndexChanged: offsetGroup.updateOffset()
                 }
                 Tumbler {
                     id: offsetAmPm
