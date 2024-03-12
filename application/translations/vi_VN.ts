@@ -116,7 +116,6 @@
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.ui" line="14"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="146"/>
         <source>the24</source>
         <translation>the24</translation>
     </message>
@@ -142,13 +141,11 @@
     </message>
     <message>
         <location filename="../mainwindow.ui" line="117"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="147"/>
         <source>Exit</source>
         <translation>Thoát</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="120"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application/the24_autogen/include/ui_mainwindow.h" line="149"/>
         <source>Ctrl+Q</source>
         <translation>Ctrl+Q</translation>
     </message>

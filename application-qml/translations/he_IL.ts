@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="he_IL" sourcelanguage="en_US">
 <context>
     <name>AddAlarmPopover</name>
     <message>
         <location filename="../alarm/AddAlarmPopover.qml" line="20"/>
         <source>New Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>שעון מעורר חדש</translation>
     </message>
     <message>
         <location filename="../alarm/AddAlarmPopover.qml" line="20"/>
         <source>Edit Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>ערוך שעון מעורר</translation>
     </message>
     <message>
         <location filename="../alarm/AddAlarmPopover.qml" line="42"/>
         <source>Alarm Time</source>
-        <translation type="unfinished"></translation>
+        <translation>זמן הצלצול</translation>
     </message>
     <message>
         <location filename="../alarm/AddAlarmPopover.qml" line="109"/>
         <source>Repeat on</source>
-        <translation type="unfinished"></translation>
+        <translation>צלצל כל</translation>
     </message>
     <message>
         <location filename="../alarm/AddAlarmPopover.qml" line="154"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף שעון מעורר</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../worldclock/AddClockPopup.qml" line="18"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף שעון</translation>
     </message>
     <message>
         <location filename="../worldclock/AddClockPopup.qml" line="30"/>
         <source>Search...</source>
-        <translation type="unfinished"></translation>
+        <translation>חפש...</translation>
     </message>
 </context>
 <context>
@@ -47,19 +47,19 @@
     <message>
         <location filename="../alarm/AlarmDisplay.qml" line="84"/>
         <source>For this alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>עבור השעון המעורר הזה</translation>
     </message>
     <message>
         <location filename="../alarm/AlarmDisplay.qml" line="88"/>
         <location filename="../alarm/AlarmDisplay.qml" line="121"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>עריכה</translation>
     </message>
     <message>
         <location filename="../alarm/AlarmDisplay.qml" line="94"/>
         <location filename="../alarm/AlarmDisplay.qml" line="109"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>מחיקה</translation>
     </message>
 </context>
 <context>
@@ -67,22 +67,22 @@
     <message>
         <location filename="../alarm/AlarmsPane.qml" line="18"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>שעונים מעוררים</translation>
     </message>
     <message>
         <location filename="../alarm/AlarmsPane.qml" line="40"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>הממ...</translation>
     </message>
     <message>
         <location filename="../alarm/AlarmsPane.qml" line="41"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>נראה ששירות the24 לא פועל, שעונים מעוררים לא יצלצלו בלעדיו.</translation>
     </message>
     <message>
         <location filename="../alarm/AlarmsPane.qml" line="69"/>
         <source>Add Alarm</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף שעון מעורר</translation>
     </message>
 </context>
 <context>
@@ -99,47 +99,47 @@
     <message>
         <location filename="../Main.qml" line="16"/>
         <source>the24</source>
-        <translation type="unfinished"></translation>
+        <translation>the24</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="25"/>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation>סגנון</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="28"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>בהיר</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="31"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>כהה</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="38"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>יציאה</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="46"/>
         <source>World Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>שעון עולמי</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="52"/>
         <source>Alarms</source>
-        <translation type="unfinished"></translation>
+        <translation>שעון מעורר</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="58"/>
         <source>Stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>סטופר</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="64"/>
         <source>Timer</source>
-        <translation type="unfinished"></translation>
+        <translation>טיימר</translation>
     </message>
 </context>
 <context>
@@ -147,13 +147,13 @@
     <message>
         <location filename="../stopwatch/StopwatchDisplay.qml" line="83"/>
         <source>For this stopwatch</source>
-        <translation type="unfinished"></translation>
+        <translation>עבור הסטופר הזה</translation>
     </message>
     <message>
         <location filename="../stopwatch/StopwatchDisplay.qml" line="87"/>
         <location filename="../stopwatch/StopwatchDisplay.qml" line="102"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>מחיקה</translation>
     </message>
 </context>
 <context>
@@ -161,22 +161,26 @@
     <message>
         <location filename="../stopwatch/StopwatchPane.qml" line="18"/>
         <source>Stopwatches</source>
-        <translation type="unfinished"></translation>
+        <translation>סטופרים</translation>
     </message>
     <message>
         <location filename="../stopwatch/StopwatchPane.qml" line="40"/>
         <source>Hmm...</source>
-        <translation type="unfinished"></translation>
+        <translation>הממ...</translation>
     </message>
     <message>
         <location filename="../stopwatch/StopwatchPane.qml" line="41"/>
         <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
-        <translation type="unfinished"></translation>
+        <translation>נראה ששירות the24 לא פועל, הסטופרים לא יפעלו בלעדיו.</translation>
     </message>
     <message>
         <location filename="../stopwatch/StopwatchPane.qml" line="69"/>
         <source>Start Stopwatch</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Alarm</source>
+        <translation type="vanished">הוסף סטופר</translation>
     </message>
 </context>
 <context>
@@ -184,13 +188,13 @@
     <message>
         <location filename="../worldclock/WorldClockDisplay.qml" line="91"/>
         <source>For this clock</source>
-        <translation type="unfinished"></translation>
+        <translation>עבור השעון הזה</translation>
     </message>
     <message>
         <location filename="../worldclock/WorldClockDisplay.qml" line="95"/>
         <location filename="../worldclock/WorldClockDisplay.qml" line="112"/>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>מחיקה</translation>
     </message>
 </context>
 <context>
@@ -198,12 +202,12 @@
     <message>
         <location filename="../worldclock/WorldClocksPane.qml" line="20"/>
         <source>World Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>שעון עולמי</translation>
     </message>
     <message>
         <location filename="../worldclock/WorldClocksPane.qml" line="55"/>
         <source>Add Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף שעון</translation>
     </message>
 </context>
 <context>
@@ -211,7 +215,7 @@
     <message>
         <location filename="../main.cpp" line="20"/>
         <source>Clock</source>
-        <translation type="unfinished"></translation>
+        <translation>שעון</translation>
     </message>
 </context>
 </TS>

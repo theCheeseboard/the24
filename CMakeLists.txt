@@ -16,5 +16,5 @@ qt_policy(
 )
 
 add_subdirectory(application-qml)
-add_subdirectory(application)
+# add_subdirectory(application)
 add_subdirectory(daemon)

@@ -1,5 +1,4 @@
-qt_add_library(the24-qml-worldclock STATIC)
-qt_add_qml_module(the24-qml-worldclock
+cntp_add_qml_module(worldclock the24-qml
     URI worldclock
     VERSION 1.0
     QML_FILES
@@ -11,8 +10,4 @@ qt_add_qml_module(the24-qml-worldclock
         worldclock.h worldclock.cpp
         timezonesmodel.h timezonesmodel.cpp
         SOURCES analogueclock.h analogueclock.cpp
-)
-
-target_link_libraries(the24-qml-worldclock
-    PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )

@@ -16,10 +16,14 @@ qt_add_qml_module(the24-qml
     VERSION 1.0
     QML_FILES
         Main.qml
+        RESOURCES common/CMakeLists.txt
+        SOURCES common/clockhelpers.h common/clockhelpers.cpp
 )
 
+add_subdirectory(common)
 add_subdirectory(worldclock)
 add_subdirectory(alarm)
+add_subdirectory(stopwatch)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -48,7 +52,7 @@ cntp_target_name(the24-qml "the24")
     # DEFAULTS_FILE the24.conf)
 
 target_link_libraries(the24-qml
-    PRIVATE libcontemporary the24-qml-worldclockplugin the24-qml-alarmplugin Qt::Quick Qt::QuickControls2
+    PRIVATE libcontemporary Qt::Quick Qt::QuickControls2
 )
 
 target_include_directories(the24-qml
