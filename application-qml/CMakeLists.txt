@@ -16,14 +16,13 @@ qt_add_qml_module(the24-qml
     VERSION 1.0
     QML_FILES
         Main.qml
-        RESOURCES common/CMakeLists.txt
-        SOURCES common/clockhelpers.h common/clockhelpers.cpp
 )
 
 add_subdirectory(common)
 add_subdirectory(worldclock)
 add_subdirectory(alarm)
 add_subdirectory(stopwatch)
+add_subdirectory(timer)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an

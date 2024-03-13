@@ -7,6 +7,7 @@ import Qt.labs.platform as Labs
 import worldclock as WorldClock
 import alarm as Alarm
 import stopwatch as Stopwatch
+import timer as Timer
 
 ContemporaryWindow {
     id: window
@@ -77,5 +78,6 @@ ContemporaryWindow {
         WorldClock.WorldClocksPane { }
         Alarm.AlarmsPane { }
         Stopwatch.StopwatchPane { }
+        Timer.TimerPane { }
     }
 }

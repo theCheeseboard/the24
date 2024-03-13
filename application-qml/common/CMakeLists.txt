@@ -5,3 +5,5 @@ cntp_add_static_module(
     SOURCES
         clockhelpers.cpp clockhelpers.h
 )
+
+target_link_libraries(the24-qml-common PRIVATE Qt::Core Qt::Widgets)
