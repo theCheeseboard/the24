@@ -93,42 +93,42 @@
         <translation>the24</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="26"/>
+        <location filename="../Main.qml" line="31"/>
         <source>Theme</source>
         <translation>סגנון</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="29"/>
+        <location filename="../Main.qml" line="34"/>
         <source>Light</source>
         <translation>בהיר</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="32"/>
+        <location filename="../Main.qml" line="37"/>
         <source>Dark</source>
         <translation>כהה</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="39"/>
+        <location filename="../Main.qml" line="44"/>
         <source>Exit</source>
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="47"/>
+        <location filename="../Main.qml" line="52"/>
         <source>World Clock</source>
         <translation>שעון עולמי</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="53"/>
+        <location filename="../Main.qml" line="58"/>
         <source>Alarms</source>
         <translation>שעון מעורר</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="59"/>
+        <location filename="../Main.qml" line="64"/>
         <source>Stopwatch</source>
         <translation>סטופר</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="65"/>
+        <location filename="../Main.qml" line="70"/>
         <source>Timer</source>
         <translation>טיימר</translation>
     </message>

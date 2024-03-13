@@ -93,42 +93,42 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="26"/>
+        <location filename="../Main.qml" line="31"/>
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="29"/>
+        <location filename="../Main.qml" line="34"/>
         <source>Light</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="32"/>
+        <location filename="../Main.qml" line="37"/>
         <source>Dark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="39"/>
+        <location filename="../Main.qml" line="44"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="47"/>
+        <location filename="../Main.qml" line="52"/>
         <source>World Clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="53"/>
+        <location filename="../Main.qml" line="58"/>
         <source>Alarms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="59"/>
+        <location filename="../Main.qml" line="64"/>
         <source>Stopwatch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="65"/>
+        <location filename="../Main.qml" line="70"/>
         <source>Timer</source>
         <translation type="unfinished"></translation>
     </message>
