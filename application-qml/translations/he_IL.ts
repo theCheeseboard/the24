@@ -108,27 +108,37 @@
         <translation>כהה</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="44"/>
+        <location filename="../Main.qml" line="43"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="46"/>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="52"/>
         <source>Exit</source>
         <translation>יציאה</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="52"/>
+        <location filename="../Main.qml" line="60"/>
         <source>World Clock</source>
         <translation>שעון עולמי</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="58"/>
+        <location filename="../Main.qml" line="66"/>
         <source>Alarms</source>
         <translation>שעון מעורר</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="64"/>
+        <location filename="../Main.qml" line="72"/>
         <source>Stopwatch</source>
         <translation>סטופר</translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="70"/>
+        <location filename="../Main.qml" line="78"/>
         <source>Timer</source>
         <translation>טיימר</translation>
     </message>

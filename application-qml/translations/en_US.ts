@@ -108,27 +108,37 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="44"/>
-        <source>Exit</source>
+        <location filename="../Main.qml" line="43"/>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="46"/>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../Main.qml" line="52"/>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Main.qml" line="60"/>
         <source>World Clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="58"/>
+        <location filename="../Main.qml" line="66"/>
         <source>Alarms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="64"/>
+        <location filename="../Main.qml" line="72"/>
         <source>Stopwatch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../Main.qml" line="70"/>
+        <location filename="../Main.qml" line="78"/>
         <source>Timer</source>
         <translation type="unfinished"></translation>
     </message>

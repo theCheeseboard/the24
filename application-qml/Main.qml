@@ -39,6 +39,14 @@ ContemporaryWindow {
                     },
                     MenuSeparator {
                     },
+                    Menu {
+                        title: qsTr("Help")
+
+                        Action {
+                            text: qsTr("About")
+                            onTriggered: outerStack.push(aboutSurface)
+                        }
+                    },
                     Action {
                         shortcut: "Ctrl+Q"
                         text: qsTr("Exit")
@@ -85,6 +93,10 @@ ContemporaryWindow {
                 Stopwatch.StopwatchPane { }
                 Timer.TimerPane { }
             }
+        }
+
+        AboutSurface {
+            id: aboutSurface
         }
     }
 }

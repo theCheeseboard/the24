@@ -40,9 +40,9 @@ set_target_properties(the24-qml PROPERTIES
 cntp_init(the24-qml 20)
 cntp_translate(the24-qml)
 cntp_target_name(the24-qml "the24")
-# cntp_app_icon(the24-qml
-    # BASEICON icons/baseicon.svg
-# )
+cntp_app_icon(the24-qml
+    BASEICON icons/baseicon.svg
+)
 # cntp_target_desktop_file(the24-qml
     # DESKTOP_FILE com.vicr123.the24.desktop
 #    BLUEPRINT_DESKTOP_FILE com.vicr123.the24_blueprint.desktop
