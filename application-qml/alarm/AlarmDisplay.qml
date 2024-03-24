@@ -36,7 +36,7 @@ Item {
                 height: childrenRect.height + 9 + 6 + 9
                 implicitWidth: 600
 
-                color: Contemporary.calculateLayer(1)
+                color: Contemporary.calculateLayer(1).value
 
                 Switch {
                     id: activeSwitch

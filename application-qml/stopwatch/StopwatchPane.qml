@@ -16,7 +16,7 @@ Item {
         z: 20
 
         text: qsTr("Stopwatches")
-        color: Contemporary.calculateLayer(1)
+        color: Contemporary.calculateLayer(1).value
     }
 
     StopwatchModel {

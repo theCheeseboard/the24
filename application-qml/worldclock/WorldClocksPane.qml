@@ -18,7 +18,7 @@ Item {
         z: 20
 
         text: qsTr("World Clock")
-        color: Contemporary.calculateLayer(1)
+        color: Contemporary.calculateLayer(1).value
     }
 
     ListView {

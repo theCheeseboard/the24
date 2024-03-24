@@ -16,7 +16,7 @@ Item {
         z: 20
 
         text: qsTr("Alarms")
-        color: Contemporary.calculateLayer(1)
+        color: Contemporary.calculateLayer(1).value
     }
 
     AlarmModel {

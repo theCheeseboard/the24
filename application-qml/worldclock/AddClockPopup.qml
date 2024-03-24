@@ -16,7 +16,7 @@ Popup {
         anchors.right: parent.right
 
         text: qsTr("Add Clock")
-        color: Contemporary.calculateLayer(1)
+        color: Contemporary.calculateLayer(1).value
 
         z: 20
     }

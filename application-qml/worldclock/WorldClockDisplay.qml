@@ -34,7 +34,7 @@ Item {
                 height: childrenRect.height + 9 + 6 + 9
                 implicitWidth: 600
 
-                color: Contemporary.calculateLayer(1)
+                color: Contemporary.calculateLayer(1).value
 
                 Label {
                     id: timeLabel
@@ -79,7 +79,7 @@ Item {
                     width: clock.height
 
                     time: itemController.currentTime
-                    backgroundColor: Contemporary.calculateLayer(1)
+                    backgroundColor: Contemporary.calculateLayer(1).value
                     accentColor: Contemporary.accent
                 }
             }
