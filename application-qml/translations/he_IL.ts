@@ -43,6 +43,69 @@
     </message>
 </context>
 <context>
+    <name>AddTimerPopover</name>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="17"/>
+        <source>New Timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="62"/>
+        <source>1 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="43"/>
+        <source>Presets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="67"/>
+        <source>2 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="72"/>
+        <source>5 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="77"/>
+        <source>10 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="82"/>
+        <source>15 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="87"/>
+        <source>30 min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="92"/>
+        <source>1 hr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="97"/>
+        <source>2 hr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="107"/>
+        <source>Custom Timer Duration</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../timer/AddTimerPopover.qml" line="159"/>
+        <source>Add Timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AlarmDisplay</name>
     <message>
         <location filename="../alarm/AlarmDisplay.qml" line="84"/>

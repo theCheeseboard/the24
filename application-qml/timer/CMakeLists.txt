@@ -4,6 +4,7 @@ cntp_add_qml_module(timer the24-qml
     QML_FILES
         TimerPane.qml
         TimerDisplay.qml
+        AddTimerPopover.qml
     SOURCES
         timermodel.h timermodel.cpp
         timerpanecontroller.h timerpanecontroller.cpp

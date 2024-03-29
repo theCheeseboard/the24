@@ -27,6 +27,8 @@ class TimerPaneController : public QObject {
 
         Q_SCRIPTABLE void remove();
 
+        Q_SCRIPTABLE void addTimer(qint64 msecs);
+
     signals:
         void objectPathChanged();
         void displayStringChanged();

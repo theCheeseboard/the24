@@ -69,7 +69,7 @@ Item {
                     text: qsTr("Add Timer")
                     icon.name: "list-add"
 
-                    onClicked: model.newStopwatch()
+                    onClicked: addTimerPopover.visible = true
                 }
             }
             footerPositioning: ListView.PullBackFooter
@@ -126,5 +126,12 @@ Item {
                 }
             }
         }
+    }
+
+    AddTimerPopover {
+        id: addTimerPopover
+        edge: Qt.BottomEdge
+        height: Math.max(500, root.Window.height - 300)
+        width: root.Window.width
     }
 }

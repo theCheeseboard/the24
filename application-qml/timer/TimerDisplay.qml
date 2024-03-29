@@ -69,7 +69,7 @@ Item {
                     anchors.rightMargin: 9
                     icon.name: "view-refresh"
                     flat: true
-                    visible: itemController.state !== "Stopped";
+                    visible: itemController.state === "Paused";
                     width: resetButton.height
 
                     onClicked: itemController.reset()

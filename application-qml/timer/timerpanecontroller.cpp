@@ -79,6 +79,12 @@ void TimerPaneController::remove() {
     d->interface->asyncCall("Remove");
 }
 
+void TimerPaneController::addTimer(qint64 msecs) {
+    QDBusMessage message = QDBusMessage::createMethodCall("com.vicr123.the24", "/com/vicr123/the24", "com.vicr123.the24", "AddTimer");
+    message.setArguments({msecs});
+    QDBusConnection::sessionBus().asyncCall(message);
+}
+
 QCoro::Task<> TimerPaneController::updateState() {
     d->timer->stop();
     auto stateReply = co_await d->interface->asyncCall("State");
