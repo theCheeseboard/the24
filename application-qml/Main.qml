@@ -26,34 +26,7 @@ ContemporaryWindow {
         initialItem: ContemporaryWindowSurface {
             overlayActionBar: true
             actionBar: ActionBar {
-                menuItems: [
-                    Menu {
-                        title: qsTr("Theme")
-
-                        Action {
-                            text: qsTr("Light")
-                        }
-                        Action {
-                            text: qsTr("Dark")
-                        }
-                    },
-                    MenuSeparator {
-                    },
-                    Menu {
-                        title: qsTr("Help")
-
-                        Action {
-                            text: qsTr("About")
-                            onTriggered: outerStack.push(aboutSurface)
-                        }
-                    },
-                    Action {
-                        shortcut: "Ctrl+Q"
-                        text: qsTr("Exit")
-
-                        onTriggered: window.close()
-                    }
-                ]
+                menu: Menu {}
 
                 ActionBarTabber {
                     ActionBarTabber.Button {
@@ -81,6 +54,8 @@ ContemporaryWindow {
                         onActivated: stack.currentIndex = 3
                     }
                 }
+
+                onAboutClicked: () => outerStack.push(aboutSurface)
             }
 
             Pager {
@@ -95,8 +70,10 @@ ContemporaryWindow {
             }
         }
 
-        AboutSurface {
+        Component {
             id: aboutSurface
+            AboutSurface {
+            }
         }
     }
 }
