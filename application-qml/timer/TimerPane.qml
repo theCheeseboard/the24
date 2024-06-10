@@ -16,11 +16,16 @@ Item {
         z: 20
 
         text: qsTr("Timers")
-        color: Contemporary.calculateLayer(1).value
+        color: layer1.color
     }
 
     TimerModel {
         id: model
+    }
+
+    LayerCalculator {
+        id: layer1
+        layer: 1
     }
 
     Pager {

@@ -18,6 +18,11 @@ Item {
         objectPath: root.objectPath
     }
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     SwipeDelegate {
         id: swipeDelegate
         anchors.centerIn: parent
@@ -36,7 +41,7 @@ Item {
                 height: childrenRect.height + 9
                 implicitWidth: 600
 
-                color: Contemporary.calculateLayer(1).value
+                color: layer1.color
 
                 Button {
                     id: pauseButton

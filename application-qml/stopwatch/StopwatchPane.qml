@@ -7,6 +7,11 @@ import Contemporary
 Item {
     id: root
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     Grandstand {
         id: grandstand
         anchors.top: parent.top
@@ -16,7 +21,7 @@ Item {
         z: 20
 
         text: qsTr("Stopwatches")
-        color: Contemporary.calculateLayer(1).value
+        color: layer1.color
     }
 
     StopwatchModel {

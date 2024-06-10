@@ -17,6 +17,11 @@ Item {
         timezone: worldClock.timezone
     }
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     SwipeDelegate {
         anchors.centerIn: parent
 
@@ -34,7 +39,7 @@ Item {
                 height: childrenRect.height + 9 + 6 + 9
                 implicitWidth: 600
 
-                color: Contemporary.calculateLayer(1).value
+                color: layer1.color
 
                 Label {
                     id: timeLabel
@@ -79,7 +84,7 @@ Item {
                     width: clock.height
 
                     time: itemController.currentTime
-                    backgroundColor: Contemporary.calculateLayer(1).value
+                    backgroundColor: layer1.color
                     accentColor: Contemporary.accent
                 }
             }

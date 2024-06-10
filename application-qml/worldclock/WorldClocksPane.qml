@@ -9,6 +9,11 @@ Item {
         id: controller
     }
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     Grandstand {
         id: grandstand
         anchors.top: parent.top
@@ -18,7 +23,7 @@ Item {
         z: 20
 
         text: qsTr("World Clock")
-        color: Contemporary.calculateLayer(1).value
+        color: layer1.color
     }
 
     ListView {

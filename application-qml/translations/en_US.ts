@@ -37,14 +37,14 @@
 <context>
     <name>AddClockPopup</name>
     <message>
-        <location filename="../worldclock/AddClockPopup.qml" line="18"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/AddClockPopup.qml" line="18"/>
+        <location filename="../worldclock/AddClockPopup.qml" line="23"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/AddClockPopup.qml" line="23"/>
         <source>Add Clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../worldclock/AddClockPopup.qml" line="30"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/AddClockPopup.qml" line="30"/>
+        <location filename="../worldclock/AddClockPopup.qml" line="35"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/AddClockPopup.qml" line="35"/>
         <source>Search...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -127,24 +127,24 @@
 <context>
     <name>AlarmDisplay</name>
     <message>
-        <location filename="../alarm/AlarmDisplay.qml" line="84"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="84"/>
+        <location filename="../alarm/AlarmDisplay.qml" line="89"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="89"/>
         <source>For this alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../alarm/AlarmDisplay.qml" line="88"/>
-        <location filename="../alarm/AlarmDisplay.qml" line="121"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="88"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="121"/>
+        <location filename="../alarm/AlarmDisplay.qml" line="93"/>
+        <location filename="../alarm/AlarmDisplay.qml" line="126"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="93"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="126"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../alarm/AlarmDisplay.qml" line="94"/>
-        <location filename="../alarm/AlarmDisplay.qml" line="109"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="94"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="109"/>
+        <location filename="../alarm/AlarmDisplay.qml" line="99"/>
+        <location filename="../alarm/AlarmDisplay.qml" line="114"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="99"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmDisplay.qml" line="114"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -180,26 +180,26 @@
 <context>
     <name>AlarmsPane</name>
     <message>
-        <location filename="../alarm/AlarmsPane.qml" line="18"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="18"/>
+        <location filename="../alarm/AlarmsPane.qml" line="23"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="23"/>
         <source>Alarms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../alarm/AlarmsPane.qml" line="40"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="40"/>
+        <location filename="../alarm/AlarmsPane.qml" line="45"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="45"/>
         <source>Hmm...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../alarm/AlarmsPane.qml" line="41"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="41"/>
+        <location filename="../alarm/AlarmsPane.qml" line="46"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="46"/>
         <source>Looks like the the24 service is not running, and alarms won&apos;t work without it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../alarm/AlarmsPane.qml" line="69"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="69"/>
+        <location filename="../alarm/AlarmsPane.qml" line="74"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/alarm/AlarmsPane.qml" line="74"/>
         <source>Add Alarm</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,16 +249,16 @@
 <context>
     <name>StopwatchDisplay</name>
     <message>
-        <location filename="../stopwatch/StopwatchDisplay.qml" line="83"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="83"/>
+        <location filename="../stopwatch/StopwatchDisplay.qml" line="88"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="88"/>
         <source>For this stopwatch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stopwatch/StopwatchDisplay.qml" line="87"/>
-        <location filename="../stopwatch/StopwatchDisplay.qml" line="102"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="87"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="102"/>
+        <location filename="../stopwatch/StopwatchDisplay.qml" line="92"/>
+        <location filename="../stopwatch/StopwatchDisplay.qml" line="107"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="92"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchDisplay.qml" line="107"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -266,26 +266,26 @@
 <context>
     <name>StopwatchPane</name>
     <message>
-        <location filename="../stopwatch/StopwatchPane.qml" line="18"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="18"/>
+        <location filename="../stopwatch/StopwatchPane.qml" line="23"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="23"/>
         <source>Stopwatches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stopwatch/StopwatchPane.qml" line="40"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="40"/>
+        <location filename="../stopwatch/StopwatchPane.qml" line="45"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="45"/>
         <source>Hmm...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stopwatch/StopwatchPane.qml" line="41"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="41"/>
+        <location filename="../stopwatch/StopwatchPane.qml" line="46"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="46"/>
         <source>Looks like the the24 service is not running, and stopwatches won&apos;t work without it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../stopwatch/StopwatchPane.qml" line="69"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="69"/>
+        <location filename="../stopwatch/StopwatchPane.qml" line="74"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/stopwatch/StopwatchPane.qml" line="74"/>
         <source>Start Stopwatch</source>
         <translation type="unfinished"></translation>
     </message>
@@ -293,16 +293,16 @@
 <context>
     <name>TimerDisplay</name>
     <message>
-        <location filename="../timer/TimerDisplay.qml" line="83"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="83"/>
+        <location filename="../timer/TimerDisplay.qml" line="88"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="88"/>
         <source>For this timer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../timer/TimerDisplay.qml" line="87"/>
-        <location filename="../timer/TimerDisplay.qml" line="102"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="87"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="102"/>
+        <location filename="../timer/TimerDisplay.qml" line="92"/>
+        <location filename="../timer/TimerDisplay.qml" line="107"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="92"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerDisplay.qml" line="107"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -316,20 +316,20 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../timer/TimerPane.qml" line="40"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="40"/>
+        <location filename="../timer/TimerPane.qml" line="45"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="45"/>
         <source>Hmm...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../timer/TimerPane.qml" line="41"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="41"/>
+        <location filename="../timer/TimerPane.qml" line="46"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="46"/>
         <source>Looks like the the24 service is not running, and timers won&apos;t work without it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../timer/TimerPane.qml" line="69"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="69"/>
+        <location filename="../timer/TimerPane.qml" line="74"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/timer/TimerPane.qml" line="74"/>
         <source>Add Timer</source>
         <translation type="unfinished"></translation>
     </message>
@@ -369,16 +369,16 @@
 <context>
     <name>WorldClockDisplay</name>
     <message>
-        <location filename="../worldclock/WorldClockDisplay.qml" line="91"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="91"/>
+        <location filename="../worldclock/WorldClockDisplay.qml" line="96"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="96"/>
         <source>For this clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../worldclock/WorldClockDisplay.qml" line="95"/>
-        <location filename="../worldclock/WorldClockDisplay.qml" line="112"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="95"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="112"/>
+        <location filename="../worldclock/WorldClockDisplay.qml" line="100"/>
+        <location filename="../worldclock/WorldClockDisplay.qml" line="117"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="100"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClockDisplay.qml" line="117"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
@@ -386,14 +386,14 @@
 <context>
     <name>WorldClocksPane</name>
     <message>
-        <location filename="../worldclock/WorldClocksPane.qml" line="20"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClocksPane.qml" line="20"/>
+        <location filename="../worldclock/WorldClocksPane.qml" line="25"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClocksPane.qml" line="25"/>
         <source>World Clock</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../worldclock/WorldClocksPane.qml" line="55"/>
-        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClocksPane.qml" line="55"/>
+        <location filename="../worldclock/WorldClocksPane.qml" line="60"/>
+        <location filename="../../../build-the24-Chroot_6-Debug/application-qml/worldclock/WorldClocksPane.qml" line="60"/>
         <source>Add Clock</source>
         <translation type="unfinished"></translation>
     </message>

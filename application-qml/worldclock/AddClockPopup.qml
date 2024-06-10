@@ -9,6 +9,11 @@ Popup {
 
     signal add(timezone: string)
 
+    LayerCalculator {
+        id: layer1
+        layer: 1
+    }
+
     Grandstand {
         id: grandstand
         anchors.top: parent.top
@@ -16,7 +21,7 @@ Popup {
         anchors.right: parent.right
 
         text: qsTr("Add Clock")
-        color: Contemporary.calculateLayer(1).value
+        color: layer1.color
 
         z: 20
     }
